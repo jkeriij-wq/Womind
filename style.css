@@ -123,6 +123,69 @@ body { background: var(--bg); color: var(--black); font-family: var(--unbounded)
     color: var(--black);
 }
 
+/* УНИВЕРСАЛЬНЫЙ СТИЛЬ КНОПОК ДЛЯ КАРТОЧЕК */
+.btn-outline, .btn-red-action, .btn-black, .btn-red {
+    display: block;
+    width: 100%;
+    padding: 18px 25px;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: none;
+    margin-top: auto; /* Прижимает кнопку к низу карточки */
+    text-align: center;
+}
+
+/* КНОПКА С ОБВОДКОЙ (Для Individual и Салфетки) */
+.btn-outline, .btn-black {
+    background: transparent;
+    border: 1.5px solid #0D0D0D !important;
+    color: #0D0D0D !important;
+}
+
+.btn-outline:hover, .btn-black:hover {
+    background: #0D0D0D !important;
+    color: #CFCABF !important; /* Цвет твоего фона */
+}
+
+/* КНОПКА КРАСНАЯ (Для тарифа W-Team) */
+.btn-red-action, .btn-red {
+    background: #D10000 !important;
+    color: white !important;
+    border: 1.5px solid #D10000 !important;
+    box-shadow: 0 5px 15px rgba(209, 0, 0, 0.3);
+}
+
+.btn-red-action:hover, .btn-red:hover {
+    background: #0D0D0D !important;
+    border-color: #0D0D0D !important;
+    box-shadow: none;
+    transform: translateY(-2px);
+}
+
+/* ИСПРАВЛЕНИЕ ДЛЯ КНОПОК ВНУТРИ ТЕСТА (Чтобы они не были белыми) */
+.quiz-opt-btn {
+    background: transparent !important;
+    border: 1px solid rgba(13, 13, 13, 0.2) !important;
+    color: #0D0D0D !important;
+    padding: 20px !important;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
+    font-family: 'Unbounded', sans-serif;
+    transition: 0.3s;
+}
+
+.quiz-opt-btn:hover {
+    background: #D10000 !important;
+    color: white !important;
+    border-color: #D10000 !important;
+}
+
 
 
 /* МОДАЛЬНОЕ ОКНО */
