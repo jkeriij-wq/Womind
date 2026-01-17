@@ -133,18 +133,28 @@ if (form) {
         submitBtn.innerText = 'СИНХРОНИЗАЦИЯ...';
 
         // Отправка данных на твою ссылку
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                submitBtn.innerText = 'ДОСТУП РАЗРЕШЕН';
-                submitBtn.style.backgroundColor = '#28a745'; // Зеленый при успехе
-                form.reset(); // Очистка полей
-                
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = originalText;
-                    submitBtn.style.backgroundColor = ''; // Возврат цвета
-                }, 3000);
-            })
+        fetch(scriptURL, { 
+    method: 'POST', 
+    body: new FormData(form),
+    mode: 'no-cors' // Добавляем этот режим, если обычный блокируется
+})
+.then(() => {
+    // В режиме no-cors мы не получим детальный ответ от сервера, 
+    // поэтому считаем, что если ошибки нет — всё ушло.
+    submitBtn.innerText = 'ДОСТУП РАЗРЕШЕН';
+    submitBtn.style.backgroundColor = '#28a745';
+    form.reset();
+    setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalText;
+        submitBtn.style.backgroundColor = '';
+    }, 3000);
+})
+.catch(error => {
+    console.error('Ошибка!', error);
+    submitBtn.innerText = 'ОШИБКА СЕТИ';
+    submitBtn.disabled = false;
+});
             .catch(error => {
                 console.error('Ошибка!', error.message);
                 submitBtn.innerText = 'ОШИБКА СЕТИ';
