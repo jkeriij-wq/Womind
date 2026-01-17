@@ -115,3 +115,41 @@ function closeQuiz() {
     document.getElementById('quiz-modal').style.display = 'none';
     document.body.style.overflow = 'auto';
 }
+
+
+// --- ЛОГИКА ОТПРАВКИ В GOOGLE ТАБЛИЦУ ---
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw0QpPdwhubcJUAUbXe99EMtJhbHc2ERGQBSf46LnNSbti9tD66b-Fl4sd37XaoW8uL/exec';
+const form = document.getElementById('google-sheet-form');
+
+if (form) {
+    form.addEventListener('submit', e => {
+        e.preventDefault(); // Чтобы страница не перезагружалась
+        
+        const submitBtn = form.querySelector('button');
+        const originalText = submitBtn.innerText;
+        
+        // Эффект загрузки
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'СИНХРОНИЗАЦИЯ...';
+
+        // Отправка данных на твою ссылку
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                submitBtn.innerText = 'ДОСТУП РАЗРЕШЕН';
+                submitBtn.style.backgroundColor = '#28a745'; // Зеленый при успехе
+                form.reset(); // Очистка полей
+                
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = originalText;
+                    submitBtn.style.backgroundColor = ''; // Возврат цвета
+                }, 3000);
+            })
+            .catch(error => {
+                console.error('Ошибка!', error.message);
+                submitBtn.innerText = 'ОШИБКА СЕТИ';
+                submitBtn.disabled = false;
+                setTimeout(() => { submitBtn.innerText = originalText; }, 3000);
+            });
+    });
+}
