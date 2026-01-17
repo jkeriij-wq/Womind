@@ -5,6 +5,27 @@
     --unbounded: 'Unbounded', sans-serif;
 }
 
+/* ЗЕРНИСТОСТЬ */
+.grain-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2.5rem, 11vw, 9rem);
+    text-transform: uppercase;
+    line-height: 0.85;
+    letter-spacing: -3px;
+    font-weight: 700;
+}
+
+
+
 * { box-sizing: border-box; margin: 0; padding: 0; text-decoration: none !important; color: inherit; }
 body { background: var(--bg); color: var(--black); font-family: var(--unbounded); overflow-x: hidden; line-height: 1.4; }
 
