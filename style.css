@@ -7,6 +7,46 @@
     --white: #ffffff;
     --gray-light: #f0f0f0;
     --beige-old-money: #CFCABF; /* Из второго стиля */
+
+    /* Дополнительные настройки для сетки программ */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ТРИ В РЯД */
+    gap: 2px; /* Тонкая линия разделения */
+    background: rgba(207, 202, 191, 0.1); /* Цвет линий сетки (бежевый) */
+    border: 1px solid rgba(207, 202, 191, 0.1);
+}
+
+/* Карточка теста - инверсия при ховере */
+.test-card:hover {
+    background: var(--beige-old-money) !important;
+    color: var(--black) !important;
+}
+
+.test-card:hover h2, 
+.test-card:hover .tag,
+.test-card:hover .list li::before {
+    color: var(--black) !important;
+}
+
+/* Featured (Средняя карточка) */
+.card.featured {
+    border: 1px solid var(--red);
+    position: relative;
+    transform: scale(1.02); /* Немного выделяем */
+    z-index: 2;
+    background: rgba(217, 4, 41, 0.05); /* Легкий красный оттенок фона */
+}
+
+/* Адаптивность для карточек */
+@media (max-width: 991px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* На планшетах в колонку */
+    }
+    .card.featured {
+        transform: scale(1);
+    }
+}
     
     /* Шрифты */
     --font-head: 'Syncopate', sans-serif;   /* Технологичный статус */
