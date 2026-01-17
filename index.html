@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOMIND Community | Маркетинговое сопровождение</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F9F7F2; /* Цвет слоновой кости */
+            --text-color: #1A1A1A;
+            --accent-color: #4A5D4E; /* Глубокий оливковый/английский зеленый */
+            --gold: #C5A059;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 3rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+            margin: 20px auto 0;
+        }
+
+        /* О нас */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        /* Продукты */
+        .product-card {
+            background: #fff;
+            padding: 50px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: 0.4s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+        }
+
+        .product-tag {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .product-card h3 {
+            font-size: 2rem;
+            margin: 15px 0;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .features-list li::before {
+            content: "—";
+            margin-right: 10px;
+            color: var(--gold);
+        }
+
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--text-color);
+            transform: translateY(-2px);
+        }
+
+        /* Форма */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            font-family: inherit;
+            outline: none;
+        }
+
+        input:focus {
+            border-bottom-color: var(--gold);
+        }
+
+        /* Соцсети */
+        .socials {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .socials a {
+            margin: 0 15px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid, .features-list { grid-template-columns: 1fr; }
+            .logo { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">WOMIND</div>
+        <div class="hero-subtitle">Маркетинг с женским интеллектом</div>
+        <a href="#apply" class="btn">Присоединиться</a>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <div class="about-grid">
+                <div>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">Эстетика смыслов</h2>
+                    <p>WOMIND — это не просто агентство. Это пространство, где мы превращаем ваш личный бренд в работающую экосистему. Мы объединяем классический маркетинг, нейропсихологию и визуальную эстетику Old Money.</p>
+                </div>
+                <div style="background: #EAE7DE; height: 400px; display: flex; align-items: center; justify-content: center; font-style: italic; color: #999;">
+                    [Место для вашего фото в стиле Old Money]
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">Программы</h2>
+
+            <div class="product-card">
+                <span class="product-tag">Personal Mentoring</span>
+                <h3>W-Individual</h3>
+                <p>Полное маркетинговое сопровождение под ключ. Мы становимся вашей командой.</p>
+                <ul class="features-list">
+                    <li>Анализ бренда и ниши</li>
+                    <li>Стратегия продвижения</li>
+                    <li>Создание продуктовой линейки</li>
+                    <li>Нейромаркетинг</li>
+                    <li>Организация съёмок</li>
+                    <li>Личный супервизоринг</li>
+                </ul>
+                <a href="#apply" class="btn">Забронировать место</a>
+            </div>
+
+            <div class="product-card">
+                <span class="product-tag">Community & Growth</span>
+                <h3>W-Team</h3>
+                <p>Ежемесячное пространство роста для тех, кто готов действовать в кругу единомышленниц.</p>
+                <ul class="features-list">
+                    <li>2 Мастермайнда в месяц</li>
+                    <li>1 Съёмочный день</li>
+                    <li>Разборы аккаунтов</li>
+                    <li>Закрытое комьюнити</li>
+                </ul>
+                <a href="#apply" class="btn">Вступить в клуб</a>
+            </div>
+
+            <div class="product-card">
+                <span class="product-tag">Offline Experience</span>
+                <h3>WIN-Салфетка</h3>
+                <p>Живая встреча-практика для развития нейропластичности и поиска новых ветвей вероятности.</p>
+                <a href="#apply" class="btn">Узнать дату встречи</a>
+            </div>
+        </section>
+
+        <section id="apply">
+            <h2 class="section-title">Оставить заявку</h2>
+            <div class="form-container">
+                <form action="https://formspree.io/f/your-email@example.com" method="POST">
+                    <input type="text" name="name" placeholder="ВАШЕ ИМЯ" required>
+                    <input type="email" name="email" placeholder="E-MAIL" required>
+                    <input type="text" name="instagram" placeholder="INSTAGRAM / TELEGRAM">
+                    <textarea name="message" rows="4" placeholder="КАКОЕ НАПРАВЛЕНИЕ ВАС ИНТЕРЕСУЕТ?"></textarea>
+                    <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Отправить</button>
+                </form>
+            </div>
+        </section>
+
+        <div class="socials">
+            <a href="#">INSTAGRAM</a>
+            <a href="#">TELEGRAM</a>
+            <a href="#">WHATSAPP</a>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 40px; font-size: 0.7rem; letter-spacing: 1px; opacity: 0.5;">
+        © 2026 WOMIND COMMUNITY. ALL RIGHTS RESERVED.
+    </footer>
+
+</body>
+</html>
