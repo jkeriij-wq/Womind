@@ -6,17 +6,51 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; text-decoration: none !important; color: inherit; }
-body { background: var(--bg); color: var(--black); font-family: var(--unbounded); overflow-x: hidden; }
+body { background: var(--bg); color: var(--black); font-family: var(--unbounded); overflow-x: hidden; line-height: 1.4; }
 
-/* РАЗДЕЛИТЕЛИ */
-.section-divider {
-    width: 100%; height: 1px; background: rgba(0, 0, 0, 0.1);
-    position: relative; margin: 80px 0;
+/* КОНТЕЙНЕР */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* НАВИГАЦИЯ */
+.nav-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px; position: fixed; width: 100%; top: 0; z-index: 1000;
+    background: rgba(207, 202, 191, 0.8); backdrop-filter: blur(10px);
 }
-.section-divider span {
-    position: absolute; right: 0; top: -10px; font-size: 10px;
-    background: var(--bg); padding: 0 10px; opacity: 0.5;
+.nav-logo { font-weight: 900; letter-spacing: 2px; }
+.nav-links a { margin-left: 30px; font-size: 12px; font-weight: 400; transition: 0.3s; }
+.nav-links a:hover { color: var(--red); }
+
+/* HERO SECTION */
+.hero { 
+    height: 100vh; display: flex; align-items: center; justify-content: center; 
+    text-align: center; padding-top: 100px;
 }
+.main-title { font-size: clamp(3rem, 10vw, 8rem); font-weight: 900; min-height: 1.2em; }
+.hero-tagline { font-size: 14px; letter-spacing: 5px; margin-bottom: 40px; opacity: 0.7; }
+
+/* КНОПКИ */
+.btn-main, .btn-red-wide {
+    background: var(--red); color: white; border: none; padding: 20px 40px;
+    font-family: var(--unbounded); font-weight: 900; cursor: pointer;
+    transition: 0.4s; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+.btn-main:hover { transform: scale(1.05); filter: brightness(1.2); }
+
+/* КАРТОЧКИ ЭКСПЕРТОВ (КТО МЫ) */
+.creators-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+.img-wrapper { position: relative; overflow: hidden; height: 500px; }
+.img-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: 0.5s; }
+.creator-card:hover img { filter: grayscale(0); transform: scale(1.05); }
+.tag { font-size: 10px; color: var(--red); display: block; margin-bottom: 10px; }
+
+/* КАРТОЧКИ ТЕСТОВ И ТАРИФОВ */
+.card {
+    background: rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.1);
+    padding: 40px; position: relative; transition: 0.3s;
+}
+.test-card:hover { background: var(--black); color: var(--bg); border-color: var(--black); }
+.featured { border: 2px solid var(--red); }
 
 /* МОДАЛЬНОЕ ОКНО */
 .modal {
@@ -28,30 +62,37 @@ body { background: var(--bg); color: var(--black); font-family: var(--unbounded)
 .modal-box {
     background: var(--bg); border: 2px solid var(--red);
     padding: 50px 40px; max-width: 600px; width: 100%; position: relative;
-    box-shadow: 0 0 60px rgba(209, 0, 0, 0.3);
 }
-.quiz-question-text {
-    color: var(--red) !important; /* ГАРАНТИЯ ЦВЕТА */
-    font-size: 1.5rem; font-weight: 900; margin-bottom: 30px; text-transform: uppercase;
-}
-.quiz-opt-btn {
-    display: block; width: 100%; padding: 18px; margin-top: 10px;
-    background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1);
-    cursor: pointer; transition: 0.3s; text-align: left;
-}
-.quiz-opt-btn:hover { background: var(--black); color: var(--bg); padding-left: 30px; }
 
-/* КНОПКА СВЕРНУТЬ */
-.btn-exit-quiz {
-    display: block; margin: 30px auto 0; background: transparent;
-    border: none; opacity: 0.4; cursor: pointer; text-decoration: underline !important;
+/* ФОРМА ОБРАТНОЙ СВЯЗИ */
+.contact-box { background: var(--black); color: var(--bg); padding: 60px; text-align: center; }
+.input-group { margin-bottom: 30px; text-align: left; }
+.input-group label { display: block; font-size: 10px; margin-bottom: 10px; opacity: 0.5; }
+.input-group input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 0; color: white; font-family: var(--unbounded); outline: none;
 }
-.btn-exit-quiz:hover { opacity: 1; color: var(--red); }
+.input-group input:focus { border-bottom-color: var(--red); }
 
-/* Остальные стили (сетки, бегущая строка и т.д.) остаются как были */
-.ticker-accent { background: var(--red); padding: 20px 0; overflow: hidden; transform: rotate(-1deg); margin: 40px 0; }
+/* РАЗДЕЛИТЕЛИ */
+.section-divider {
+    width: 100%; height: 1px; background: rgba(0, 0, 0, 0.1);
+    position: relative; margin: 80px 0;
+}
+.section-divider span {
+    position: absolute; right: 0; top: -10px; font-size: 10px;
+    background: var(--bg); padding: 0 10px; opacity: 0.5;
+}
+
+/* БЕГУЩАЯ СТРОКА */
+.ticker-accent { background: var(--red); padding: 20px 0; overflow: hidden; transform: rotate(-1deg); margin: 60px 0; }
 .ticker-track { display: inline-block; white-space: nowrap; animation: moveTicker 20s linear infinite; color: white; font-weight: 900; }
 @keyframes moveTicker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
+/* СЕТКИ */
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+
+@media (max-width: 900px) {
+    .grid-3, .creators-grid { grid-template-columns: 1fr; }
+    .hero { height: auto; padding: 150px 20px; }
+}
