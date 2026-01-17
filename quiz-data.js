@@ -1,54 +1,41 @@
 const QUIZ_DATA = {
     archetype: {
-        title: "NEURO_CODE: АРХЕТИП",
+        title: "NEURO_CODE: ARCHETYPE",
         questions: [
-            { q: "Как вы хотите, чтобы вас считывали?", a: ["Как эксперта-интеллектуала", "Как дерзкого новатора", "Как заботливого наставника", "Как эстета-гедониста"] },
-            { q: "Ваша главная ценность в блоге?", a: ["Система и порядок", "Эмоции и хаос", "Красота и статус", "Польза и рост"] }
+            { q: "Как вы хотите влиять на мир?", a: ["Через эстетику и чувства", "Через власть и структуру", "Через знания и поиск истины", "Через бунт и изменения"] },
+            { q: "Ваш идеальный клиент — это...", a: ["Тот, кто ищет вдохновения", "Тот, кто ищет систему", "Тот, кто ищет глубину", "Тот, кто ищет результат"] }
         ]
     },
     money: {
         title: "SCALE_PRO: MONEY-MIND",
         questions: [
-            { q: "Ваша реакция на чек в 1.000.000?", a: ["Страх и сомнения", "Азарт и готовность", "Непонимание, что с этим делать", "Спокойный расчет"] },
-            { q: "Что сейчас ваш главный тормоз?", a: ["Нет системы продаж", "Страх проявленности", "Слабое окружение", "Отсутствие продукта"] }
+            { q: "Что вы чувствуете при мысли о чеке в $10,000?", a: ["Азарт и готовность", "Страх ответственности", "Неуверенность в продукте", "Это мой стандарт"] }
         ]
     },
     brand: {
-        title: "CORE_SCAN: BRAND POTENTIAL",
+        title: "CORE_SCAN: SYSTEM AUDIT",
         questions: [
-            { q: "Есть ли у вас прописанная стратегия?", a: ["Да, на год вперед", "Только в голове", "Нет, плыву по течению"] },
-            { q: "Ваш визуал отражает вашу цену?", a: ["Да, выглядит дорого", "Нет, нужно переделывать", "Не знаю"] }
+            { q: "Насколько ваша текущая упаковка соответствует вашей цене?", a: ["Полное соответствие", "Упаковка выглядит дешевле", "Упаковки нет", "Нужна перепрошивка"] }
+        ]
+    },
+    visual: {
+        title: "VISUAL_DNA: DECODING",
+        questions: [
+            { q: "Какой визуальный ритм вам ближе?", a: ["Минимализм и воздух", "Драма и контраст", "Raw-эстетика и хаос", "Геометрия и симметрия"] }
         ]
     }
 };
 
-// Функции управления
+// Функция инициализации в main.js
 function openQuiz(type) {
     const data = QUIZ_DATA[type];
-    const app = document.getElementById('quiz-app');
-    app.innerHTML = `
-        <h2 class="unbounded" style="color:var(--gold); margin-bottom:20px;">${data.title}</h2>
-        ${data.questions.map((q, i) => `
-            <div style="margin-bottom:30px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:20px;">
-                <p style="margin-bottom:15px; font-family:var(--unbounded); font-size:0.8rem;">${i+1}. ${q.q}</p>
-                ${q.a.map(opt => `<button class="btn-os" style="display:block; width:100%; text-align:left; margin:5px 0;" onclick="nextStep()">${opt}</button>`).join('')}
-            </div>
-        `).join('')}
-        <button class="btn-os-gold" style="width:100%" onclick="closeQuiz()">ЗАВЕРШИТЬ_АНАЛИЗ</button>
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = `
+        <h2 class="unbounded" style="color:var(--gold)">${data.title}</h2>
+        <div class="q-wrap">
+            <p>${data.questions[0].q}</p>
+            ${data.questions[0].a.map(opt => `<button class="btn-os-gold" onclick="closeQuiz()">${opt}</button>`).join('')}
+        </div>
     `;
     document.getElementById('quiz-modal').style.display = 'flex';
 }
-
-function closeQuiz() { document.getElementById('quiz-modal').style.display = 'none'; }
-function nextStep() { console.log("Answer registered"); }
-
-// Typewriter
-window.onload = () => {
-    AOS.init();
-    new Typewriter('#typewriter', {
-        strings: ['PROGRAMMING_REALITY', 'DESIGNING_SENSES', 'UPGRADING_SYSTEMS'],
-        autoStart: true,
-        loop: true,
-        delay: 75
-    });
-};
