@@ -3,116 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOMIND | High-End Marketing</title>
+    <title>WOMIND | Brand Duo & Strategy</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Unbounded:wght@300;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Unbounded:wght@300;700&family=Tenor+Sans&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="grain"></div>
 
     <header class="hero">
-        <div class="hero-content">
-            <h1 data-aos="clip-path">WOMIND</h1>
-            <p class="hero-sub" data-aos="fade-up" data-aos-delay="400">Where intelligence meets <em>pure aesthetic</em>.</p>
-            <div class="line-accent" data-aos="width-expand"></div>
-        </div>
+        <h1 data-aos="zoom-out" data-aos-duration="2000">WOMIND</h1>
+        <p class="hero-sub" data-aos="fade-up">Маркетинговая экосистема нового времени</p>
     </header>
 
-    <main>
-        <section class="philosophy">
-            <div class="container">
-                <div class="marquee">
-                    <span>STRATEGY • VISUAL • NEUROMARKETING • SALES • </span>
-                    <span>STRATEGY • VISUAL • NEUROMARKETING • SALES • </span>
-                </div>
-                <p class="premium-text" data-aos="fade-up">
-                    Мы не работаем с шаблонами. Мы создаем <span class="text-red">ветки вероятности</span>, где ваш бренд становится доминирующим.
-                </p>
-            </div>
-        </section>
-
-        <section class="tests-section">
-            <div class="container">
-                <h2 class="unbounded-title" data-aos="fade-right">Check your brand</h2>
-                <div class="test-grid">
-                    <div class="test-card" data-aos="zoom-in">
-                        <span class="num">01</span>
-                        <h3>Тест на архетип</h3>
-                        <p>Пойми, какое мета-сообщение транслирует твой визуал на самом деле.</p>
-                        <a href="#form" class="btn-minimal">ПРОЙТИ →</a>
+    <div class="container">
+        
+        <section class="about-us section">
+            <h2 class="unbounded center" data-aos="fade-up">Создатели смыслов</h2>
+            <div class="team-grid">
+                <div class="member-card" data-aos="fade-right">
+                    <div class="member-photo-wrapper">
+                        <img src="IMG_9895 2.jpg" alt="Оля Паршин" class="member-photo">
                     </div>
-                    <div class="test-card" data-aos="zoom-in" data-aos-delay="200">
-                        <span class="num">02</span>
-                        <h3>Аудит системы</h3>
-                        <p>Готов ли твой продукт к масштабированию или ты работаешь вхолостую?</p>
-                        <a href="#form" class="btn-minimal">ПРОВЕРИТЬ →</a>
+                    <div class="member-info">
+                        <span class="member-role">Стратегия & Таргетинг</span>
+                        <h3 class="unbounded">Оля Паршин</h3>
+                        <p>Выстраивает фундамент: от смыслов и структуры до рекламных механик, которые приводят целевых клиентов.</p>
+                    </div>
+                </div>
+
+                <div class="member-card" data-aos="fade-left">
+                    <div class="member-photo-wrapper">
+                        <img src="IMG_9892 2.jpg" alt="Мари Кикоин" class="member-photo">
+                    </div>
+                    <div class="member-info">
+                        <span class="member-role">Визуал & Нейромаркетинг</span>
+                        <h3 class="unbounded">Мари Кикоин</h3>
+                        <p>Создает визуальные метасообщения и контент-системы, работающие напрямую с подсознанием аудитории.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="muse-section">
-            <div class="container">
-                <div class="muse-grid">
-                    <div class="muse-image" data-aos="fade-right">
-                        <img src="IMG_9890.jpg" alt="Womind Mood">
-                    </div>
-                    <div class="muse-content" data-aos="fade-left">
-                        <h2 class="unbounded-title">The Muse</h2>
-                        <p>Индивидуальная работа — это не про теорию. Это про <span class="italic-red">изменение биологического интеллекта</span> вашего бизнеса. Когда каждый Reels, каждый текст и каждый выход в сторис бьет точно в цель.</p>
-                        <div class="accent-box">
-                            "Ваш бренд — это ваше самое дорогое украшение."
-                        </div>
-                    </div>
+        <section id="test-section" class="section">
+            <div class="test-container" id="quiz-wrapper" data-aos="flip-up">
+                <div id="intro-screen">
+                    <h2 class="unbounded">Тест: твой архетип силы</h2>
+                    <p>Узнай, через что ты влияешь и создаешь на самом деле.</p>
+                    <button class="btn-gold" onclick="startQuiz()">Начать трансформацию</button>
+                </div>
+                <div id="quiz-content" style="display: none;">
+                    <div class="progress-bar"><div id="progress"></div></div>
+                    <h3 id="question-text" class="question-title"></h3>
+                    <div id="options-container" class="options-grid"></div>
+                </div>
+                <div id="result-screen" style="display: none;">
+                    <h2 class="unbounded">Твой код: <span id="result-name" class="text-red"></span></h2>
+                    <p id="result-desc"></p>
+                    <button class="btn-gold" onclick="location.reload()">Пройти еще раз</button>
                 </div>
             </div>
         </section>
 
-        <section class="services-dark">
-            <div class="container">
-                <div class="service-row" data-aos="fade-up">
-                    <div class="service-info">
-                        <h3>W-Individual</h3>
-                        <p>Marketing Concierge Service. От смыслов до продаж.</p>
-                    </div>
-                    <div class="service-price">Limited</div>
+        <section class="section">
+            <div class="tariffs-grid">
+                <div class="card" data-aos="fade-up">
+                    <h3 class="unbounded">W-Individual</h3>
+                    <p>Индивидуальная работа. Личное сопровождение.</p>
+                    <a href="#form" class="btn-card">Забронировать</a>
                 </div>
-                <div class="service-row" data-aos="fade-up">
-                    <div class="service-info">
-                        <h3>W-Team</h3>
-                        <p>Групповой мастермайнд + Контент-день.</p>
-                    </div>
-                    <div class="service-price">Monthly</div>
+                <div class="card featured" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="unbounded">W-Team</h3>
+                    <p>Групповая динамика + съемки.</p>
+                    <a href="#form" class="btn-card-red">Присоединиться</a>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="unbounded">WIN-Салфетка</h3>
+                    <p>Живой аудит. Встреча в реальности.</p>
+                    <a href="https://t.me/womind_community" class="btn-card">Написать в TG</a>
                 </div>
             </div>
         </section>
-    </main>
 
-    <section id="form" class="form-section">
-        <div class="container">
-            <div class="form-box" data-aos="flip-left">
-                <h2>Join the elite</h2>
-                <form action="https://formspree.io/f/ваша_почта" method="POST">
-                    <input type="text" name="name" placeholder="NAME" required>
-                    <input type="text" name="contact" placeholder="TG / INST" required>
-                    <button type="submit" class="btn-red-gold">SUBMIT APPLICATION</button>
+        <section id="form" class="section">
+            <div class="form-wrapper" data-aos="fade-up">
+                <h2 class="unbounded">Анкета предзаписи</h2>
+                <form action="https://formspree.io/f/YOUR_ID" method="POST" class="main-form">
+                    <input type="text" name="name" required placeholder="ВАШЕ ИМЯ *">
+                    <input type="tel" name="phone" required placeholder="ТЕЛЕФОН / WHATSAPP *">
+                    <textarea name="msg" rows="3" placeholder="ОПИШИТЕ ВАШ ЗАПРОС"></textarea>
+                    <button type="submit" class="btn-submit">ОТПРАВИТЬ ДАННЫЕ</button>
                 </form>
             </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>WOMIND // EST. 2026</p>
-        <div class="social-links">
-            <a href="#">INSTAGRAM</a>
-            <a href="#">TELEGRAM</a>
-        </div>
-    </footer>
+        </section>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1200 });</script>
+    <script src="quiz.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
