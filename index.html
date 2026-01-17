@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOMIND | Ecosystem of Excellence</title>
+    <title>WOMIND | Brand Duo & Ecosystem</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Unbounded:wght@300;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;700&family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,6 +16,7 @@
     <nav class="nav-glass">
         <div class="nav-logo">WOMIND</div>
         <div class="nav-links">
+            <a href="#about">О нас</a>
             <a href="#test-section">Тест</a>
             <a href="#programs">Программы</a>
             <a href="#form">Связаться</a>
@@ -29,146 +30,89 @@
                 «Мы не просто создаем бренды. Мы программируем реальность через смыслы и визуальный интеллект».
             </p>
             <div class="stats-row">
-                <div class="stat-item"><span class="unbounded">100+</span> проектов</div>
-                <div class="stat-item"><span class="unbounded">500k+</span> охваты</div>
+                <div class="stat-item"><span class="unbounded">3888</span> шк/мес</div>
+                <div class="stat-item"><span class="unbounded">W-INDIVIDUAL</span></div>
             </div>
-            <button class="btn-glitch" onclick="document.getElementById('test-section').scrollIntoView()">
-                АКТИВИРОВАТЬ КОД АРХЕТИПА
+            <button class="btn-tech-primary" onclick="document.getElementById('test-section').scrollIntoView()">
+                <span class="btn-text">АКТИВИРОВАТЬ КОД</span>
+                <span class="btn-flare"></span>
             </button>
         </div>
-        <div class="scroll-indicator"></div>
     </header>
 
     <div class="ticker-wrap">
         <div class="ticker">
-            <span class="unbounded">STRATEGY • VISUAL • NEUROMARKETING • MINDSET • BRANDING • STRATEGY • VISUAL • NEUROMARKETING • MINDSET • BRANDING • </span>
+            <span class="unbounded">STRATEGY • VISUAL • NEUROMARKETING • MINDSET • BRANDING • SYSTEM • </span>
+            <span class="unbounded">STRATEGY • VISUAL • NEUROMARKETING • MINDSET • BRANDING • SYSTEM • </span>
         </div>
     </div>
 
     <div class="container">
-        <section class="section">
-            <div class="section-tag" data-aos="fade-right">Mindset & Strategy</div>
-            <h2 class="unbounded center" data-aos="fade-up">Архитектура ценностей</h2>
-            <div class="values-grid">
-                <div class="value-item" data-aos="fade-up">
-                    <h4 class="unbounded">Эстетика</h4>
-                    <p class="serif">Визуальный код как высшая форма коммуникации.</p>
-                </div>
-                <div class="value-item" data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="unbounded">Система</h4>
-                    <p class="serif">Твердый маркетинг: структура, воронки и масштаб.</p>
-                </div>
-                <div class="value-item" data-aos="fade-up" data-aos-delay="400">
-                    <h4 class="unbounded">Смыслы</h4>
-                    <p class="serif">Нейромаркетинг и упаковка, которую хотят на подсознании.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="about-us section">
-            <h2 class="unbounded center" data-aos="fade-up">Создатели смыслов</h2>
+        <section id="about" class="section">
+            <h2 class="unbounded center reveal-text" data-aos="reveal-anim">Brand Duo</h2>
             <div class="team-grid">
-                <div class="member-card" data-aos="fade-right">
+                <div class="member-card" data-aos="fade-up">
                     <div class="member-photo-wrapper">
                         <img src="IMG_9895 2.jpg" alt="Оля Паршин" class="member-photo">
                     </div>
                     <div class="member-info">
-                        <span class="member-role">Стратегия & Таргетинг</span>
+                        <span class="member-role">Маркетолог • Таргетинг</span>
                         <h3 class="unbounded">Оля Паршин</h3>
-                        <p>Масштаб бизнеса через систему и структуру.</p>
+                        <p class="serif">Выстраивает маркетинговую стратегию, структуру и продуктовую линейку. Приводит клиентов через системный подход.</p>
                     </div>
                 </div>
-                <div class="member-card" data-aos="fade-left">
+                <div class="member-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="member-photo-wrapper">
                         <img src="IMG_9892 2.jpg" alt="Мари Кикоин" class="member-photo">
                     </div>
                     <div class="member-info">
-                        <span class="member-role">Визуал & Смыслы</span>
+                        <span class="member-role">SMM • Продуктолог</span>
                         <h3 class="unbounded">Мари Кикоин</h3>
-                        <p>Эстетика и упаковка личного бренда.</p>
+                        <p class="serif">Создает визуал, фото-видео контент и внедряет нейромаркетинг в упаковку личного бренда.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="test-section" class="section">
-            <div class="test-container glass-card" id="quiz-wrapper" data-aos="zoom-in">
-                <div id="intro-screen">
-                    <h2 class="unbounded">Твой архетип проявленности</h2>
-                    <p class="serif">Узнай код своей личности через 10 интуитивных вопросов.</p>
-                    <button class="btn-red-action pulse" onclick="startQuiz()">Начать тест</button>
-                </div>
-                <div id="quiz-content" style="display: none;">
-                    <div class="progress-container"><div id="progress"></div></div>
-                    <h3 id="question-text" class="question-title"></h3>
-                    <div id="options-container" class="options-grid"></div>
-                </div>
-                <div id="result-screen" style="display: none;">
-                    <h2 class="unbounded">Твой код: <span id="result-name" class="text-red"></span></h2>
-                    <div class="result-box"><p id="result-desc" class="serif"></p></div>
-                    <button class="btn-minimal" onclick="location.reload()">Пройти еще раз</button>
                 </div>
             </div>
         </section>
 
         <section id="programs" class="section">
-            <h2 class="unbounded center" data-aos="fade-up">Программы</h2>
+            <h2 class="unbounded center reveal-text" data-aos="reveal-anim">Услуги</h2>
             <div class="tariffs-grid">
                 <div class="card glass" data-aos="fade-up">
-                    <span class="tag">01</span>
+                    <span class="tag">01 / INDIVIDUAL</span>
                     <h3 class="unbounded">W-Individual</h3>
-                    <p>Личное сопровождение: бренд под ключ.</p>
-                    <a href="#form" class="btn-card">Забронировать</a>
+                    <p class="serif">Индивидуальная работа под ключ. Стратегия, смыслы, структура и контент.</p>
+                    <div class="price-tag unbounded">от 3888 ШЕК</div>
+                    <button class="btn-tech-secondary" onclick="window.open('https://t.me/womind_community')">ЗАБРОНИРОВАТЬ</button>
                 </div>
                 <div class="card featured" data-aos="fade-up" data-aos-delay="200">
-                    <span class="tag" style="color:var(--red)">02</span>
+                    <span class="tag" style="color:var(--red)">02 / COMMUNITY</span>
                     <h3 class="unbounded">W-Team</h3>
-                    <p>Мастермайнды и контент-съемки в комьюнити.</p>
-                    <a href="#form" class="btn-card-red">Вступить</a>
+                    <p class="serif">Клуб поддержки: 2 мастермайнда, съемки и реклама в наших аккаунтах.</p>
+                    <div class="price-tag unbounded">444 ШЕК / мес</div>
+                    <button class="btn-tech-primary">ВСТУПИТЬ <span class="btn-flare"></span></button>
                 </div>
-                <div class="card glass" data-aos="fade-up" data-aos-delay="400">
-                    <span class="tag">03</span>
-                    <h3 class="unbounded">WIN-Салфетка</h3>
-                    <p>Живая практика нейропластичности мышления.</p>
-                    <a href="https://t.me/womind_community" class="btn-card">Написать</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="form" class="section">
-            <div class="form-wrapper glass-card" data-aos="fade-up">
-                <h2 class="unbounded center">Связаться</h2>
-                <form action="https://formspree.io/f/YOUR_ID" method="POST" class="main-form">
-                    <div class="input-group">
-                        <input type="text" name="name" required placeholder="ИМЯ">
-                        <input type="tel" name="phone" required placeholder="ТЕЛЕФОН">
-                    </div>
-                    <textarea name="message" rows="4" placeholder="ЗАПРОС"></textarea>
-                    <button type="submit" class="btn-submit">ОТПРАВИТЬ КОД</button>
-                </form>
             </div>
         </section>
     </div>
 
     <footer class="footer">
         <div class="footer-socials">
-            <a href="https://instagram.com/womind_community" target="_blank" class="social-pill">INSTAGRAM</a>
-            <a href="https://t.me/womind_community" target="_blank" class="social-pill">TELEGRAM</a>
+            <a href="https://instagram.com/womind_community" class="social-pill">INSTAGRAM</a>
+            <a href="https://t.me/womind_community" class="social-pill">TELEGRAM</a>
         </div>
-        <p class="unbounded copyright">WOMIND // 2026 // ECOSYSTEM</p>
+        <p class="unbounded" style="opacity: 0.2; font-size: 0.6rem; margin-top: 40px;">WOMIND SYSTEM // 2026</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="quiz.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
         
-        // Интерактив: наклон Hero при движении мыши
+        // Интерактивный наклон заголовка
         document.addEventListener('mousemove', (e) => {
             const title = document.querySelector('.glitch-title');
             if(title) {
-                const x = (window.innerWidth / 2 - e.pageX) / 40;
-                const y = (window.innerHeight / 2 - e.pageY) / 40;
+                const x = (window.innerWidth / 2 - e.pageX) / 45;
+                const y = (window.innerHeight / 2 - e.pageY) / 45;
                 title.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
             }
         });
