@@ -30,32 +30,77 @@ window.onload = () => {
 };
 
 // Открытие теста
-function openQuiz(quizType) {
-    if (typeof QUIZ_DATA === 'undefined' || !QUIZ_DATA[quizType]) {
-        console.error("Данные теста не найдены");
-        return;
-    }
+let currentQuizData = null;
+let currentQuestionIndex = 0;
+let totalScore = 0;
 
-    const data = QUIZ_DATA[quizType];
-    const modal = document.getElementById('quiz-modal');
+function openQuiz(type) {
+    currentQuizData = QUIZ_DATA[type];
+    currentQuestionIndex = 0;
+    totalScore = 0;
+    
+    showQuestion();
+    
+    document.getElementById('quiz-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function showQuestion() {
     const container = document.getElementById('quiz-content');
+    const question = currentQuizData.questions[currentQuestionIndex];
+    const progress = Math.round(((currentQuestionIndex) / currentQuizData.questions.length) * 100);
 
     container.innerHTML = `
-        <span class="quiz-title-small">SYSTEM_SCAN // ${data.title}</span>
-        <h2 class="quiz-question-text">${data.questions[0].q}</h2>
+        <div style="margin-bottom: 10px; font-size: 10px; opacity: 0.5;">
+            PROGRESS: ${progress}% | QUESTION ${currentQuestionIndex + 1}/${currentQuizData.questions.length}
+        </div>
+        <span class="quiz-title-small">SYSTEM_SCAN // ${currentQuizData.title}</span>
+        <h2 class="quiz-question-text">${question.q}</h2>
         <div class="options-list">
-            ${data.questions[0].a.map(answer => `
-                <button class="quiz-opt-btn" onclick="closeQuiz()">
+            ${question.a.map((answer, index) => `
+                <button class="quiz-opt-btn" onclick="nextQuestion(${question.points[index]})">
                     ${answer}
                 </button>
             `).join('')}
         </div>
-        <button class="btn-exit-quiz" onclick="closeQuiz()">← СВЕРНУТЬ ОКНО БЕЗ ОТВЕТА</button>
+        <button class="btn-exit-quiz" onclick="closeQuiz()">← ПРЕРВАТЬ ТЕСТ</button>
     `;
-
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; 
 }
+
+function nextQuestion(points) {
+    totalScore += points;
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < currentQuizData.questions.length) {
+        showQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function showResult() {
+    const container = document.getElementById('quiz-content');
+    
+    // Поиск подходящего результата
+    let finalResult = currentQuizData.results[0].text;
+    for (let res of currentQuizData.results) {
+        if (totalScore >= res.min) {
+            finalResult = res.text;
+        }
+    }
+
+    container.innerHTML = `
+        <span class="quiz-title-small">SCAN_COMPLETED // TOTAL SCORE: ${totalScore}</span>
+        <h2 class="quiz-question-text" style="color: var(--black) !important;">ВАШ РЕЗУЛЬТАТ:</h2>
+        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; font-weight: 400;">${finalResult}</p>
+        
+        <button class="btn-red-wide" onclick="document.getElementById('form').scrollIntoView(); closeQuiz();">
+            ОБСУДИТЬ РЕЗУЛЬТАТ НА РАЗБОРЕ
+        </button>
+        <button class="btn-exit-quiz" onclick="closeQuiz()">ЗАКРЫТЬ</button>
+    `;
+}
+
 
 function closeQuiz() {
     document.getElementById('quiz-modal').style.display = 'none';
