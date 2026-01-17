@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOMIND // ЦИФРОВАЯ ЭВОЛЮЦИЯ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Unbounded:wght@400;900&family=Manrope:wght@300;600&display=swap" rel="stylesheet">
+    <title>WOMIND // EVOLUTION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Unbounded:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,53 +12,47 @@
     <div class="grain"></div>
 
     <nav class="nav-bar">
-        <div class="nav-logo">WOMIND</div>
+        <div class="nav-logo">WOMIND.OS</div>
         <div class="nav-links">
-            <a href="#about">КТО МЫ</a>
-            <a href="#lab">ЛАБОРАТОРИЯ</a>
-            <a href="#tariffs">ПРОГРАММЫ</a>
-            <a href="#form">СВЯЗЬ</a>
+            <a href="#about">О НАС</a>
+            <a href="#lab">ТЕСТЫ</a>
+            <a href="#tariffs">ТАРИФЫ</a>
+            <a href="#form">КОНТАКТ</a>
         </div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <h1 class="main-title" id="decode-text">WOMIND</h1>
+            <h1 class="main-title" id="typewriter"></h1>
             <div class="hero-spacer"></div>
-            <p class="hero-tagline" data-aos="fade-up">ПРОГРАММИРУЕМ РЕАЛЬНОСТЬ</p>
-            <button class="btn-main" onclick="document.getElementById('lab').scrollIntoView()">ЗАПУСТИТЬ ТЕСТ</button>
+            <p class="hero-tagline" data-aos="fade-up">МАРКЕТИНГОВАЯ ЭКОСИСТЕМА БУДУЩЕГО</p>
+            <button class="btn-main" onclick="document.getElementById('lab').scrollIntoView()">НАЧАТЬ СКАНИРОВАНИЕ</button>
         </div>
     </header>
 
-    <div class="ticker">
-        <div class="ticker-wrapper">
-            <span>СТРАТЕГИЯ • НЕЙРОМАРКЕТИНГ • МАСШТАБ • ВИЗУАЛЬНЫЙ КОД • СИСТЕМА • </span>
-            <span>СТРАТЕГИЯ • НЕЙРОМАРКЕТИНГ • МАСШТАБ • ВИЗУАЛЬНЫЙ КОД • СИСТЕМА • </span>
+    <div class="ticker-accent">
+        <div class="ticker-track">
+            <span>НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • ВИЗУАЛ • ПРОДАЖИ • НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • ВИЗУАЛ • ПРОДАЖИ • </span>
+            <span>НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • ВИЗУАЛ • ПРОДАЖИ • НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • ВИЗУАЛ • ПРОДАЖИ • </span>
         </div>
     </div>
 
     <main class="container">
         <section id="about" class="section">
-            <h2 class="section-title" data-aos="fade-right">СОЗДАТЕЛИ</h2>
+            <h2 class="section-title" data-aos="fade-right">КТО МЫ</h2>
             <div class="creators-grid">
                 <div class="creator-card" data-aos="fade-up">
-                    <div class="img-box">
-                        <img src="IMG_9895 2.jpg" alt="Оля">
-                    </div>
-                    <div class="creator-text">
-                        <span class="sub">MARKETING ARCHITECT</span>
+                    <div class="img-wrapper"><img src="IMG_9895 2.jpg" alt="Оля"></div>
+                    <div class="creator-info">
+                        <span class="tag">STRATEGY</span>
                         <h3>ОЛЯ ПАРШИН</h3>
-                        <p>Таргетинг и системный рост. Оцифровывает смыслы в прибыль.</p>
                     </div>
                 </div>
                 <div class="creator-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="img-box">
-                        <img src="IMG_9892 2.jpg" alt="Мари">
-                    </div>
-                    <div class="creator-text">
-                        <span class="sub">VISUAL STRATEGIST</span>
+                    <div class="img-wrapper"><img src="IMG_9892 2.jpg" alt="Мари"></div>
+                    <div class="creator-info">
+                        <span class="tag">VISUAL</span>
                         <h3>МАРИ КИКОИН</h3>
-                        <p>Нейромаркетинг и эстетика. Создает визуал, который управляет вниманием.</p>
                     </div>
                 </div>
             </div>
@@ -66,90 +60,90 @@
 
         <section id="lab" class="section">
             <h2 class="section-title center" data-aos="fade-up">MIND LAB</h2>
-            <div class="lab-grid">
-                <div class="lab-item" data-aos="zoom-in" onclick="openQuiz('archetype')">
-                    <span class="num">01</span>
+            <div class="grid-3">
+                <div class="card test-card" data-aos="zoom-in" onclick="openQuiz('archetype')">
+                    <div class="card-header">MOD_01</div>
                     <h3>NEURO-CODE</h3>
                     <p>Твой архетип и проявленность</p>
-                    <div class="lab-btn">SCAN</div>
+                    <div class="card-btn">ЗАПУСТИТЬ</div>
                 </div>
-                <div class="lab-item featured-lab" data-aos="zoom-in" data-aos-delay="100" onclick="openQuiz('money')">
-                    <span class="num">02</span>
+                <div class="card test-card featured" data-aos="zoom-in" data-aos-delay="100" onclick="openQuiz('money')">
+                    <div class="card-header">MOD_02</div>
                     <h3>MONEY-MIND</h3>
-                    <p>Код денежного мышления</p>
-                    <div class="lab-btn">UPGRADE</div>
+                    <p>Код твоего денежного мышления</p>
+                    <div class="card-btn">ЗАПУСТИТЬ</div>
                 </div>
-                <div class="lab-item" data-aos="zoom-in" data-aos-delay="200" onclick="openQuiz('brand')">
-                    <span class="num">03</span>
+                <div class="card test-card" data-aos="zoom-in" data-aos-delay="200" onclick="openQuiz('brand')">
+                    <div class="card-header">MOD_03</div>
                     <h3>BRAND-SCAN</h3>
                     <p>Аудит готовности к масштабу</p>
-                    <div class="lab-btn">RUN</div>
+                    <div class="card-btn">ЗАПУСТИТЬ</div>
                 </div>
             </div>
         </section>
 
         <section id="tariffs" class="section">
-            <h2 class="section-title center">ПРОГРАММЫ</h2>
-            <div class="price-grid">
-                <div class="price-box" data-aos="fade-up">
+            <h2 class="section-title center" data-aos="fade-up">ПРОГРАММЫ</h2>
+            <div class="grid-3">
+                <div class="card price-card" data-aos="fade-up">
                     <h4>W-Individual</h4>
-                    <div class="cost">3888 ₪</div>
-                    <ul class="price-list">
+                    <div class="price">3888 ₪</div>
+                    <ul class="list">
                         <li>Индивидуальная стратегия</li>
                         <li>Личный съемочный день</li>
                         <li>Полное сопровождение</li>
                     </ul>
-                    <button class="btn-dark" onclick="location.href='#form'">ВЫБРАТЬ</button>
+                    <button class="btn-black" onclick="document.getElementById('form').scrollIntoView()">ВЫБРАТЬ</button>
                 </div>
-                <div class="price-box gold-border" data-aos="fade-up" data-aos-delay="200">
-                    <div class="badge">TOP</div>
+                <div class="card price-card highlight" data-aos="fade-up" data-aos-delay="100">
+                    <div class="badge">Bestseller</div>
                     <h4>W-Team</h4>
-                    <div class="cost">444 ₪</div>
-                    <ul class="price-list">
+                    <div class="price">444 ₪</div>
+                    <ul class="list">
                         <li>Мастермайнды и чат</li>
-                        <li>Общий съемочный день</li>
-                        <li>Групповой рост</li>
+                        <li>Групповой контент-день</li>
+                        <li>Поддержка 24/7</li>
                     </ul>
-                    <button class="btn-red" onclick="location.href='#form'">ВСТУПИТЬ</button>
+                    <button class="btn-red" onclick="document.getElementById('form').scrollIntoView()">ВСТУПИТЬ</button>
                 </div>
-                <div class="price-box" data-aos="fade-up" data-aos-delay="400">
+                <div class="card price-card" data-aos="fade-up" data-aos-delay="200">
                     <h4>WIN-Салфетка</h4>
-                    <div class="cost">LIVE</div>
-                    <ul class="price-list">
-                        <li>Оффлайн-практика</li>
+                    <div class="price">LIVE</div>
+                    <ul class="list">
+                        <li>Оффлайн-встреча</li>
                         <li>Нейропластичность</li>
-                        <li>Нетворкинг</li>
+                        <li>Новый нетворкинг</li>
                     </ul>
-                    <button class="btn-dark" onclick="location.href='#form'">УЗНАТЬ</button>
+                    <button class="btn-black" onclick="document.getElementById('form').scrollIntoView()">УЗНАТЬ</button>
                 </div>
             </div>
         </section>
 
         <section id="form" class="section">
-            <div class="contact-card" data-aos="zoom-in">
-                <h2 class="unbounded">СВЯЗЬ С НАМИ</h2>
+            <div class="contact-box" data-aos="zoom-in">
+                <h2 class="unbounded">СТАТЬ ЧАСТЬЮ СИСТЕМЫ</h2>
                 <form class="main-form">
-                    <input type="text" placeholder="ИМЯ" required>
-                    <input type="text" placeholder="INSTAGRAM / TG" required>
-                    <textarea placeholder="ВАШ ЗАПРОС"></textarea>
-                    <button type="submit" class="btn-red">ОТПРАВИТЬ ДАННЫЕ</button>
+                    <input type="text" placeholder="ВАШЕ ИМЯ" required>
+                    <input type="text" placeholder="INSTAGRAM / ТЕЛЕГРАМ" required>
+                    <textarea placeholder="ОПИШИТЕ ВАШ ЗАПРОС"></textarea>
+                    <button type="submit" class="btn-red-wide">ОТПРАВИТЬ ДАННЫЕ</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="socials">
+        <div class="social-block">
             <a href="https://instagram.com/womind_community">INSTAGRAM</a>
             <a href="https://t.me/womind_community">TELEGRAM</a>
         </div>
-        <p>© 2026 WOMIND // SYSTEM UPGRADE</p>
+        <p>© 2026 WOMIND // NO LIMITS</p>
     </footer>
 
     <div id="quiz-modal" class="modal">
-        <div class="modal-box">
-            <span class="close-modal" onclick="closeQuiz()">&times;</span>
-            <div id="quiz-content"></div>
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeQuiz()">&times;</span>
+            <div id="quiz-root"></div>
         </div>
     </div>
 
