@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOMIND // ESTHETIC_SYSTEM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;700&family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+    <title>WOMIND // ТВОЯ ЭВОЛЮЦИЯ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Unbounded:wght@900&family=Manrope:wght@300;500&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,172 +14,200 @@
     <nav class="nav-bar">
         <div class="nav-logo">WOMIND</div>
         <div class="nav-links">
-            <a href="#about">CREATORS</a>
-            <a href="#lab">LAB</a>
-            <a href="#tariffs">OFFERS</a>
-            <a href="#form">CONNECT</a>
+            <a href="#about">СОЗДАТЕЛИ</a>
+            <a href="#lab">ЛАБОРАТОРИЯ</a>
+            <a href="#tariffs">ПРОГРАММЫ</a>
+            <a href="#form">СВЯЗЬ</a>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content" data-aos="zoom-out" data-aos-duration="2000">
-            <h1 class="main-title">WOMIND</h1>
-            <div class="hero-divider"></div>
-            <p class="hero-tagline serif">Экосистема смыслов, визуала и нейромаркетинга</p>
-            <button class="btn-accent" onclick="document.getElementById('lab').scrollIntoView()">INITIATE SCAN</button>
+        <div class="hero-content">
+            <h1 class="main-title" data-aos="zoom-in">WOMIND</h1>
+            <div class="hero-spacer"></div>
+            <p class="hero-tagline serif" data-aos="fade-up" data-aos-delay="200">
+                Программируем реальность через смыслы и визуальный интеллект
+            </p>
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                <button class="btn-main" onclick="document.getElementById('lab').scrollIntoView()">НАЧАТЬ ТЕСТ-ДРАЙВ</button>
+            </div>
         </div>
+        <div class="floating-shape"></div>
     </header>
 
-    <div class="ticker-box">
-        <div class="ticker-line">
-            <span>NEURO_MARKETING • VISUAL_DNA • STRATEGY • SYSTEM • HIGH_LEVEL • </span>
-            <span>NEURO_MARKETING • VISUAL_DNA • STRATEGY • SYSTEM • HIGH_LEVEL • </span>
+    <div class="ticker">
+        <div class="ticker-wrapper">
+            <span>НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • МАСШТАБ • ВИЗУАЛЬНЫЙ КОД • ВЫХОД В ТОП • </span>
+            <span>НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • МАСШТАБ • ВИЗУАЛЬНЫЙ КОД • ВЫХОД В ТОП • </span>
         </div>
     </div>
 
     <main class="container">
         <section id="about" class="section">
-            <h2 class="unbounded section-title" data-aos="fade-up">CREATORS</h2>
-            <div class="team-grid">
-                <div class="member-card" data-aos="fade-up">
-                    <div class="photo-frame">
-                        <img src="IMG_9895 2.jpg" alt="Olya">
-                        <div class="corner-accents"></div>
+            <h2 class="section-title" data-aos="fade-right">КТО МЫ</h2>
+            <div class="creators-grid">
+                <div class="creator-card" data-aos="fade-up">
+                    <div class="img-box">
+                        <img src="IMG_9895 2.jpg" alt="Оля Паршин">
+                        <div class="img-overlay"></div>
                     </div>
-                    <div class="member-info">
-                        <span class="role-tag">Strategy • Targeting</span>
-                        <h3 class="unbounded">Olya Parshin</h3>
-                        <p class="serif">Архитектор системного маркетинга. Оцифровывает хаос в результат.</p>
+                    <div class="creator-text">
+                        <span class="sub">АРХИТЕКТОР СМЫСЛОВ</span>
+                        <h3>ОЛЯ ПАРШИН</h3>
+                        <p>Таргетинг и стратегия. Превращает хаотичные действия в твердую финансовую систему.</p>
                     </div>
                 </div>
-                <div class="member-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="photo-frame">
-                        <img src="IMG_9892 2.jpg" alt="Mari">
-                        <div class="corner-accents"></div>
+                <div class="creator-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-box">
+                        <img src="IMG_9892 2.jpg" alt="Мари Кикоин">
+                        <div class="img-overlay"></div>
                     </div>
-                    <div class="member-info">
-                        <span class="role-tag">Visual • Neuromarketing</span>
-                        <h3 class="unbounded">Mari Kikoin</h3>
-                        <p class="serif">Куратор эстетики и упаковки смыслов через визуальный интеллект.</p>
+                    <div class="creator-text">
+                        <span class="sub">ВИЗУАЛЬНЫЙ СТРАТЕГ</span>
+                        <h3>МАРИ КИКОИН</h3>
+                        <p>SMM и нейромаркетинг. Создает визуал, который продает на подсознательном уровне.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="lab" class="section">
-            <h2 class="unbounded center section-title" data-aos="fade-up">MIND_LAB</h2>
+            <div class="lab-header">
+                <h2 class="section-title center">MIND LAB</h2>
+                <p class="section-desc center">Выбери свой модуль диагностики</p>
+            </div>
             <div class="lab-grid">
-                <div class="test-card glass" data-aos="fade-up">
-                    <span class="test-no">01</span>
-                    <h3 class="unbounded">Neuro-Code</h3>
-                    <p class="serif">Тест на архетип и проявленность.</p>
-                    <button class="btn-outline" onclick="openQuiz('archetype')">START</button>
+                <div class="lab-item" data-aos="flip-up">
+                    <div class="lab-inner">
+                        <span class="num">01</span>
+                        <h3>Neuro-Code</h3>
+                        <p>Узнай свой архетип и как его проявлять</p>
+                        <button class="btn-lab" onclick="openQuiz('archetype')">ЗАПУСТИТЬ</button>
+                    </div>
                 </div>
-                <div class="test-card glass gold-bg" data-aos="fade-up" data-aos-delay="100">
-                    <span class="test-no">02</span>
-                    <h3 class="unbounded">Money-Mind</h3>
-                    <p class="serif">Прошивка на финансовый масштаб.</p>
-                    <button class="btn-black" onclick="openQuiz('money')">UPGRADE</button>
+                <div class="lab-item featured-lab" data-aos="flip-up" data-aos-delay="100">
+                    <div class="lab-inner">
+                        <span class="num">02</span>
+                        <h3>Money-Mind</h3>
+                        <p>Найди баги в своем денежном мышлении</p>
+                        <button class="btn-lab-light" onclick="openQuiz('money')">ПРОЙТИ</button>
+                    </div>
                 </div>
-                <div class="test-card glass" data-aos="fade-up" data-aos-delay="200">
-                    <span class="test-no">03</span>
-                    <h3 class="unbounded">Brand-Scan</h3>
-                    <p class="serif">Аудит потенциала вашего бренда.</p>
-                    <button class="btn-outline" onclick="openQuiz('brand')">RUN</button>
-                </div>
-                <div class="test-card glass red-accent" data-aos="fade-up" data-aos-delay="300">
-                    <span class="test-no">04</span>
-                    <h3 class="unbounded">Visual DNA</h3>
-                    <p class="serif">Код твоего визуального стиля.</p>
-                    <button class="btn-outline" onclick="openQuiz('visual')">DECODE</button>
+                <div class="lab-item" data-aos="flip-up" data-aos-delay="200">
+                    <div class="lab-inner">
+                        <span class="num">03</span>
+                        <h3>Brand-Scan</h3>
+                        <p>Готов ли твой бренд к большому масштабу?</p>
+                        <button class="btn-lab" onclick="openQuiz('brand')">ТЕСТ</button>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="tariffs" class="section">
-            <h2 class="unbounded center section-title" data-aos="fade-up">OFFERS</h2>
-            <div class="tariffs-grid">
-                <div class="price-card" data-aos="fade-right">
+            <h2 class="section-title center">ВЫБЕРИ СВОЙ УРОВЕНЬ</h2>
+            <div class="price-grid">
+                <div class="price-box" data-aos="fade-up">
                     <h4 class="unbounded">W-Individual</h4>
-                    <div class="price">3888 ШЕК</div>
-                    <ul class="features serif">
-                        <li>Полное сопровождение под ключ</li>
-                        <li>Стратегия, смыслы, структура</li>
-                        <li>Организация съемочного дня</li>
-                        <li>Личный супервизоринг</li>
+                    <div class="cost">3888 ₪</div>
+                    <p class="price-info">Персональная работа под ключ</p>
+                    <ul class="price-list">
+                        <li>Полный аудит и стратегия</li>
+                        <li>Разработка воронки продаж</li>
+                        <li>Личный съемочный день</li>
+                        <li>Супервизия 24/7</li>
                     </ul>
-                    <button class="btn-black" onclick="document.getElementById('form').scrollIntoView()">ACQUIRE</button>
+                    <button class="btn-dark" onclick="scrollToForm()">ЗАБРОНИРОВАТЬ</button>
                 </div>
-                <div class="price-card featured" data-aos="fade-up">
-                    <div class="top-label">MOST POPULAR</div>
+                <div class="price-box gold-border" data-aos="fade-up" data-aos-delay="200">
+                    <div class="best-choice">ПОПУЛЯРНО</div>
                     <h4 class="unbounded">W-Team</h4>
-                    <div class="price">444 ШЕК / мес</div>
-                    <ul class="features serif">
-                        <li>2 Мастермайнда онлайн</li>
-                        <li>1 Съемочный день (группа)</li>
-                        <li>Комьюнити поддержки</li>
-                        <li>Мини-разборы аккаунтов</li>
+                    <div class="cost">444 ₪</div>
+                    <p class="price-info">Групповое поле и рост</p>
+                    <ul class="price-list">
+                        <li>2 Мастермайнда в месяц</li>
+                        <li>Групповой съемочный день</li>
+                        <li>Закрытый чат поддержки</li>
+                        <li>Нетворкинг и разборы</li>
                     </ul>
-                    <button class="btn-accent" onclick="document.getElementById('form').scrollIntoView()">JOIN CLUB</button>
+                    <button class="btn-red" onclick="scrollToForm()">ВСТУПИТЬ В КЛУБ</button>
                 </div>
-                <div class="price-card" data-aos="fade-left">
+                <div class="price-box" data-aos="fade-up" data-aos-delay="400">
                     <h4 class="unbounded">WIN-Салфетка</h4>
-                    <div class="price">OFFLINE</div>
-                    <ul class="features serif">
-                        <li>Живая встреча в пространстве</li>
+                    <div class="cost">LIVE</div>
+                    <p class="price-info">Оффлайн-трансформация</p>
+                    <ul class="price-list">
+                        <li>Живая встреча в Израиле</li>
                         <li>Тренировка нейропластичности</li>
+                        <li>Личное знакомство</li>
                         <li>Новые ветки вероятности</li>
-                        <li>Стратегический нетворкинг</li>
                     </ul>
-                    <button class="btn-black" onclick="document.getElementById('form').scrollIntoView()">RESERVE</button>
+                    <button class="btn-dark" onclick="scrollToForm()">УЗНАТЬ ДАТУ</button>
                 </div>
             </div>
         </section>
 
         <section id="form" class="section">
-            <div class="form-box" data-aos="zoom-in">
-                <h2 class="unbounded">CONNECT</h2>
-                <form class="contact-form">
-                    <div class="input-row">
-                        <input type="text" placeholder="NAME" required>
-                        <input type="text" placeholder="INSTAGRAM / TG" required>
+            <div class="contact-card" data-aos="zoom-in">
+                <div class="contact-info">
+                    <h2 class="unbounded">ГОТОВА К РОСТУ?</h2>
+                    <p class="serif">Оставь данные, и мы подберем стратегию специально под твой запрос.</p>
+                </div>
+                <form class="main-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="ИМЯ" required>
                     </div>
-                    <textarea placeholder="ВАШ ЗАПРОС"></textarea>
-                    <button type="submit" class="btn-accent" style="width:100%">SEND DATA</button>
+                    <div class="form-group">
+                        <input type="text" placeholder="TELEGRAM / WHATSAPP" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="ТВОЙ ЗАПРОС И ССЫЛКА НА ИНСТАГРАМ"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">ОТПРАВИТЬ ЗАЯВКУ</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p class="unbounded">WOMIND // 2026</p>
+        <div class="footer-content">
+            <div class="footer-logo">WOMIND</div>
+            <div class="socials">
+                <a href="https://instagram.com/womind_community" class="social-link">INSTAGRAM</a>
+                <a href="https://t.me/womind_community" class="social-link">TELEGRAM</a>
+            </div>
+            <p class="copy">© 2026 WOMIND. ВСЕ ПРАВА ЗАЩИЩЕНЫ. ТВОЕ ВРЕМЯ ПРИШЛО.</p>
+        </div>
     </footer>
 
     <div id="quiz-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeQuiz()">&times;</span>
-            <div id="quiz-container"></div>
+        <div class="modal-box glass">
+            <span class="close-x" onclick="closeQuiz()">&times;</span>
+            <div id="quiz-content"></div>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="quiz-data.js"></script>
     <script>
-        AOS.init({ duration: 1200, once: true });
+        AOS.init({ duration: 1000, once: true });
+        
+        function scrollToForm() { document.getElementById('form').scrollIntoView(); }
         
         function openQuiz(type) {
             const data = QUIZ_DATA[type];
-            const container = document.getElementById('quiz-container');
-            container.innerHTML = `
-                <h2 class="unbounded" style="color:#A30000; margin-bottom:20px;">${data.title}</h2>
-                <div class="quiz-step">
-                    <p class="serif" style="font-size:1.4rem; margin-bottom:20px;">${data.questions[0].q}</p>
-                    ${data.questions[0].a.map(opt => `<button class="quiz-opt" onclick="closeQuiz()">${opt}</button>`).join('')}
+            const content = document.getElementById('quiz-content');
+            content.innerHTML = `
+                <h2 class="unbounded red-text">${data.title}</h2>
+                <div class="quiz-body">
+                    <p class="quiz-q">${data.questions[0].q}</p>
+                    <div class="quiz-opts">
+                        ${data.questions[0].a.map(opt => `<button class="opt-btn" onclick="closeQuiz()">${opt}</button>`).join('')}
+                    </div>
                 </div>
             `;
             document.getElementById('quiz-modal').style.display = 'flex';
         }
-
         function closeQuiz() { document.getElementById('quiz-modal').style.display = 'none'; }
     </script>
 </body>
