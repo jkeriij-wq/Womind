@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOMIND // EVOLUTION</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Unbounded:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -26,43 +27,41 @@
             <h1 class="main-title" id="typewriter">WOMIND // EVOLUTION</h1>
             <div class="hero-spacer"></div>
             <p class="hero-tagline" data-aos="fade-up">МАРКЕТИНГОВАЯ ЭКОСИСТЕМА БУДУЩЕГО</p>
-            <button class="btn-main" onclick="document.getElementById('lab').scrollIntoView()">НАЧАТЬ СКАНИРОВАНИЕ</button>
+            <button class="btn-main" onclick="document.getElementById('lab').scrollIntoView({behavior: 'smooth'})">НАЧАТЬ СКАНИРОВАНИЕ</button>
         </div>
     </header>
 
     <div class="ticker-accent">
         <div class="ticker-track">
-            <span>НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • ВИЗУАЛ • ПРОДАЖИ • </span>
-            <span>НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • ВИЗУАЛ • ПРОДАЖИ • </span>
+            <span>НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • ВИЗУАЛ • ПРОДАЖИ • НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • ВИЗУАЛ • ПРОДАЖИ • </span>
+            <span>НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • ВИЗУАЛ • ПРОДАЖИ • НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • ВИЗУАЛ • ПРОДАЖИ • </span>
         </div>
     </div>
 
     <main class="container">
-        <section id="about" class="section">
-            <div class="section-divider"><span>DATA_SCAN // 001</span></div>
-            <h2 class="section-title" data-aos="fade-right">КТО МЫ</h2>
-            <div class="creators-grid">
-                <div class="creator-card" data-aos="fade-up">
-                    <div class="img-wrapper">
-                        <img src="IMG_9895 2.jpg" alt="Оля">
-                        <div class="img-accent"></div>
+        <section id="about" class="section manifesto-section">
+            <div class="manifesto-container">
+                <div class="manifesto-visual" data-aos="zoom-in">
+                    <div class="circle-text-wrapper">
+                        <div class="rotating-ring">
+                            <img src="https://i.ibb.co/v4499S8/circle-text.png" alt="ESTETICS NEURO MARKETING" class="rotating-svg">
+                        </div>
+                        <div class="strategy-badge">STRATEGY</div>
                     </div>
-                    <div class="creator-info">
-                        <span class="tag">STRATEGY & TARGET</span>
-                        <h3>ОЛЯ ПАРШИН</h3>
-                        <p>Архитектор системного маркетинга. Оцифровывает хаос в твердую прибыль.</p>
+                    <div class="manifesto-images">
+                        <img src="IMG_9895 2.jpg" class="img-olya" alt="Olya">
+                        <img src="IMG_9892 2.jpg" class="img-mari" alt="Mari">
                     </div>
                 </div>
-                <div class="creator-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="img-wrapper">
-                        <img src="IMG_9892 2.jpg" alt="Мари">
-                        <div class="img-accent"></div>
-                    </div>
-                    <div class="creator-info">
-                        <span class="tag">VISUAL & NEURO</span>
-                        <h3>МАРИ КИКОИН</h3>
-                        <p>Куратор эстетики и упаковки. Создает визуальный интеллект бренда.</p>
-                    </div>
+                
+                <div class="manifesto-content" data-aos="fade-left">
+                    <span class="sub-label">// DNA MANIFESTO</span>
+                    <h2 class="huge-title">МЫ — <br><span class="outline-text">WOMIND</span></h2>
+                    <p class="manifesto-text">
+                        Мы объединили холодный расчет маркетинга и нейрофизиологию. 
+                        Мы не просто меняем визуал — мы меняем ветку вероятности в твоей голове.
+                    </p>
+                    <span class="red-accent-text">MARKETING & PSYCHOLOGY SYNERGY</span>
                 </div>
             </div>
         </section>
@@ -97,20 +96,20 @@
             <h2 class="section-title center" data-aos="fade-up">ПРОГРАММЫ</h2>
             <div class="grid-3">
                 <div class="card price-card" data-aos="fade-up">
-                    <div class="card-header">INDIVIDUAL_LEVEL</div>
+                    <div class="card-header">INDIVIDUAL</div>
                     <h4>W-Individual</h4>
                     <div class="price">3888 ₪</div>
-                    <button class="btn-outline" onclick="document.getElementById('form').scrollIntoView()">ВЫБРАТЬ ПУТЬ</button>
+                    <button class="btn-outline" onclick="document.getElementById('form').scrollIntoView()">ВЫБРАТЬ</button>
                 </div>
                 <div class="card price-card highlight" data-aos="fade-up" data-aos-delay="200">
                     <div class="badge">Bestseller</div>
-                    <div class="card-header" style="color: #ff0000;">TEAM_EVOLUTION</div>
+                    <div class="card-header" style="color: var(--red);">EVOLUTION</div>
                     <h4>W-Team</h4>
                     <div class="price">444 ₪</div>
                     <button class="btn-red-action" onclick="document.getElementById('form').scrollIntoView()">ВСТУПИТЬ</button>
                 </div>
                 <div class="card price-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card-header">LIVE_FORMAT</div>
+                    <div class="card-header">LIVE</div>
                     <h4>WIN-Салфетка</h4>
                     <div class="price">LIVE</div>
                     <button class="btn-outline" onclick="document.getElementById('form').scrollIntoView()">УЗНАТЬ</button>
@@ -118,21 +117,23 @@
             </div>
         </section>
 
-        <section id="form" class="section">
-            <div class="contact-box" data-aos="zoom-in">
-                <div class="form-header">
-                    <h2 class="unbounded">ВХОД В СИСТЕМУ</h2>
+        <section id="form" class="section form-dark-section">
+            <div class="form-bg-text" data-aos="fade-up">READY FOR <span class="red-text">MORE?</span></div>
+            
+            <div class="form-container">
+                <div class="form-header-main" data-aos="fade-down">
+                    <span class="sub-label-red">// APPLICATION FORM</span>
+                    <h2 class="form-title-heavy">СТАТЬ <br> <span class="outline-text-white">ЧАСТЬЮ</span></h2>
                 </div>
-                <form class="main-form" id="google-sheet-form">
-                    <div class="input-group">
-                        <label>ИМЯ</label>
-                        <input type="text" id="name" name="name" placeholder="ВВЕДИТЕ ВАШЕ ИМЯ" required>
+
+                <form class="minimal-form" id="google-sheet-form">
+                    <div class="input-field">
+                        <input type="text" name="name" id="name" placeholder="ВАШЕ ИМЯ" required>
                     </div>
-                    <div class="input-group">
-                        <label>INSTAGRAM / TELEGRAM</label>
-                        <input type="text" id="contact" name="contact" placeholder="@USERNAME" required>
+                    <div class="input-field">
+                        <input type="text" name="contact" id="contact" placeholder="@TELEGRAM / INSTAGRAM" required>
                     </div>
-                    <button type="submit" class="btn-red-wide" id="submit-btn">ОТПРАВИТЬ ДАННЫЕ</button>
+                    <button type="submit" class="submit-circle-btn" id="submit-btn">ОТПРАВИТЬ</button>
                 </form>
             </div>
         </section>
@@ -150,43 +151,35 @@
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="quiz-data.js"></script>
+    <script src="main.js"></script>
+
     <script>
         // Инициализация анимаций
         AOS.init({ duration: 1000, once: true });
 
-        // Работа с формой
+        // Отправка формы в Google Sheets
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyGxuAaqowAPbzEpHWXAGY-KSavw3EZOmbl_sXVtxGhJnNw6jolNqGDN9sAIRZzySh4/exec';
         const form = document.getElementById('google-sheet-form');
-        const submitBtn = document.getElementById('submit-btn');
+        const btn = document.getElementById('submit-btn');
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            submitBtn.innerText = 'ОТПРАВКА...';
-            submitBtn.disabled = true;
+            btn.innerText = 'СИСТЕМА ПРИНИМАЕТ ДАННЫЕ...';
+            btn.disabled = true;
 
-            const formData = new FormData(form);
-
-            fetch(scriptURL, { method: 'POST', body: formData })
-            .then(response => {
-                submitBtn.innerText = 'ОТПРАВЛЕНО';
-                form.reset();
-                alert('Спасибо! Данные успешно сохранены.');
-            })
-            .catch(error => {
-                console.error('Error!', error.message);
-                submitBtn.innerText = 'ОШИБКА';
-                submitBtn.disabled = false;
-            });
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    btn.innerText = 'ДОСТУП РАЗРЕШЕН';
+                    alert('Данные успешно отправлены в систему WOMIND.');
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    btn.innerText = 'ОШИБКА';
+                    btn.disabled = false;
+                });
         });
-
-        // Заглушки для функций квиза (чтобы не было ошибок в консоли)
-        function openQuiz(type) { 
-            document.getElementById('quiz-modal').style.display = 'block';
-            document.getElementById('quiz-content').innerHTML = 'Загрузка модуля ' + type + '...';
-        }
-        function closeQuiz() { 
-            document.getElementById('quiz-modal').style.display = 'none'; 
-        }
     </script>
 </body>
 </html>
