@@ -1,64 +1,88 @@
 // Эффект пишущей машинки
 const typewriterElement = document.getElementById('typewriter');
-const text = "WOMIND";
-let index = 0;
+const heroText = "WOMIND"; // Переименовал переменную, чтобы не путать с функцией
+let typewriterIndex = 0;
 let isDeleting = false;
 
-function type() {
+function runTypewriter() { // Переименовал функцию, чтобы не конфликтовала с параметрами
     if (!typewriterElement) return;
-    const currentText = isDeleting ? text.substring(0, index - 1) : text.substring(0, index + 1);
+    
+    const currentText = isDeleting 
+        ? heroText.substring(0, typewriterIndex - 1) 
+        : heroText.substring(0, typewriterIndex + 1);
+        
     typewriterElement.innerHTML = currentText;
     
-    let typeSpeed = isDeleting ? 100 : 200;
+    let speed = isDeleting ? 100 : 200;
 
-    if (!isDeleting && currentText === text) {
-        typeSpeed = 2000; 
+    if (!isDeleting && currentText === heroText) {
+        speed = 2000; 
         isDeleting = true;
     } else if (isDeleting && currentText === '') {
         isDeleting = false;
-        typeSpeed = 500;
+        speed = 500;
     } else {
-        index = isDeleting ? index - 1 : index + 1;
+        typewriterIndex = isDeleting ? typewriterIndex - 1 : typewriterIndex + 1;
     }
-    setTimeout(type, typeSpeed);
+    setTimeout(runTypewriter, speed);
 }
 
-// Инициализация
-window.onload = () => {
-    if (typeof AOS !== 'undefined') AOS.init({ duration: 1000, once: true });
-    type(); 
-};
-
-// Открытие теста
+// Глобальные переменные теста
 let currentQuizData = null;
 let currentQuestionIndex = 0;
 let totalScore = 0;
 
-function openQuiz(type) {
-    currentQuizData = QUIZ_DATA[type];
+// Инициализация всего при загрузке
+window.addEventListener('load', () => {
+    // Запуск AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 1000, once: true });
+    }
+    // Запуск машинки
+    runTypewriter();
+});
+
+// Открытие теста (Параметр теперь quizType, чтобы не путать с функцией type)
+function openQuiz(quizType) {
+    if (typeof QUIZ_DATA === 'undefined') {
+        console.error("Файл quiz-data.js не загружен!");
+        return;
+    }
+    
+    currentQuizData = QUIZ_DATA[quizType];
+    if (!currentQuizData) {
+        console.error("Данные теста не найдены для:", quizType);
+        return;
+    }
+
     currentQuestionIndex = 0;
     totalScore = 0;
     
     showQuestion();
     
-    document.getElementById('quiz-modal').style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    const modal = document.getElementById('quiz-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function showQuestion() {
     const container = document.getElementById('quiz-content');
+    if (!container) return;
+
     const question = currentQuizData.questions[currentQuestionIndex];
-    const progress = Math.round(((currentQuestionIndex) / currentQuizData.questions.length) * 100);
+    const progress = Math.round((currentQuestionIndex / currentQuizData.questions.length) * 100);
 
     container.innerHTML = `
-        <div style="margin-bottom: 10px; font-size: 10px; opacity: 0.5;">
+        <div style="margin-bottom: 10px; font-size: 10px; opacity: 0.5; font-family: 'Unbounded';">
             PROGRESS: ${progress}% | QUESTION ${currentQuestionIndex + 1}/${currentQuizData.questions.length}
         </div>
         <span class="quiz-title-small">SYSTEM_SCAN // ${currentQuizData.title}</span>
         <h2 class="quiz-question-text">${question.q}</h2>
         <div class="options-list">
-            ${question.a.map((answer, index) => `
-                <button class="quiz-opt-btn" onclick="nextQuestion(${question.points[index]})">
+            ${question.a.map((answer, idx) => `
+                <button class="quiz-opt-btn" onclick="nextQuestion(${question.points[idx]})">
                     ${answer}
                 </button>
             `).join('')}
@@ -80,8 +104,8 @@ function nextQuestion(points) {
 
 function showResult() {
     const container = document.getElementById('quiz-content');
+    if (!container) return;
     
-    // Поиск подходящего результата
     let finalResult = currentQuizData.results[0].text;
     for (let res of currentQuizData.results) {
         if (totalScore >= res.min) {
@@ -92,7 +116,7 @@ function showResult() {
     container.innerHTML = `
         <span class="quiz-title-small">SCAN_COMPLETED // TOTAL SCORE: ${totalScore}</span>
         <h2 class="quiz-question-text" style="color: var(--black) !important;">ВАШ РЕЗУЛЬТАТ:</h2>
-        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; font-weight: 400;">${finalResult}</p>
+        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; font-weight: 400; font-family: 'Unbounded';">${finalResult}</p>
         
         <button class="btn-red-wide" onclick="document.getElementById('form').scrollIntoView(); closeQuiz();">
             ОБСУДИТЬ РЕЗУЛЬТАТ НА РАЗБОРЕ
@@ -101,8 +125,8 @@ function showResult() {
     `;
 }
 
-
 function closeQuiz() {
-    document.getElementById('quiz-modal').style.display = 'none';
+    const modal = document.getElementById('quiz-modal');
+    if (modal) modal.style.display = 'none';
     document.body.style.overflow = 'auto'; 
 }
