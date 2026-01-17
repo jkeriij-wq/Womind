@@ -1,119 +1,73 @@
 :root {
-    --bg: #F0EDE5;       /* Металлик-шампань */
-    --accent-red: #D40000; /* Яркий красный */
-    --gold: #C5A059;     /* Золото */
-    --black: #0F0F0F;
-    --white: #FFFFFF;
+    --bg: #EAE6DD;       /* Благородный бежевый (матовый) */
+    --black: #121212;    /* Глубокий черный */
+    --red: #8B0000;      /* Глубокий красный (Oxblood) */
+    --gold: #B89352;     /* Античное золото */
+    --text: #121212;
     --unbounded: 'Unbounded', sans-serif;
-    --sync: 'Syncopate', sans-serif;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { 
-    background: var(--bg); 
-    color: var(--black); 
-    font-family: 'Manrope', sans-serif; 
-    overflow-x: hidden; 
-    line-height: 1.6;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; text-decoration: none !important; }
+body { background: var(--bg); color: var(--text); font-family: 'Manrope', sans-serif; overflow-x: hidden; }
 
-.serif { font-family: 'Cormorant Garamond', serif; font-style: italic; }
-.container { max-width: 1300px; margin: 0 auto; padding: 0 25px; }
+/* УБИРАЕМ СИНИЕ ССЫЛКИ */
+a, a:visited, a:hover, a:active { color: inherit; }
 
-/* ШУМ И ФОН */
 .grain::before {
     content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: url('https://grainy-gradients.vercel.app/noise.svg');
-    opacity: 0.07; pointer-events: none; z-index: 1000;
+    opacity: 0.05; pointer-events: none; z-index: 1000;
 }
 
-/* ЗАГОЛОВОК WOMIND */
-.main-title {
-    font-family: var(--sync);
-    font-size: clamp(3.5rem, 18vw, 12rem);
-    font-weight: 700;
-    line-height: 0.85;
-    letter-spacing: -5px;
-    color: var(--black);
-    text-align: center;
+/* МЕНЮ */
+.nav-bar {
+    position: fixed; top: 0; width: 100%; padding: 25px 50px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(234, 230, 221, 0.95); backdrop-filter: blur(10px);
+    z-index: 2000; border-bottom: 1px solid rgba(0,0,0,0.05);
 }
+.nav-logo { font-family: var(--unbounded); font-weight: 900; letter-spacing: 2px; }
+.nav-links a { font-family: var(--unbounded); font-size: 0.7rem; margin-left: 30px; color: var(--black); transition: 0.3s; }
+.nav-links a:hover { color: var(--red); }
 
-.hero-spacer { height: 40px; } /* ВОЗДУХ МЕЖДУ ЗАГОЛОВКОМ И ТЕКСТОМ */
+/* HERO */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.main-title { font-family: var(--sync); font-size: clamp(3rem, 15vw, 10rem); color: var(--black); letter-spacing: -2px; }
+.hero-spacer { height: 50px; }
+.hero-tagline { font-family: var(--unbounded); font-size: 1rem; letter-spacing: 5px; color: var(--red); margin-bottom: 40px; }
 
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background: radial-gradient(circle at center, #FFFFFF 0%, #F0EDE5 100%);
+/* КНОПКИ (БЕЗ БЕЛОГО) */
+.btn-main, .btn-red {
+    background: var(--black); color: var(--bg); border: none;
+    padding: 22px 50px; font-family: var(--unbounded); font-weight: 900;
+    font-size: 0.75rem; cursor: pointer; transition: 0.4s;
 }
+.btn-red { background: var(--red); }
+.btn-main:hover, .btn-red:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(139,0,0,0.3); }
 
-.hero-tagline { font-size: clamp(1.2rem, 3vw, 2.2rem); color: var(--accent-red); margin-bottom: 50px; text-align: center; }
-
-/* КНОПКИ */
-.btn-main {
-    background: var(--black); color: var(--white); border: none;
-    padding: 25px 60px; font-family: var(--unbounded); font-weight: 900;
-    font-size: 0.8rem; cursor: pointer; transition: 0.5s;
-    letter-spacing: 2px;
-}
-.btn-main:hover { background: var(--accent-red); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(212,0,0,0.3); }
-
-/* БЕГУЩАЯ СТРОКА */
-.ticker { background: var(--black); padding: 20px 0; overflow: hidden; border-top: 2px solid var(--accent-red); }
-.ticker-wrapper { display: inline-block; white-space: nowrap; animation: move 20s linear infinite; }
-.ticker-wrapper span { color: var(--white); font-family: var(--unbounded); font-weight: 900; font-size: 0.8rem; padding-right: 50px; }
-@keyframes move { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* КАРТОЧКИ СОЗДАТЕЛЕЙ */
-.creators-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 80px; }
-.img-box { position: relative; height: 650px; overflow: hidden; clip-path: inset(0 0 0 0); transition: 0.8s; }
-.img-box img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: 1s; }
-.creator-card:hover img { filter: grayscale(0); transform: scale(1.05); }
-.creator-text { margin-top: 30px; }
-.creator-text h3 { font-family: var(--unbounded); font-size: 1.5rem; margin: 10px 0; }
-.sub { font-family: var(--unbounded); font-size: 0.7rem; color: var(--accent-red); }
+.btn-dark { background: var(--black); color: var(--gold); border: 1px solid var(--gold); padding: 15px 30px; font-family: var(--unbounded); cursor: pointer; }
 
 /* ЛАБОРАТОРИЯ (ТЕСТЫ) */
-.lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-.lab-item { background: var(--white); padding: 50px; position: relative; border-bottom: 5px solid var(--black); transition: 0.4s; }
-.lab-item:hover { border-bottom-color: var(--accent-red); transform: translateY(-10px); }
-.featured-lab { background: var(--accent-red); color: var(--white); border-bottom-color: var(--gold); }
-.num { font-family: var(--unbounded); opacity: 0.2; font-size: 0.8rem; }
+.lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.lab-item { background: rgba(0,0,0,0.03); padding: 50px; border: 1px solid rgba(0,0,0,0.05); cursor: pointer; transition: 0.4s; position: relative; }
+.lab-item:hover { background: var(--black); color: var(--gold); }
+.featured-lab { border: 1px solid var(--red); }
 
-/* ТАРИФЫ */
-.price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 80px; }
-.price-box { background: var(--white); padding: 60px 40px; text-align: center; position: relative; }
-.gold-border { border: 2px solid var(--gold); transform: scale(1.05); }
-.cost { font-family: var(--unbounded); font-size: 3rem; color: var(--accent-red); margin: 20px 0; }
-.price-list { list-style: none; margin: 30px 0; text-align: left; }
-.price-list li { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
-
-/* АНКЕТА (ДЕРЗКАЯ СТИЛИЗАЦИЯ) */
-.contact-card {
-    background: var(--black); color: var(--white); padding: 80px;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;
-}
+/* АНКЕТА (КАК ТЕБЕ НРАВИТСЯ) */
+.contact-card { background: var(--black); color: var(--bg); padding: 80px 40px; text-align: center; }
+.main-form { max-width: 600px; margin: 40px auto 0; }
 .main-form input, .main-form textarea {
-    width: 100%; background: transparent; border: none; border-bottom: 2px solid #333;
-    padding: 20px 0; color: var(--white); font-family: var(--unbounded); font-size: 0.8rem; margin-bottom: 30px; outline: none;
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333;
+    padding: 20px 0; color: white; margin-bottom: 20px; font-family: var(--unbounded); outline: none;
 }
-.main-form input:focus { border-bottom-color: var(--accent-red); }
-.btn-submit {
-    background: var(--accent-red); color: var(--white); border: none; width: 100%;
-    padding: 25px; font-family: var(--unbounded); cursor: pointer; font-weight: 900;
-}
+.main-form input:focus { border-bottom-color: var(--red); }
 
-/* МОБИЛЬНАЯ АДАПТАЦИЯ */
-@media (max-width: 900px) {
-    .creators-grid, .contact-card { grid-template-columns: 1fr; }
-    .main-title { font-size: 4.5rem; letter-spacing: -2px; }
+/* МОБИЛКА */
+@media (max-width: 768px) {
     .nav-links { display: none; }
-    .price-box { transform: none !important; }
+    .creators-grid { grid-template-columns: 1fr; }
+    .price-grid { grid-template-columns: 1fr; gap: 20px; }
 }
 
-.footer { padding: 80px 0; background: #000; color: #fff; text-align: center; }
-.socials { margin: 30px 0; }
-.social-link { color: var(--accent-red); text-decoration: none; margin: 0 20px; font-family: var(--unbounded); font-size: 0.7rem; border-bottom: 1px solid var(--accent-red); }
+.footer { padding: 60px 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }
+.socials a { margin: 0 15px; font-family: var(--unbounded); font-size: 0.7rem; color: var(--red); }
