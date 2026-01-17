@@ -117,7 +117,7 @@ function closeQuiz() {
 }
 
 // --- ЛОГИКА ОТПРАВКИ В GOOGLE ТАБЛИЦУ ---
-const scriptURL = 'https://script.google.com/macros/s/AKfycbw0QpPdwhubcJUAUbXe99EMtJhbHc2ERGQBSf46LnNSbti9tD66b-Fl4sd37XaoW8uL/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxobu7sN0dABTjFrPPDiIUap8CDgfuQWhpLpjxcJUZldcLfy8I6q6Dbc3H1Fn-cqLil/exec';
 const form = document.getElementById('google-sheet-form');
 
 if (form) {
