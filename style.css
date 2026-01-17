@@ -235,6 +235,11 @@ body { background: var(--bg); color: var(--black); font-family: var(--unbounded)
     transform: translateX(10px);
 }
 
+.spacer-xl {
+    height: 150px; /* Размер твоего отступа */
+    width: 100%;
+}
+
 /* Адаптив для мобилок */
 @media (max-width: 768px) {
     .social-links-grid {
