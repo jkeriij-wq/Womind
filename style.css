@@ -175,3 +175,184 @@ body {
     background: white;
     color: black;
 }
+
+/* --- СТИЛИ ДЛЯ КАРТОЧЕК ПРОГРАММ (Tariffs) --- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.price-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.price-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--red);
+    transform: translateY(-10px);
+}
+
+.price-card.highlight {
+    border: 1px solid var(--red);
+    background: rgba(255, 0, 0, 0.02);
+}
+
+.card-header {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.price-card h4 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+.price {
+    font-size: 32px;
+    font-family: 'Syncopate', sans-serif;
+    margin-bottom: 25px;
+    color: var(--white);
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--red);
+    color: white;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* --- СТИЛИ ДЛЯ АНКЕТЫ (Как на втором фото) --- */
+.form-dark-section {
+    position: relative;
+    padding: 150px 0;
+    overflow: hidden;
+}
+
+.form-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: clamp(60px, 15vw, 180px);
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03); /* Очень бледный текст на фоне */
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    text-align: center;
+}
+
+.form-container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sub-label-red {
+    color: var(--red);
+    font-size: 12px;
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.form-title-heavy {
+    font-size: clamp(40px, 8vw, 90px);
+    line-height: 0.85;
+    font-weight: 900;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+
+.minimal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.input-field {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus-within {
+    border-color: var(--red);
+}
+
+.input-field input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 20px 0;
+    color: var(--white);
+    font-family: 'Unbounded', sans-serif;
+    font-size: 16px;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.input-field input::placeholder {
+    color: #333;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.submit-circle-btn {
+    align-self: center;
+    background: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+    padding: 25px 60px;
+    border-radius: 100px;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.submit-circle-btn:hover {
+    background: var(--white);
+    color: var(--black);
+    transform: scale(1.05);
+}
+
+.submit-circle-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 768px) {
+    .form-title-heavy { font-size: 50px; }
+    .price-card { padding: 30px; }
+}
+
+
+
