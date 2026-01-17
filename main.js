@@ -41,7 +41,7 @@ window.onload = () => {
 };
 
 // Открытие теста
-function openQuiz(quizId) { // Изменено с 'type' на 'quizId'
+function openQuiz(quizId) {
     if (typeof QUIZ_DATA === 'undefined' || !QUIZ_DATA[quizId]) {
         console.error("Данные теста не найдены");
         return;
@@ -116,50 +116,44 @@ function closeQuiz() {
     document.body.style.overflow = 'auto';
 }
 
-
 // --- ЛОГИКА ОТПРАВКИ В GOOGLE ТАБЛИЦУ ---
 const scriptURL = 'https://script.google.com/macros/s/AKfycbw0QpPdwhubcJUAUbXe99EMtJhbHc2ERGQBSf46LnNSbti9tD66b-Fl4sd37XaoW8uL/exec';
 const form = document.getElementById('google-sheet-form');
 
 if (form) {
     form.addEventListener('submit', e => {
-        e.preventDefault(); // Чтобы страница не перезагружалась
+        e.preventDefault();
         
         const submitBtn = form.querySelector('button');
         const originalText = submitBtn.innerText;
         
-        // Эффект загрузки
         submitBtn.disabled = true;
         submitBtn.innerText = 'СИНХРОНИЗАЦИЯ...';
 
-        // Отправка данных на твою ссылку
         fetch(scriptURL, { 
-    method: 'POST', 
-    body: new FormData(form),
-    mode: 'no-cors' // Добавляем этот режим, если обычный блокируется
-})
-.then(() => {
-    // В режиме no-cors мы не получим детальный ответ от сервера, 
-    // поэтому считаем, что если ошибки нет — всё ушло.
-    submitBtn.innerText = 'ДОСТУП РАЗРЕШЕН';
-    submitBtn.style.backgroundColor = '#28a745';
-    form.reset();
-    setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerText = originalText;
-        submitBtn.style.backgroundColor = '';
-    }, 3000);
-})
-.catch(error => {
-    console.error('Ошибка!', error);
-    submitBtn.innerText = 'ОШИБКА СЕТИ';
-    submitBtn.disabled = false;
-});
-            .catch(error => {
-                console.error('Ошибка!', error.message);
-                submitBtn.innerText = 'ОШИБКА СЕТИ';
+            method: 'POST', 
+            body: new FormData(form),
+            mode: 'no-cors' 
+        })
+        .then(() => {
+            // Успешная отправка
+            submitBtn.innerText = 'ДОСТУП РАЗРЕШЕН';
+            submitBtn.style.backgroundColor = '#28a745';
+            form.reset();
+            setTimeout(() => {
                 submitBtn.disabled = false;
-                setTimeout(() => { submitBtn.innerText = originalText; }, 3000);
-            });
+                submitBtn.innerText = originalText;
+                submitBtn.style.backgroundColor = '';
+            }, 3000);
+        })
+        .catch(error => {
+            // Ошибка
+            console.error('Ошибка!', error);
+            submitBtn.innerText = 'ОШИБКА СЕТИ';
+            submitBtn.disabled = false;
+            setTimeout(() => {
+                submitBtn.innerText = originalText;
+            }, 3000);
+        });
     });
 }
