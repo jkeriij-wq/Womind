@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOMIND | Brand Duo & Ecosystem</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;700&family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+    <title>WOMIND | Neuro-Branding Ecosystem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;700&family=Tenor+Sans&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,105 +16,122 @@
         <div class="nav-logo">WOMIND</div>
         <div class="nav-links">
             <a href="#about">О нас</a>
-            <a href="#test-section">Тест</a>
-            <a href="#programs">Программы</a>
+            <a href="#lab">Лаборатория</a>
+            <a href="#programs">Тарифы</a>
+            <a href="#evidence">Evidence</a>
             <a href="#form">Связаться</a>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content-glitch">
-            <h1 class="glitch-title" data-text="WOMIND.OS">WOMIND.OS</h1>
-            <p class="hero-manifest serif">
-                «Мы не просто создаем бренды. Мы программируем реальность через смыслы и визуальный интеллект».
-            </p>
-            <div class="stats-row">
-                <div class="stat-item"><span class="unbounded">3888</span> шк/мес</div>
-                <div class="stat-item"><span class="unbounded">W-INDIVIDUAL</span></div>
-            </div>
-            <button class="btn-tech-primary" onclick="document.getElementById('test-section').scrollIntoView()">
-                <span class="btn-text">АКТИВИРОВАТЬ КОД</span>
-                <span class="btn-flare"></span>
+        <div class="hero-content">
+            <h1 class="glitch-title" data-aos="reveal-anim">WOMIND.OS</h1>
+            <p class="hero-subtitle" data-aos="fade-up">Система программирования личного бренда через смыслы и визуальный интеллект.</p>
+            <button class="btn-tech-primary" onclick="document.getElementById('lab').scrollIntoView()">
+                АКТИВИРОВАТЬ ТЕСТЫ <span class="btn-flare"></span>
             </button>
         </div>
     </header>
 
-    <div class="ticker-wrap">
-        <div class="ticker">
-            <span class="unbounded">STRATEGY • VISUAL • NEUROMARKETING • MINDSET • BRANDING • SYSTEM • </span>
-            <span class="unbounded">STRATEGY • VISUAL • NEUROMARKETING • MINDSET • BRANDING • SYSTEM • </span>
-        </div>
-    </div>
-
-    <div class="container">
+    <main class="container">
         <section id="about" class="section">
-            <h2 class="unbounded center reveal-text" data-aos="reveal-anim">Brand Duo</h2>
+            <h2 class="unbounded center" data-aos="reveal-anim">DUO CREATORS</h2>
             <div class="team-grid">
                 <div class="member-card" data-aos="fade-up">
-                    <div class="member-photo-wrapper">
-                        <img src="IMG_9895 2.jpg" alt="Оля Паршин" class="member-photo">
-                    </div>
+                    <div class="member-photo-wrapper"><img src="IMG_9895 2.jpg" class="member-photo"></div>
                     <div class="member-info">
-                        <span class="member-role">Маркетолог • Таргетинг</span>
+                        <span class="member-role">Strategy • Targeting</span>
                         <h3 class="unbounded">Оля Паршин</h3>
-                        <p class="serif">Выстраивает маркетинговую стратегию, структуру и продуктовую линейку. Приводит клиентов через системный подход.</p>
+                        <p>Архитектор воронок и системного маркетинга.</p>
                     </div>
                 </div>
                 <div class="member-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="member-photo-wrapper">
-                        <img src="IMG_9892 2.jpg" alt="Мари Кикоин" class="member-photo">
-                    </div>
+                    <div class="member-photo-wrapper"><img src="IMG_9892 2.jpg" class="member-photo"></div>
                     <div class="member-info">
-                        <span class="member-role">SMM • Продуктолог</span>
+                        <span class="member-role">Visual • Neuromarketing</span>
                         <h3 class="unbounded">Мари Кикоин</h3>
-                        <p class="serif">Создает визуал, фото-видео контент и внедряет нейромаркетинг в упаковку личного бренда.</p>
+                        <p>Куратор эстетики и упаковки смыслов.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lab" class="section">
+            <h2 class="unbounded center" data-aos="reveal-anim">MIND LAB</h2>
+            <div class="lab-grid">
+                <div class="test-box glass-card" data-aos="zoom-in">
+                    <span class="tag">TEST 01</span>
+                    <h3 class="unbounded">Neuro-Code</h3>
+                    <p>Взломай свой код архетипа и узнай, как тебя считывает аудитория.</p>
+                    <button class="btn-tech-secondary" onclick="alert('Запуск Neuro-Code...')">ЗАПУСТИТЬ СКАН</button>
+                </div>
+                <div class="test-box glass-card" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="tag">TEST 02</span>
+                    <h3 class="unbounded">Brand-Scan</h3>
+                    <p>Чек-ап твоего бренда: готов ли ты к масштабу x10 в этом году?</p>
+                    <button class="btn-tech-secondary" onclick="alert('Запуск Brand-Scan...')">ПРОВЕРИТЬ СИСТЕМУ</button>
                 </div>
             </div>
         </section>
 
         <section id="programs" class="section">
-            <h2 class="unbounded center reveal-text" data-aos="reveal-anim">Услуги</h2>
+            <h2 class="unbounded center" data-aos="reveal-anim">PROGRAMS</h2>
             <div class="tariffs-grid">
-                <div class="card glass" data-aos="fade-up">
-                    <span class="tag">01 / INDIVIDUAL</span>
-                    <h3 class="unbounded">W-Individual</h3>
-                    <p class="serif">Индивидуальная работа под ключ. Стратегия, смыслы, структура и контент.</p>
-                    <div class="price-tag unbounded">от 3888 ШЕК</div>
-                    <button class="btn-tech-secondary" onclick="window.open('https://t.me/womind_community')">ЗАБРОНИРОВАТЬ</button>
+                <div class="card">
+                    <span class="tag">W-INDIVIDUAL</span>
+                    <h3 class="unbounded">Personal Build</h3>
+                    <p>Индивидуальная стратегия и контент-сопровождение.</p>
+                    <div class="price-tag unbounded">3888 ШЕК</div>
+                    <button class="btn-tech-secondary" onclick="location.href='#form'">ВЗЯТЬ В РАБОТУ</button>
                 </div>
-                <div class="card featured" data-aos="fade-up" data-aos-delay="200">
-                    <span class="tag" style="color:var(--red)">02 / COMMUNITY</span>
-                    <h3 class="unbounded">W-Team</h3>
-                    <p class="serif">Клуб поддержки: 2 мастермайнда, съемки и реклама в наших аккаунтах.</p>
-                    <div class="price-tag unbounded">444 ШЕК / мес</div>
-                    <button class="btn-tech-primary">ВСТУПИТЬ <span class="btn-flare"></span></button>
+                <div class="card featured">
+                    <span class="tag">W-TEAM</span>
+                    <h3 class="unbounded">The Club</h3>
+                    <p>Сообщество, мастермайнды и совместные съемки.</p>
+                    <div class="price-tag unbounded">444 ШЕК / МЕС</div>
+                    <button class="btn-tech-primary">ПРИСОЕДИНИТЬСЯ <span class="btn-flare"></span></button>
                 </div>
             </div>
         </section>
-    </div>
+
+        <section id="evidence" class="section">
+            <h2 class="unbounded center" data-aos="reveal-anim">EVIDENCE</h2>
+            <div class="evidence-grid">
+                <div class="evidence-item glass-card" data-aos="fade-up">
+                    <p class="serif">"Система WOMIND изменила мое восприятие контента. Охваты выросли в 3 раза за месяц."</p>
+                    <span class="evidence-author">— Анна, Beauty-эксперт</span>
+                </div>
+                <div class="evidence-item glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <p class="serif">"Оля и Мари — это идеальный баланс структуры и творчества. Лучшая инвестиция в бренд."</p>
+                    <span class="evidence-author">— Елена, Психолог</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="form" class="section">
+            <div class="form-wrapper glass-card" data-aos="fade-up">
+                <h2 class="unbounded center">CONNECT</h2>
+                <form class="main-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="NAME" required>
+                        <input type="tel" placeholder="PHONE" required>
+                    </div>
+                    <textarea placeholder="ОПИШИТЕ ВАШ ЗАПРОС"></textarea>
+                    <button type="submit" class="btn-tech-primary" style="width:100%">ОТПРАВИТЬ ДАННЫЕ</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="footer-socials">
             <a href="https://instagram.com/womind_community" class="social-pill">INSTAGRAM</a>
             <a href="https://t.me/womind_community" class="social-pill">TELEGRAM</a>
         </div>
-        <p class="unbounded" style="opacity: 0.2; font-size: 0.6rem; margin-top: 40px;">WOMIND SYSTEM // 2026</p>
+        <p class="unbounded copyright">WOMIND ecosystem // 2026</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-        
-        // Интерактивный наклон заголовка
-        document.addEventListener('mousemove', (e) => {
-            const title = document.querySelector('.glitch-title');
-            if(title) {
-                const x = (window.innerWidth / 2 - e.pageX) / 45;
-                const y = (window.innerHeight / 2 - e.pageY) / 45;
-                title.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-            }
-        });
-    </script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
