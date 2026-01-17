@@ -233,63 +233,79 @@ input:-webkit-autofill:focus {
     .form-header h2 { font-size: 2rem; }
 }
 
-/* МОДАЛЬНОЕ ОКНО (ВСПЛЫВАЮЩЕЕ ПОВЕРХ) */
+/* МОДАЛЬНОЕ ОКНО (ВСПЛЫВАЮЩЕЕ) 
 .modal {
-    display: none; /* Скрыто по умолчанию */
-    position: fixed; /* Фиксируем относительно экрана */
-    z-index: 3000; /* Выше меню и всего остального */
+    display: none;
+    position: fixed;
+    z-index: 3000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(15, 15, 15, 0.95); /* Темный фон с прозрачностью */
-    backdrop-filter: blur(10px); /* Размытие заднего плана */
+    background-color: rgba(15, 15, 15, 0.98); /* Почти черный фон для контраста */
+    backdrop-filter: blur(15px);
     align-items: center;
     justify-content: center;
     padding: 20px;
 }
 
 .modal-box {
-    background: var(--bg); /* Твой благородный беж */
+    background: var(--bg); /* Твой бежевый фон */
     border: 2px solid var(--red);
-    padding: 60px 40px;
+    padding: 50px 40px;
     max-width: 600px;
     width: 100%;
     position: relative;
-    color: var(--black);
-    text-align: left;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 0 50px rgba(209, 0, 0, 0.2);
 }
 
+/* Цвет самого вопроса */
+.quiz-question-text {
+    color: var(--red) !important; /* Делаем вопрос ярко-красным */
+    font-family: var(--unbounded);
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Заголовок теста (архетип, бренд и т.д.) */
+.quiz-title-small {
+    color: var(--black);
+    font-family: var(--unbounded);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Кнопка ВЫХОДА (крестик) */
 .close-modal {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 30px;
+    font-size: 24px;
     cursor: pointer;
-    color: var(--red);
-    font-family: var(--unbounded);
-    line-height: 1;
-}
-
-/* Стили для кнопок-ответов внутри модалки */
-.quiz-opt-btn {
-    display: block;
-    width: 100%;
-    padding: 20px;
-    margin-top: 15px;
-    background: transparent;
-    border: 1px solid rgba(0,0,0,0.1);
-    font-family: var(--unbounded);
-    font-size: 0.8rem;
-    cursor: pointer;
-    text-align: left;
+    color: var(--black);
     transition: 0.3s;
 }
+.close-modal:hover { color: var(--red); transform: rotate(90deg); }
 
-.quiz-opt-btn:hover {
-    background: var(--black);
-    color: var(--bg);
-    border-color: var(--black);
-    padding-left: 30px; /* Эффект сдвига при наведении */
+/* Кнопка СВЕРНУТЬ (внизу) */
+.btn-exit-quiz {
+    margin-top: 20px;
+    background: transparent;
+    border: none;
+    color: var(--black);
+    font-family: var(--unbounded);
+    font-size: 0.6rem;
+    cursor: pointer;
+    text-decoration: underline !important; /* Чтобы выделялась как ссылка */
+    opacity: 0.5;
+    width: 100%;
+    text-align: center;
+}
+.btn-exit-quiz:hover { opacity: 1; color: var(--red); }
 }
