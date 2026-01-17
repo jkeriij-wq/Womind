@@ -1,72 +1,72 @@
 :root {
-    --red: #D90429;
-    --black: #0d0d0d;
-    --white: #ffffff;
-    --gray: #f0f0f0;
-    --font-head: 'Syncopate', sans-serif;
-    --font-text: 'Montserrat', sans-serif;
+    --red: #D90429;
+    --black: #0d0d0d;
+    --white: #ffffff;
+    --gray: #f0f0f0;
+    --font-head: 'Syncopate', sans-serif;
+    --font-text: 'Montserrat', sans-serif;
 }
 
 * {
-    margin: 0; padding: 0; box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    cursor: none; /* Кастомный курсор */
+    margin: 0; padding: 0; box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    cursor: none; /* Кастомный курсор */
 }
 
 body {
-    width: 100%;
-    background: var(--black);
-    color: var(--white);
-    font-family: var(--font-text);
-    overflow-x: hidden;
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-text);
+    overflow-x: hidden;
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
 }
 
 #cursor {
-    width: 20px; height: 20px;
-    background: var(--red);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transition: transform 0.1s;
+    width: 20px; height: 20px;
+    background: var(--red);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s;
 }
 
 /* ЗЕРНИСТОСТЬ */
 .grain-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: url('https://grainy-gradients.vercel.app/noise.svg');
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 5;
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 5;
 }
 
 /* HERO */
 .hero {
-    height: 85vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    background: var(--gray);
-    color: var(--black);
-    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: var(--gray);
+    color: var(--black);
+    position: relative;
 }
 
 .hero h1 {
-    font-family: var(--font-head);
-    font-size: clamp(2.5rem, 11vw, 9rem);
-    text-transform: uppercase;
-    line-height: 0.85;
-    letter-spacing: -3px;
-    font-weight: 700;
+    font-family: var(--font-head);
+    font-size: clamp(2.5rem, 11vw, 9rem);
+    text-transform: uppercase;
+    line-height: 0.85;
+    letter-spacing: -3px;
+    font-weight: 700;
 }
 
 .highlight { color: var(--red); }
@@ -75,57 +75,57 @@ body {
 
 /* MARQUEE */
 .marquee {
-    background: var(--red);
-    padding: 22px 0;
-    overflow: hidden;
-    border-top: 1px solid var(--black);
+    background: var(--red);
+    padding: 22px 0;
+    overflow: hidden;
+    border-top: 1px solid var(--black);
 }
 
 .marquee-track {
-    display: flex;
-    white-space: nowrap;
-    animation: scroll 25s linear infinite;
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 25s linear infinite;
 }
 
 .marquee-track span {
-    font-family: var(--font-head);
-    font-size: 1rem;
-    font-weight: 700;
-    padding-right: 50px;
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    padding-right: 50px;
 }
 
 @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
 /* DNA SECTION */
 .dna-section {
-    position: relative;
-    padding: 140px 0;
-    background: var(--black);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    padding: 140px 0;
+    background: var(--black);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .dna-container {
-    display: flex;
-    align-items: center;
-    gap: 80px;
-    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
 }
 
 .dna-visual {
-    flex: 1;
-    position: relative;
-    min-height: 550px;
-    min-width: 320px;
+    flex: 1;
+    position: relative;
+    min-height: 550px;
+    min-width: 320px;
 }
 
 .photo-wrapper {
-    position: absolute;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.5s ease;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.5s ease;
 }
 
 .p1 { width: 280px; height: 380px; top: 0; left: 0; z-index: 2; }
@@ -135,53 +135,53 @@ body {
 .photo-wrapper:hover img { filter: grayscale(0); transform: scale(1.05); }
 
 .photo-label {
-    position: absolute;
-    bottom: 15px; right: 15px;
-    background: var(--red);
-    color: white;
-    font-size: 10px;
-    padding: 5px 12px;
-    font-family: var(--font-head);
-    font-weight: 700;
+    position: absolute;
+    bottom: 15px; right: 15px;
+    background: var(--red);
+    color: white;
+    font-size: 10px;
+    padding: 5px 12px;
+    font-family: var(--font-head);
+    font-weight: 700;
 }
 
 /* ВРАЩАЮЩИЙСЯ КРУГ */
 .rotating-badge {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 220px; height: 220px;
-    z-index: 3;
-    animation: rotateCircle 20s linear infinite;
-    pointer-events: none;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px; height: 220px;
+    z-index: 3;
+    animation: rotateCircle 20s linear infinite;
+    pointer-events: none;
 }
 
 .rotating-badge text {
-    fill: var(--red);
-    font-size: 10px;
-    font-family: var(--font-head);
-    font-weight: 700;
-    text-transform: uppercase;
+    fill: var(--red);
+    font-size: 10px;
+    font-family: var(--font-head);
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 @keyframes rotateCircle {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .dna-content { flex: 1; min-width: 320px; }
 .section-label { color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: 3px; display: block; margin-bottom: 20px; }
 
 .massive-title {
-    font-family: var(--font-head);
-    font-size: clamp(2.5rem, 7vw, 5.5rem);
-    line-height: 0.85;
-    margin-bottom: 40px;
+    font-family: var(--font-head);
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    line-height: 0.85;
+    margin-bottom: 40px;
 }
 
 .outline-text {
-    color: transparent;
-    -webkit-text-stroke: 1px var(--white);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white);
 }
 
 .manifesto-box { border-left: 3px solid var(--red); padding-left: 25px; }
@@ -191,19 +191,19 @@ body {
 /* ТАРИФЫ */
 .tariffs-section { padding: 120px 0; background: var(--black); }
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .card {
-    background: var(--black);
-    padding: 50px 40px;
-    display: flex;
-    flex-direction: column;
-    min-height: 650px;
+    background: var(--black);
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    min-height: 650px;
 }
 
 .tag { font-family: var(--font-head); font-size: 10px; color: var(--red); display: block; margin-bottom: 20px; font-weight: 700; }
@@ -219,10 +219,10 @@ body {
 .price { font-family: var(--font-head); font-size: 2.2rem; display: block; margin: 35px 0; font-weight: 700; }
 
 .cta-btn {
-    display: block; text-align: center; padding: 20px;
-    border: 1px solid var(--white); color: var(--white);
-    text-decoration: none; font-family: var(--font-head);
-    font-size: 11px; border-radius: 100px; transition: 0.3s ease; font-weight: 700;
+    display: block; text-align: center; padding: 20px;
+    border: 1px solid var(--white); color: var(--white);
+    text-decoration: none; font-family: var(--font-head);
+    font-size: 11px; border-radius: 100px; transition: 0.3s ease; font-weight: 700;
 }
 
 .cta-btn:hover { background: var(--white); color: var(--black); }
@@ -238,155 +238,157 @@ body {
 
 /* ADAPTIVITY */
 @media (max-width: 991px) {
-    .dna-container { flex-direction: column; gap: 60px; text-align: center; }
-    .dna-visual { min-height: 450px; width: 100%; max-width: 400px; margin: 0 auto; }
-    .manifesto-box { border-left: none; border-top: 2px solid var(--red); padding: 25px 0 0 0; }
+    .dna-container { flex-direction: column; gap: 60px; text-align: center; }
+    .dna-visual { min-height: 450px; width: 100%; max-width: 400px; margin: 0 auto; }
+    .manifesto-box { border-left: none; border-top: 2px solid var(--red); padding: 25px 0 0 0; }
 }
 
 @media (max-width: 768px) {
-    #cursor { display: none; }
-    * { cursor: auto !important; }
-    .hero { height: 60vh; }
-    .p1 { width: 160px; height: 240px; }
-    .p2 { width: 180px; height: 260px; }
-    .rotating-badge { width: 160px; height: 160px; }
+    #cursor { display: none; }
+    * { cursor: auto !important; }
+    .hero { height: 60vh; }
+    .p1 { width: 160px; height: 240px; }
+    .p2 { width: 180px; height: 260px; }
+    .rotating-badge { width: 160px; height: 160px; }
 
 
-    .form-section {
-    padding: 100px 0;
-    background: #000;
-    color: #fff;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    .form-section {
+    padding: 100px 0;
+    background: #000;
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .application-form {
-    max-width: 600px;
-    margin-top: 50px;
+    max-width: 600px;
+    margin-top: 50px;
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
-.application-form input, 
-.application-form select, 
+.application-form input, 
+.application-form select, 
 .application-form textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    padding: 15px 0;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    letter-spacing: 1px;
-    outline: none;
-    transition: border-color 0.3s ease;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding: 15px 0;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.application-form input:focus, 
-.application-form select:focus, 
+.application-form input:focus, 
+.application-form select:focus, 
 .application-form textarea:focus {
-    border-bottom-color: #fff;
+    border-bottom-color: #fff;
 }
 
 .application-form select {
-    appearance: none;
-    cursor: pointer;
+    appearance: none;
+    cursor: pointer;
 }
 
 .application-form option {
-    background: #111;
-    color: #fff;
+    background: #111;
+    color: #fff;
 }
 
 .form-submit-btn {
-    width: 100%;
-    margin-top: 30px;
-    cursor: pointer;
-    border: 1px solid #fff;
-    background: #fff;
-    color: #000;
+    width: 100%;
+    margin-top: 30px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background: #fff;
+    color: #000;
 }
 
 .form-submit-btn:hover {
-    background: transparent;
-    color: #fff;
+    background: transparent;
+    color: #fff;
 }
 }
 
 /* Адаптация полей под стиль WOMIND */
 .application-form {
-    max-width: 650px; /* Немного расширим для солидности */
-    margin-top: 60px;
-    position: relative;
-    z-index: 2;
+    max-width: 650px; /* Немного расширим для солидности */
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
 }
 
 .form-group {
-    margin-bottom: 40px; /* Увеличиваем отступы между полями */
-    position: relative;
+    margin-bottom: 40px; /* Увеличиваем отступы между полями */
+    position: relative;
 }
 
-.application-form input, 
-.application-form select, 
+.application-form input, 
+.application-form select, 
 .application-form textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Тонкая линия */
-    padding: 18px 0;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    letter-spacing: 0.15em; /* Разрядка как в заголовках */
-    text-transform: uppercase; /* Все в верхнем регистре для стиля */
-    outline: none;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 0;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Тонкая линия */
+    padding: 18px 0;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.15em; /* Разрядка как в заголовках */
+    text-transform: uppercase; /* Все в верхнем регистре для стиля */
+    outline: none;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0;
 }
 
 /* Эффект при клике на поле */
-.application-form input:focus, 
-.application-form select:focus, 
+.application-form input:focus, 
+.application-form select:focus, 
 .application-form textarea:focus {
-    border-bottom-color: #fff;
-    padding-left: 10px; /* Небольшой сдвиг вправо при фокусе */
-    background: rgba(255, 255, 255, 0.03); /* Еле заметный блик */
+    border-bottom-color: #fff;
+    padding-left: 10px; /* Небольшой сдвиг вправо при фокусе */
+    background: rgba(255, 255, 255, 0.03); /* Еле заметный блик */
 }
 
 /* Стилизация плейсхолдеров (текст-подсказка) */
 .application-form ::placeholder {
-    color: rgba(255, 255, 255, 0.4);
-    font-weight: 300;
-    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+    letter-spacing: 0.1em;
 }
 
 /* Адаптация выпадающего списка */
 .application-form select {
-    cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right center;
-    padding-right: 20px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 20px;
 }
 
 /* Убираем синий фон у автозаполнения в Chrome */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
-    -webkit-text-fill-color: #fff;
-    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
-    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff;
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 /* Поле сообщения */
 .application-form textarea {
-    resize: none; /* Запрещаем менять размер вручную */
-    min-height: 100px;
+    resize: none; /* Запрещаем менять размер вручную */
+    min-height: 100px;
 }
 
 
 
 
+
+найди мне в этом стиел - главный двухцветный заголовок 
