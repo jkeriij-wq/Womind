@@ -1,10 +1,10 @@
 // Эффект пишущей машинки
 const typewriterElement = document.getElementById('typewriter');
-const heroText = "WOMIND"; // Переименовал переменную, чтобы не путать с функцией
+const heroText = "WOMIND"; 
 let typewriterIndex = 0;
 let isDeleting = false;
 
-function runTypewriter() { // Переименовал функцию, чтобы не конфликтовала с параметрами
+function runTypewriter() {
     if (!typewriterElement) return;
     
     const currentText = isDeleting 
@@ -27,50 +27,38 @@ function runTypewriter() { // Переименовал функцию, чтоб�
     setTimeout(runTypewriter, speed);
 }
 
-// Глобальные переменные теста
+// Переменные теста
 let currentQuizData = null;
 let currentQuestionIndex = 0;
 let totalScore = 0;
 
-// Инициализация всего при загрузке
-window.addEventListener('load', () => {
-    // Запуск AOS
+// Инициализация при загрузке
+window.onload = () => {
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 1000, once: true });
     }
-    // Запуск машинки
     runTypewriter();
-});
+};
 
-// Открытие теста (Параметр теперь quizType, чтобы не путать с функцией type)
-function openQuiz(quizType) {
-    if (typeof QUIZ_DATA === 'undefined') {
-        console.error("Файл quiz-data.js не загружен!");
+// Открытие теста
+function openQuiz(quizId) { // Изменено с 'type' на 'quizId'
+    if (typeof QUIZ_DATA === 'undefined' || !QUIZ_DATA[quizId]) {
+        console.error("Данные теста не найдены");
         return;
     }
     
-    currentQuizData = QUIZ_DATA[quizType];
-    if (!currentQuizData) {
-        console.error("Данные теста не найдены для:", quizType);
-        return;
-    }
-
+    currentQuizData = QUIZ_DATA[quizId];
     currentQuestionIndex = 0;
     totalScore = 0;
     
     showQuestion();
     
-    const modal = document.getElementById('quiz-modal');
-    if (modal) {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
+    document.getElementById('quiz-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
 
 function showQuestion() {
     const container = document.getElementById('quiz-content');
-    if (!container) return;
-
     const question = currentQuizData.questions[currentQuestionIndex];
     const progress = Math.round((currentQuestionIndex / currentQuizData.questions.length) * 100);
 
@@ -104,9 +92,8 @@ function nextQuestion(points) {
 
 function showResult() {
     const container = document.getElementById('quiz-content');
-    if (!container) return;
-    
     let finalResult = currentQuizData.results[0].text;
+    
     for (let res of currentQuizData.results) {
         if (totalScore >= res.min) {
             finalResult = res.text;
@@ -115,18 +102,16 @@ function showResult() {
 
     container.innerHTML = `
         <span class="quiz-title-small">SCAN_COMPLETED // TOTAL SCORE: ${totalScore}</span>
-        <h2 class="quiz-question-text" style="color: var(--black) !important;">ВАШ РЕЗУЛЬТАТ:</h2>
-        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; font-weight: 400; font-family: 'Unbounded';">${finalResult}</p>
-        
+        <h2 class="quiz-question-text" style="color: #000 !important;">ВАШ РЕЗУЛЬТАТ:</h2>
+        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 30px; font-family: 'Unbounded';">${finalResult}</p>
         <button class="btn-red-wide" onclick="document.getElementById('form').scrollIntoView(); closeQuiz();">
-            ОБСУДИТЬ РЕЗУЛЬТАТ НА РАЗБОРЕ
+            ОБСУДИТЬ НА РАЗБОРЕ
         </button>
         <button class="btn-exit-quiz" onclick="closeQuiz()">ЗАКРЫТЬ</button>
     `;
 }
 
 function closeQuiz() {
-    const modal = document.getElementById('quiz-modal');
-    if (modal) modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; 
+    document.getElementById('quiz-modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
 }
