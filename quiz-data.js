@@ -1,209 +1,54 @@
-const questions = [
-    {
-        q: "1. Когда ты входишь в новое пространство, что ты чувствуешь первым?",
-        options: [
-            { text: "Тепло и желание, чтобы всем было комфортно", type: "Мать" },
-            { text: "Замечаю красоту — свет, запах, детали", type: "Афродита" },
-            { text: "Сразу понимаю, как устроено и где мой центр", type: "Хозяйка" },
-            { text: "Сканирую энергию — есть ли здесь сила и правда", type: "Ведьма" },
-            { text: "Слушаю тишину, ощущаю глубину, смысл", type: "Жрица" },
-            { text: "Чувствую вызов — хочу понять, кто лидер", type: "Амазонка" }
-        ]
-    },
-    {
-        q: "2. Когда тебе больно или тяжело, ты обычно…",
-        options: [
-            { text: "Ищу контакт, обнимаю, делюсь", type: "Мать" },
-            { text: "Устраиваю себе красивый ритуал: свеча, ванна, музыка", type: "Афродита" },
-            { text: "Навожу порядок, чтобы вернуть контроль", type: "Хозяйка" },
-            { text: "Иду в глубину, смотрю в корень боли", type: "Ведьма" },
-            { text: "Остаюсь наедине с собой, ищу смысл", type: "Жрица" },
-            { text: "Говорю себе: «Поднимись, докажи»", type: "Амазонка" }
-        ]
-    },
-    {
-        q: "3. Какая сцена из фильма тебе ближе всего?",
-        options: [
-            { text: "Герой держит за руку кого-то в трудный момент", type: "Мать" },
-            { text: "Камера скользит по лицу — и время останавливается", type: "Афродита" },
-            { text: "Всё работает идеально, как оркестр", type: "Хозяйка" },
-            { text: "Ведьма у костра улыбается миру", type: "Ведьма" },
-            { text: "Молчание и восход — всё ясно без слов", type: "Жрица" },
-            { text: "Она идёт по залу, и все оборачиваются", type: "Амазонка" }
-        ]
-    },
-    {
-        q: "4. Если бы твоя сила была стихией, это было бы…",
-        options: [
-            { text: "Земля — надёжная и тёплая", type: "Мать" },
-            { text: "Вода — чувственная и текучая", type: "Афродита" },
-            { text: "Воздух — лёгкий и ясный", type: "Хозяйка" },
-            { text: "Огонь — сильный и очищающий", type: "Ведьма" },
-            { text: "Свет — тихий и сияющий", type: "Жрица" },
-            { text: "Металл — точный и направленный", type: "Амазонка" }
-        ]
-    },
-    {
-        q: "5. Когда ты что-то создаёшь, тебе важнее всего…",
-        options: [
-            { text: "Чтобы это помогало другим", type: "Мать" },
-            { text: "Чтобы это было красиво и с эмоцией", type: "Афродита" },
-            { text: "Чтобы всё было продумано и удобно", type: "Хозяйка" },
-            { text: "Чтобы это несло трансформацию", type: "Ведьма" },
-            { text: "Чтобы это было смыслово и глубоко", type: "Жрица" },
-            { text: "Чтобы это вдохновляло и впечатляло", type: "Амазонка" }
-        ]
-    },
-    {
-        q: "6. Твой идеальный отдых — это...",
-        options: [
-            { text: "Семейный ужин или встреча с близкими", type: "Мать" },
-            { text: "Спа, шелковые простыни и нега", type: "Афродита" },
-            { text: "Планирование следующего месяца в тишине", type: "Хозяйка" },
-            { text: "Ночь у костра или в мистическом месте", type: "Ведьма" },
-            { text: "Медитация или чтение философской книги", type: "Жрица" },
-            { text: "Активный спорт или покорение вершины", type: "Амазонка" }
-        ]
-    },
-    {
-        q: "7. В отношениях с людьми ты больше всего ценишь...",
-        options: [
-            { text: "Заботу, верность и сопереживание", type: "Мать" },
-            { text: "Восхищение, флирт и общие наслаждения", type: "Афродита" },
-            { text: "Понятность, стабильность и честный расчет", type: "Хозяйка" },
-            { text: "Глубинную связь на уровне душ и искру", type: "Ведьма" },
-            { text: "Тихое понимание без лишних слов", type: "Жрица" },
-            { text: "Партнерство в достижении великих целей", type: "Амазонка" }
-        ]
-    },
-    {
-        q: "8. Твой стиль в одежде чаще всего...",
-        options: [
-            { text: "Мягкий трикотаж, уютные формы, светлые тона", type: "Мать" },
-            { text: "Подчеркнутая женственность, шелк, ароматы", type: "Афродита" },
-            { text: "Идеальный крой, минимализм, ничего лишнего", type: "Хозяйка" },
-            { text: "Необычные аксессуары, черный цвет, магия", type: "Ведьма" },
-            { text: "Простые натуральные ткани, свет и чистота", type: "Жрица" },
-            { text: "Динамичные линии, акценты, кожа или металл", type: "Амазонка" }
-        ]
-    },
-    {
-        q: "9. Твой главный страх — это...",
-        options: [
-            { text: "Оказаться ненужной или отвергнутой близкими", type: "Мать" },
-            { text: "Потерять привлекательность и перестать чувствовать жизнь", type: "Афродита" },
-            { text: "Потерять контроль над своей жизнью и хаос", type: "Хозяйка" },
-            { text: "Предать свою правду или лишиться свободы", type: "Ведьма" },
-            { text: "Поверхностность и потеря смысла существования", type: "Жрица" },
-            { text: "Поражение и слабость перед лицом вызова", type: "Амазонка" }
-        ]
-    },
-    {
-        q: "10. Какое послание ты хочешь нести миру через свой бренд?",
-        options: [
-            { text: "Ты в безопасности. Здесь тебя примут.", type: "Мать" },
-            { text: "Наслаждайся моментом. Твоя жизнь прекрасна.", type: "Афродита" },
-            { text: "Всё просто и понятно. Создай свою систему успеха.", type: "Хозяйка" },
-            { text: "Пробуди свою внутреннюю силу. Ты — творец.", type: "Ведьма" },
-            { text: "Истинная глубина внутри. Найди свой свет.", type: "Жрица" },
-            { text: "Ты можешь больше. Иди и возьми свое.", type: "Амазонка" }
-        ]
-    }
-];
-
-const resultsData = {
-    "Мать": "Маркетинговый фокус: безопасность и искренность. Твое сообщение: «Ты в безопасности. Тебя видят. Здесь — по-настоящему». Твои визуалы: мягкие оттенки, прикосновения, свет.",
-    "Афродита": "Маркетинговый фокус: удовольствие и эстетика. Твое сообщение: «Живи красиво. Твоя жизнь — произведение искусства». Твои визуалы: текстуры, свет, тени, чувственность.",
-    "Хозяйка": "Маркетинговый фокус: легкость и упорядоченность. Твое сообщение: «Живи с лёгкостью. Всё просто, если по-женски». Твои визуалы: чистое пространство, структура, порядок.",
-    "Ведьма": "Маркетинговый фокус: свобода и внутренняя власть. Твое сообщение: «Ты можешь всё. Ты — закон своей реальности». Твои визуалы: контраст, магия, символы, глубина.",
-    "Жрица": "Маркетинговый фокус: осознанность и глубина. Твое сообщение: «Истинная глубина — в лёгкости. Свет — внутри». Твои визуалы: белый, золотой, сияние, минимализм.",
-    "Амазонка": "Маркетинговый фокус: драйв и победа. Твое сообщение: «Ты можешь больше. Возьми своё». Твои визуалы: движение, динамика, контрасты, металл."
-};
-
-let currentQuestion = 0;
-let scores = { "Мать": 0, "Афродита": 0, "Хозяйка": 0, "Ведьма": 0, "Жрица": 0, "Амазонка": 0 };
-
-function startQuiz() {
-    document.getElementById('intro-screen').style.display = 'none';
-    document.getElementById('quiz-content').style.display = 'block';
-    showQuestion();
-}
-
-function showQuestion() {
-    const q = questions[currentQuestion];
-    document.getElementById('question-text').innerText = q.q;
-    const container = document.getElementById('options-container');
-    container.innerHTML = '';
-    
-    q.options.forEach(opt => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerText = opt.text;
-        btn.onclick = () => selectOption(opt.type);
-        container.appendChild(btn);
-    });
-
-    document.getElementById('progress').style.width = ((currentQuestion + 1) / questions.length * 100) + '%';
-}
-
-function selectOption(type) {
-    scores[type]++;
-    currentQuestion++;
-    if (currentQuestion < questions.length) {
-        showQuestion();
-    } else {
-        showResult();
-    }
-}
-
-function showResult() {
-    document.getElementById('quiz-content').style.display = 'none';
-    document.getElementById('result-screen').style.display = 'block';
-    
-    let winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-    document.getElementById('result-name').innerText = winner;
-    document.getElementById('result-desc').innerText = resultsData[winner];
-}
-
-
-const QUIZ_STORAGE = {
+const QUIZ_DATA = {
     archetype: {
-        title: "NEURO_CODE SCAN",
+        title: "NEURO_CODE: АРХЕТИП",
         questions: [
-            { q: "Как вы принимаете решения?", a: ["Логика", "Интуиция", "Система", "Импульс"] },
-            { q: "Ваш идеальный визуал?", a: ["Минимализм", "Драма", "Хаос", "Порядок"] }
+            { q: "Как вы хотите, чтобы вас считывали?", a: ["Как эксперта-интеллектуала", "Как дерзкого новатора", "Как заботливого наставника", "Как эстета-гедониста"] },
+            { q: "Ваша главная ценность в блоге?", a: ["Система и порядок", "Эмоции и хаос", "Красота и статус", "Польза и рост"] }
         ]
     },
     money: {
-        title: "MONEY_MIND UPGRADE",
+        title: "SCALE_PRO: MONEY-MIND",
         questions: [
-            { q: "Ваш финансовый потолок сейчас?", a: ["0-100k", "100-500k", "500k-1M", "1M+"] },
-            { q: "Что мешает расти?", a: ["Страх", "Нет системы", "Окружение", "Лень"] }
+            { q: "Ваша реакция на чек в 1.000.000?", a: ["Страх и сомнения", "Азарт и готовность", "Непонимание, что с этим делать", "Спокойный расчет"] },
+            { q: "Что сейчас ваш главный тормоз?", a: ["Нет системы продаж", "Страх проявленности", "Слабое окружение", "Отсутствие продукта"] }
         ]
     },
     brand: {
-        title: "BRAND_CORE ANALYSIS",
+        title: "CORE_SCAN: BRAND POTENTIAL",
         questions: [
-            { q: "У вас есть стратегия на год?", a: ["Да", "Нет", "В процессе"] }
+            { q: "Есть ли у вас прописанная стратегия?", a: ["Да, на год вперед", "Только в голове", "Нет, плыву по течению"] },
+            { q: "Ваш визуал отражает вашу цену?", a: ["Да, выглядит дорого", "Нет, нужно переделывать", "Не знаю"] }
         ]
     }
 };
 
-function initQuiz(type) {
-    const data = QUIZ_STORAGE[type];
-    const modal = document.getElementById('quiz-modal');
-    const container = document.getElementById('quiz-container');
-    
-    container.innerHTML = `<h3>${data.title}</h3>` + data.questions.map((q, i) => `
-        <div class="q-block">
-            <p>${q.q}</p>
-            ${q.a.map(opt => `<button class="btn-os" onclick="alert('Processed')">${opt}</button>`).join('')}
-        </div>
-    `).join('');
-    
-    modal.style.display = "block";
+// Функции управления
+function openQuiz(type) {
+    const data = QUIZ_DATA[type];
+    const app = document.getElementById('quiz-app');
+    app.innerHTML = `
+        <h2 class="unbounded" style="color:var(--gold); margin-bottom:20px;">${data.title}</h2>
+        ${data.questions.map((q, i) => `
+            <div style="margin-bottom:30px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:20px;">
+                <p style="margin-bottom:15px; font-family:var(--unbounded); font-size:0.8rem;">${i+1}. ${q.q}</p>
+                ${q.a.map(opt => `<button class="btn-os" style="display:block; width:100%; text-align:left; margin:5px 0;" onclick="nextStep()">${opt}</button>`).join('')}
+            </div>
+        `).join('')}
+        <button class="btn-os-gold" style="width:100%" onclick="closeQuiz()">ЗАВЕРШИТЬ_АНАЛИЗ</button>
+    `;
+    document.getElementById('quiz-modal').style.display = 'flex';
 }
 
-function closeQuiz() {
-    document.getElementById('quiz-modal').style.display = "none";
-}
+function closeQuiz() { document.getElementById('quiz-modal').style.display = 'none'; }
+function nextStep() { console.log("Answer registered"); }
+
+// Typewriter
+window.onload = () => {
+    AOS.init();
+    new Typewriter('#typewriter', {
+        strings: ['PROGRAMMING_REALITY', 'DESIGNING_SENSES', 'UPGRADING_SYSTEMS'],
+        autoStart: true,
+        loop: true,
+        delay: 75
+    });
+};
