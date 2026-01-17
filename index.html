@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOMIND // PROG_REALITY_2026</title>
+    <title>WOMIND // SYSTEM_2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;700&family=Tenor+Sans&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -15,154 +15,164 @@
     <nav class="nav-os">
         <div class="nav-logo">WOMIND.OS</div>
         <div class="nav-links">
+            <a href="#about">CREATORS</a>
             <a href="#lab">LAB</a>
             <a href="#tariffs">SYSTEM</a>
-            <a href="#evidence">EVIDENCE</a>
             <a href="#form">CONNECT</a>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-wrap">
+        <div class="hero-content">
             <h1 class="glitch-title" data-text="ARCHITECTS">ARCHITECTS</h1>
-            <div class="typewriter-box">
+            <div class="typewriter-container">
                 <span id="typewriter"></span>
             </div>
             <div class="hero-stats">
                 <div class="stat"><span class="unbounded">3888</span> SHK_OS</div>
-                <div class="stat"><span class="unbounded">100+</span> PROJECTS</div>
+                <div class="stat"><span class="unbounded">W-TEAM</span> ACTIVE</div>
             </div>
         </div>
-        <div class="scroll-down">SCROLL_TO_INIT</div>
     </header>
 
     <div class="ticker-box">
         <div class="ticker-line">
-            <span>STRATEGY • VISUAL • NEUROMARKETING • MINDSET • SYSTEM • </span>
-            <span>STRATEGY • VISUAL • NEUROMARKETING • MINDSET • SYSTEM • </span>
+            <span>STRATEGY • VISUAL • NEUROMARKETING • MINDSET • SYSTEM • SCALE • </span>
+            <span>STRATEGY • VISUAL • NEUROMARKETING • MINDSET • SYSTEM • SCALE • </span>
         </div>
     </div>
 
-    <section class="section container" id="about">
-        <h2 class="unbounded reveal-text">CREATORS</h2>
-        <div class="team-grid">
-            <div class="member-card" data-aos="fade-up">
-                <div class="photo-container">
-                    <img src="IMG_9895 2.jpg" alt="Parshin">
-                    <div class="photo-overlay"></div>
+    <main class="container">
+        <section id="about" class="section">
+            <h2 class="unbounded reveal-text" data-aos="reveal-anim">CREATORS</h2>
+            <div class="team-grid">
+                <div class="member-card" data-aos="fade-up">
+                    <div class="photo-wrapper">
+                        <img src="IMG_9895 2.jpg" alt="Оля">
+                        <div class="scan-effect"></div>
+                    </div>
+                    <div class="member-info">
+                        <span class="role">MARKETING_ARCHITECT</span>
+                        <h3 class="unbounded">Olya Parshin</h3>
+                        <p>Стратегия, воронки и системный масштаб.</p>
+                    </div>
                 </div>
-                <h3 class="unbounded">Olya Parshin</h3>
-                <span class="role">MARKETING_ARCHITECT</span>
-            </div>
-            <div class="member-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="photo-container">
-                    <img src="IMG_9892 2.jpg" alt="Kikoin">
-                    <div class="photo-overlay"></div>
+                <div class="member-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="photo-wrapper">
+                        <img src="IMG_9892 2.jpg" alt="Мари">
+                        <div class="scan-effect"></div>
+                    </div>
+                    <div class="member-info">
+                        <span class="role">VISUAL_SENSE_MAKER</span>
+                        <h3 class="unbounded">Mari Kikoin</h3>
+                        <p>Эстетика, нейромаркетинг и упаковка смыслов.</p>
+                    </div>
                 </div>
-                <h3 class="unbounded">Mari Kikoin</h3>
-                <span class="role">VISUAL_SENSE_MAKER</span>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section container" id="lab">
-        <h2 class="unbounded center reveal-text">MIND_LAB.exe</h2>
-        <div class="lab-grid">
-            <div class="glass-card test-card" data-aos="zoom-in">
-                <div class="card-glow"></div>
-                <span class="test-id">MODULE_01</span>
-                <h3 class="unbounded">NEURO_CODE</h3>
-                <p>Взлом системы архетипов личности.</p>
-                <button class="btn-os" onclick="initQuiz('archetype')">START_SCAN</button>
+        <section id="lab" class="section">
+            <h2 class="unbounded center reveal-text" data-aos="reveal-anim">MIND_LAB.exe</h2>
+            <div class="lab-grid">
+                <div class="glass-card test-card" data-aos="zoom-in">
+                    <span class="test-id">MODULE_01</span>
+                    <h3 class="unbounded">NEURO_CODE</h3>
+                    <p>Глубокий тест на твой архетип и проявленность.</p>
+                    <button class="btn-os" onclick="openQuiz('archetype')">START_SCAN</button>
+                </div>
+                <div class="glass-card test-card gold-accent" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="test-id">MODULE_02</span>
+                    <h3 class="unbounded">SCALE_PRO</h3>
+                    <p>Money-Mind: Прошивка мышления на масштаб.</p>
+                    <button class="btn-os-gold" onclick="openQuiz('money')">UPGRADE_MIND</button>
+                </div>
+                <div class="glass-card test-card" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="test-id">MODULE_03</span>
+                    <h3 class="unbounded">CORE_SCAN</h3>
+                    <p>Brand-Scan: Аудит потенциала твоего бренда.</p>
+                    <button class="btn-os" onclick="openQuiz('brand')">RUN_ANALYSIS</button>
+                </div>
             </div>
-            <div class="glass-card test-card highlighted" data-aos="zoom-in" data-aos-delay="200">
-                <div class="card-glow"></div>
-                <span class="test-id">MODULE_02</span>
-                <h3 class="unbounded">SCALE_PRO</h3>
-                <p>Прошивка мышления на масштаб.</p>
-                <button class="btn-os-gold" onclick="initQuiz('money')">UPGRADE_MIND</button>
-            </div>
-            <div class="glass-card test-card" data-aos="zoom-in" data-aos-delay="400">
-                <div class="card-glow"></div>
-                <span class="test-id">MODULE_03</span>
-                <h3 class="unbounded">CORE_SCAN</h3>
-                <p>Аудит потенциала вашего бренда.</p>
-                <button class="btn-os" onclick="initQuiz('brand')">RUN_ANALYSIS</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section container" id="tariffs">
-        <h2 class="unbounded center">PRICING_TABLE</h2>
-        <div class="tariffs-grid">
-            <div class="price-card glass-card" data-aos="fade-right">
-                <h4 class="unbounded">INDIVIDUAL</h4>
-                <div class="price">3888 ШЕК</div>
-                <ul class="list">
-                    <li>Стратегия под ключ</li>
-                    <li>Полная упаковка</li>
-                    <li>Таргетинг</li>
-                </ul>
-                <button class="btn-os">SELECT</button>
+        <section id="evidence" class="section">
+            <h2 class="unbounded center" data-aos="reveal-anim">EVIDENCE.log</h2>
+            <div class="evidence-grid">
+                <div class="evidence-node glass-card" data-aos="fade-up">
+                    <p>"Система перепрошита. Рост х3 за месяц."</p>
+                    <span class="author">// USER_092</span>
+                </div>
+                <div class="evidence-node glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <p>"Лучшее комьюнити для тех, кто ценит смыслы."</p>
+                    <span class="author">// USER_114</span>
+                </div>
             </div>
-            <div class="price-card glass-card gold-border" data-aos="fade-up">
-                <div class="badge">POPULAR</div>
-                <h4 class="unbounded">W_TEAM</h4>
-                <div class="price">444 ШЕК/мес</div>
-                <ul class="list">
-                    <li>2 Мастермайнда</li>
-                    <li>1 Съемочный день</li>
-                    <li>Реклама у нас</li>
-                </ul>
-                <button class="btn-os-gold">JOIN_COMMUNITY</button>
-            </div>
-            <div class="price-card glass-card" data-aos="fade-left">
-                <h4 class="unbounded">CONSULT</h4>
-                <div class="price">888 ШЕК</div>
-                <ul class="list">
-                    <li>Разбор системы</li>
-                    <li>Visual Guide</li>
-                    <li>План на 3 месяца</li>
-                </ul>
-                <button class="btn-os">SELECT</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section container" id="evidence">
-        <h2 class="unbounded center">EVIDENCE.log</h2>
-        <div class="evidence-slider">
-            <div class="evidence-node glass-card" data-aos="fade-up">
-                <p>"Система перепрошита. Рост х3 за месяц."</p>
-                <span>// USER_092</span>
+        <section id="tariffs" class="section">
+            <h2 class="unbounded center" data-aos="reveal-anim">SYSTEM_PRICING</h2>
+            <div class="tariffs-grid">
+                <div class="price-card glass-card" data-aos="fade-up">
+                    <h3 class="unbounded">W-INDIVIDUAL</h3>
+                    <div class="price">3888 ШЕК</div>
+                    <ul class="specs">
+                        <li>Стратегия под ключ</li>
+                        <li>Контент-сопровождение</li>
+                        <li>Таргетинг</li>
+                    </ul>
+                    <button class="btn-os" onclick="document.getElementById('form').scrollIntoView()">INIT_ORDER</button>
+                </div>
+                <div class="price-card glass-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="badge">TOP_SYSTEM</div>
+                    <h3 class="unbounded">W-TEAM</h3>
+                    <div class="price">444 ШЕК/мес</div>
+                    <ul class="specs">
+                        <li>2 Мастермайнда</li>
+                        <li>1 Съемочный день</li>
+                        <li>Рекламная поддержка</li>
+                    </ul>
+                    <button class="btn-os-gold" onclick="document.getElementById('form').scrollIntoView()">JOIN_NOW</button>
+                </div>
+                <div class="price-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="unbounded">W-CONSULT</h3>
+                    <div class="price">888 ШЕК</div>
+                    <ul class="specs">
+                        <li>Разбор воронки</li>
+                        <li>Visual Roadmap</li>
+                        <li>Q&A Сессия</li>
+                    </ul>
+                    <button class="btn-os" onclick="document.getElementById('form').scrollIntoView()">INIT_ORDER</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section container" id="form">
-        <div class="form-container glass-card">
-            <h2 class="unbounded">INIT_CONNECTION</h2>
-            <form id="womindForm">
-                <input type="text" placeholder="USER_NAME" required>
-                <input type="tel" placeholder="CONTACT_ID (PHONE)" required>
-                <textarea placeholder="INPUT_REQUEST..."></textarea>
-                <button type="submit" class="btn-os-gold" style="width: 100%;">SEND_DATA</button>
-            </form>
-        </div>
-    </section>
+        <section id="form" class="section">
+            <div class="form-wrapper glass-card" data-aos="fade-up">
+                <h2 class="unbounded">CONNECT.exe</h2>
+                <form class="os-form">
+                    <div class="input-row">
+                        <input type="text" placeholder="USER_NAME" required>
+                        <input type="tel" placeholder="CONTACT_ID" required>
+                    </div>
+                    <textarea placeholder="INPUT_REQUEST (Instagram/Goal)"></textarea>
+                    <button type="submit" class="btn-os-gold" style="width:100%">SEND_ENCRYPTED_DATA</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
-        <div class="social-links">
-            <a href="#" class="unbounded">INSTAGRAM</a>
-            <a href="#" class="unbounded">TELEGRAM</a>
+        <div class="footer-links">
+            <a href="https://instagram.com/womind_community" class="social-pill">INSTAGRAM</a>
+            <a href="https://t.me/womind_community" class="social-pill">TELEGRAM</a>
         </div>
         <div class="copyright">// WOMIND.OS_BUILD_2026</div>
     </footer>
 
     <div id="quiz-modal" class="modal">
         <div class="modal-content glass-card">
-            <span class="close" onclick="closeQuiz()">&times;</span>
-            <div id="quiz-container"></div>
+            <span class="close-modal" onclick="closeQuiz()">&times;</span>
+            <div id="quiz-app"></div>
         </div>
     </div>
 
