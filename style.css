@@ -246,6 +246,10 @@ body { background: var(--bg); color: var(--black); font-family: var(--unbounded)
 }
 
 
+.section-content {
+    padding: 120px 0; /* Создает отступы сверху и снизу внутри блока */
+}
+
 /* БЛОК СОЦСЕТЕЙ */
 .social-links-grid {
     display: grid;
