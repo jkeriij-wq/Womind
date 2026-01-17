@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOMIND // ТВОЯ ЭВОЛЮЦИЯ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Unbounded:wght@900&family=Manrope:wght@300;500&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+    <title>WOMIND // ЦИФРОВАЯ ЭВОЛЮЦИЯ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Unbounded:wght@400;900&family=Manrope:wght@300;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,7 +14,7 @@
     <nav class="nav-bar">
         <div class="nav-logo">WOMIND</div>
         <div class="nav-links">
-            <a href="#about">СОЗДАТЕЛИ</a>
+            <a href="#about">КТО МЫ</a>
             <a href="#lab">ЛАБОРАТОРИЯ</a>
             <a href="#tariffs">ПРОГРАММЫ</a>
             <a href="#form">СВЯЗЬ</a>
@@ -23,192 +23,138 @@
 
     <header class="hero">
         <div class="hero-content">
-            <h1 class="main-title" data-aos="zoom-in">WOMIND</h1>
+            <h1 class="main-title" id="decode-text">WOMIND</h1>
             <div class="hero-spacer"></div>
-            <p class="hero-tagline serif" data-aos="fade-up" data-aos-delay="200">
-                Программируем реальность через смыслы и визуальный интеллект
-            </p>
-            <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
-                <button class="btn-main" onclick="document.getElementById('lab').scrollIntoView()">НАЧАТЬ ТЕСТ-ДРАЙВ</button>
-            </div>
+            <p class="hero-tagline" data-aos="fade-up">ПРОГРАММИРУЕМ РЕАЛЬНОСТЬ</p>
+            <button class="btn-main" onclick="document.getElementById('lab').scrollIntoView()">ЗАПУСТИТЬ ТЕСТ</button>
         </div>
-        <div class="floating-shape"></div>
     </header>
 
     <div class="ticker">
         <div class="ticker-wrapper">
-            <span>НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • МАСШТАБ • ВИЗУАЛЬНЫЙ КОД • ВЫХОД В ТОП • </span>
-            <span>НЕЙРОМАРКЕТИНГ • СТРАТЕГИЯ • МАСШТАБ • ВИЗУАЛЬНЫЙ КОД • ВЫХОД В ТОП • </span>
+            <span>СТРАТЕГИЯ • НЕЙРОМАРКЕТИНГ • МАСШТАБ • ВИЗУАЛЬНЫЙ КОД • СИСТЕМА • </span>
+            <span>СТРАТЕГИЯ • НЕЙРОМАРКЕТИНГ • МАСШТАБ • ВИЗУАЛЬНЫЙ КОД • СИСТЕМА • </span>
         </div>
     </div>
 
     <main class="container">
         <section id="about" class="section">
-            <h2 class="section-title" data-aos="fade-right">КТО МЫ</h2>
+            <h2 class="section-title" data-aos="fade-right">СОЗДАТЕЛИ</h2>
             <div class="creators-grid">
                 <div class="creator-card" data-aos="fade-up">
                     <div class="img-box">
-                        <img src="IMG_9895 2.jpg" alt="Оля Паршин">
-                        <div class="img-overlay"></div>
+                        <img src="IMG_9895 2.jpg" alt="Оля">
                     </div>
                     <div class="creator-text">
-                        <span class="sub">АРХИТЕКТОР СМЫСЛОВ</span>
+                        <span class="sub">MARKETING ARCHITECT</span>
                         <h3>ОЛЯ ПАРШИН</h3>
-                        <p>Таргетинг и стратегия. Превращает хаотичные действия в твердую финансовую систему.</p>
+                        <p>Таргетинг и системный рост. Оцифровывает смыслы в прибыль.</p>
                     </div>
                 </div>
                 <div class="creator-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="img-box">
-                        <img src="IMG_9892 2.jpg" alt="Мари Кикоин">
-                        <div class="img-overlay"></div>
+                        <img src="IMG_9892 2.jpg" alt="Мари">
                     </div>
                     <div class="creator-text">
-                        <span class="sub">ВИЗУАЛЬНЫЙ СТРАТЕГ</span>
+                        <span class="sub">VISUAL STRATEGIST</span>
                         <h3>МАРИ КИКОИН</h3>
-                        <p>SMM и нейромаркетинг. Создает визуал, который продает на подсознательном уровне.</p>
+                        <p>Нейромаркетинг и эстетика. Создает визуал, который управляет вниманием.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="lab" class="section">
-            <div class="lab-header">
-                <h2 class="section-title center">MIND LAB</h2>
-                <p class="section-desc center">Выбери свой модуль диагностики</p>
-            </div>
+            <h2 class="section-title center" data-aos="fade-up">MIND LAB</h2>
             <div class="lab-grid">
-                <div class="lab-item" data-aos="flip-up">
-                    <div class="lab-inner">
-                        <span class="num">01</span>
-                        <h3>Neuro-Code</h3>
-                        <p>Узнай свой архетип и как его проявлять</p>
-                        <button class="btn-lab" onclick="openQuiz('archetype')">ЗАПУСТИТЬ</button>
-                    </div>
+                <div class="lab-item" data-aos="zoom-in" onclick="openQuiz('archetype')">
+                    <span class="num">01</span>
+                    <h3>NEURO-CODE</h3>
+                    <p>Твой архетип и проявленность</p>
+                    <div class="lab-btn">SCAN</div>
                 </div>
-                <div class="lab-item featured-lab" data-aos="flip-up" data-aos-delay="100">
-                    <div class="lab-inner">
-                        <span class="num">02</span>
-                        <h3>Money-Mind</h3>
-                        <p>Найди баги в своем денежном мышлении</p>
-                        <button class="btn-lab-light" onclick="openQuiz('money')">ПРОЙТИ</button>
-                    </div>
+                <div class="lab-item featured-lab" data-aos="zoom-in" data-aos-delay="100" onclick="openQuiz('money')">
+                    <span class="num">02</span>
+                    <h3>MONEY-MIND</h3>
+                    <p>Код денежного мышления</p>
+                    <div class="lab-btn">UPGRADE</div>
                 </div>
-                <div class="lab-item" data-aos="flip-up" data-aos-delay="200">
-                    <div class="lab-inner">
-                        <span class="num">03</span>
-                        <h3>Brand-Scan</h3>
-                        <p>Готов ли твой бренд к большому масштабу?</p>
-                        <button class="btn-lab" onclick="openQuiz('brand')">ТЕСТ</button>
-                    </div>
+                <div class="lab-item" data-aos="zoom-in" data-aos-delay="200" onclick="openQuiz('brand')">
+                    <span class="num">03</span>
+                    <h3>BRAND-SCAN</h3>
+                    <p>Аудит готовности к масштабу</p>
+                    <div class="lab-btn">RUN</div>
                 </div>
             </div>
         </section>
 
         <section id="tariffs" class="section">
-            <h2 class="section-title center">ВЫБЕРИ СВОЙ УРОВЕНЬ</h2>
+            <h2 class="section-title center">ПРОГРАММЫ</h2>
             <div class="price-grid">
                 <div class="price-box" data-aos="fade-up">
-                    <h4 class="unbounded">W-Individual</h4>
+                    <h4>W-Individual</h4>
                     <div class="cost">3888 ₪</div>
-                    <p class="price-info">Персональная работа под ключ</p>
                     <ul class="price-list">
-                        <li>Полный аудит и стратегия</li>
-                        <li>Разработка воронки продаж</li>
+                        <li>Индивидуальная стратегия</li>
                         <li>Личный съемочный день</li>
-                        <li>Супервизия 24/7</li>
+                        <li>Полное сопровождение</li>
                     </ul>
-                    <button class="btn-dark" onclick="scrollToForm()">ЗАБРОНИРОВАТЬ</button>
+                    <button class="btn-dark" onclick="location.href='#form'">ВЫБРАТЬ</button>
                 </div>
                 <div class="price-box gold-border" data-aos="fade-up" data-aos-delay="200">
-                    <div class="best-choice">ПОПУЛЯРНО</div>
-                    <h4 class="unbounded">W-Team</h4>
+                    <div class="badge">TOP</div>
+                    <h4>W-Team</h4>
                     <div class="cost">444 ₪</div>
-                    <p class="price-info">Групповое поле и рост</p>
                     <ul class="price-list">
-                        <li>2 Мастермайнда в месяц</li>
-                        <li>Групповой съемочный день</li>
-                        <li>Закрытый чат поддержки</li>
-                        <li>Нетворкинг и разборы</li>
+                        <li>Мастермайнды и чат</li>
+                        <li>Общий съемочный день</li>
+                        <li>Групповой рост</li>
                     </ul>
-                    <button class="btn-red" onclick="scrollToForm()">ВСТУПИТЬ В КЛУБ</button>
+                    <button class="btn-red" onclick="location.href='#form'">ВСТУПИТЬ</button>
                 </div>
                 <div class="price-box" data-aos="fade-up" data-aos-delay="400">
-                    <h4 class="unbounded">WIN-Салфетка</h4>
+                    <h4>WIN-Салфетка</h4>
                     <div class="cost">LIVE</div>
-                    <p class="price-info">Оффлайн-трансформация</p>
                     <ul class="price-list">
-                        <li>Живая встреча в Израиле</li>
-                        <li>Тренировка нейропластичности</li>
-                        <li>Личное знакомство</li>
-                        <li>Новые ветки вероятности</li>
+                        <li>Оффлайн-практика</li>
+                        <li>Нейропластичность</li>
+                        <li>Нетворкинг</li>
                     </ul>
-                    <button class="btn-dark" onclick="scrollToForm()">УЗНАТЬ ДАТУ</button>
+                    <button class="btn-dark" onclick="location.href='#form'">УЗНАТЬ</button>
                 </div>
             </div>
         </section>
 
         <section id="form" class="section">
             <div class="contact-card" data-aos="zoom-in">
-                <div class="contact-info">
-                    <h2 class="unbounded">ГОТОВА К РОСТУ?</h2>
-                    <p class="serif">Оставь данные, и мы подберем стратегию специально под твой запрос.</p>
-                </div>
+                <h2 class="unbounded">СВЯЗЬ С НАМИ</h2>
                 <form class="main-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="ИМЯ" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="TELEGRAM / WHATSAPP" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="ТВОЙ ЗАПРОС И ССЫЛКА НА ИНСТАГРАМ"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+                    <input type="text" placeholder="ИМЯ" required>
+                    <input type="text" placeholder="INSTAGRAM / TG" required>
+                    <textarea placeholder="ВАШ ЗАПРОС"></textarea>
+                    <button type="submit" class="btn-red">ОТПРАВИТЬ ДАННЫЕ</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">WOMIND</div>
-            <div class="socials">
-                <a href="https://instagram.com/womind_community" class="social-link">INSTAGRAM</a>
-                <a href="https://t.me/womind_community" class="social-link">TELEGRAM</a>
-            </div>
-            <p class="copy">© 2026 WOMIND. ВСЕ ПРАВА ЗАЩИЩЕНЫ. ТВОЕ ВРЕМЯ ПРИШЛО.</p>
+        <div class="socials">
+            <a href="https://instagram.com/womind_community">INSTAGRAM</a>
+            <a href="https://t.me/womind_community">TELEGRAM</a>
         </div>
+        <p>© 2026 WOMIND // SYSTEM UPGRADE</p>
     </footer>
 
     <div id="quiz-modal" class="modal">
-        <div class="modal-box glass">
-            <span class="close-x" onclick="closeQuiz()">&times;</span>
+        <div class="modal-box">
+            <span class="close-modal" onclick="closeQuiz()">&times;</span>
             <div id="quiz-content"></div>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="quiz-data.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-        
-        function scrollToForm() { document.getElementById('form').scrollIntoView(); }
-        
-        function openQuiz(type) {
-            const data = QUIZ_DATA[type];
-            const content = document.getElementById('quiz-content');
-            content.innerHTML = `
-                <h2 class="unbounded red-text">${data.title}</h2>
-                <div class="quiz-body">
-                    <p class="quiz-q">${data.questions[0].q}</p>
-                    <div class="quiz-opts">
-                        ${data.questions[0].a.map(opt => `<button class="opt-btn" onclick="closeQuiz()">${opt}</button>`).join('')}
-                    </div>
-                </div>
-            `;
-            document.getElementById('quiz-modal').style.display = 'flex';
-        }
-        function closeQuiz() { document.getElementById('quiz-modal').style.display = 'none'; }
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
