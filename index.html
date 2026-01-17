@@ -202,6 +202,54 @@
         </div>
     </div>
 
+             cursor.style.top = e.clientY + 'px';
+            });
+        }
+
+        // Код для отправки формы
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyGxuAaqowAPbzEpHWXAGY-KSavw3EZOmbl_sXVtxGhJnNw6jolNqGDN9sAIRZzySh4/exec';
+        const form = document.getElementById('womind-form');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const submitBtn = form.querySelector('.form-submit-btn');
+            submitBtn.innerText = 'ОТПРАВКА...';
+            submitBtn.disabled = true;
+
+            // Собираем данные. Убрали tariff, так как его нет в HTML
+            const data = {
+                name: document.getElementById('name').value,
+                contact: document.getElementById('contact').value,
+                description: document.getElementById('message').value
+            };
+
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(() => {
+                submitBtn.innerText = 'ОТПРАВЛЕНО';
+                form.reset();
+                alert('Спасибо! Данные успешно сохранены.');
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                submitBtn.innerText = 'ОШИБКА';
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+
+    
+</body>
+</html>
+
+    
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="quiz-data.js"></script>
     <script src="main.js"></script>
