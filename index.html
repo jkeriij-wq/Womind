@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOMIND | Brand Duo & Strategy</title>
     
+    <meta name="description" content="WOMIND — Экосистема твоего превосходства. Стратегия, визуал и нейромаркетинг.">
+    <meta property="og:title" content="WOMIND | Brand Duo">
+    <meta property="og:image" content="IMG_9895 2.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Unbounded:wght@300;700&family=Tenor+Sans&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -12,47 +16,62 @@
 <body>
     <div class="grain"></div>
 
+    <nav class="nav-glass">
+        <div class="nav-logo">WOMIND</div>
+        <div class="nav-links">
+            <a href="#test-section">Тест</a>
+            <a href="#programs">Программы</a>
+            <a href="#form" class="btn-nav">Связаться</a>
+        </div>
+    </nav>
+
     <header class="hero">
-        <h1 class="typewriter">WOMIND</h1>
-        <p class="hero-sub" data-aos="fade-up" data-aos-delay="1000">Экосистема твоего превосходства</p>
+        <div class="hero-content">
+            <h1 class="typewriter">WOMIND</h1>
+            <p class="hero-sub" data-aos="fade-up" data-aos-delay="600">Экосистема твоего превосходства</p>
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="900">
+                <a href="#test-section" class="btn-main">Познать себя</a>
+            </div>
+        </div>
         <div class="scroll-indicator"></div>
     </header>
 
-    <div class="container">
-        
+    <main class="container">
         <section class="about-us section">
+            <div class="section-tag" data-aos="fade-right">Mindset Creators</div>
             <h2 class="unbounded center" data-aos="fade-up">Создатели смыслов</h2>
             <div class="team-grid">
-                <div class="member-card" data-aos="fade-right">
+                <article class="member-card" data-aos="fade-up">
                     <div class="member-photo-wrapper">
                         <img src="IMG_9895 2.jpg" alt="Оля Паршин" class="member-photo">
                     </div>
                     <div class="member-info">
                         <span class="member-role">Стратегия & Таргетинг</span>
                         <h3 class="unbounded">Оля Паршин</h3>
-                        <p>Твердый маркетинг: структура, воронки и масштаб.</p>
+                        <p class="serif">Твердый маркетинг: структура, воронки и масштаб бизнеса через систему.</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="member-card" data-aos="fade-left">
+                <article class="member-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="member-photo-wrapper">
                         <img src="IMG_9892 2.jpg" alt="Мари Кикоин" class="member-photo">
                     </div>
                     <div class="member-info">
                         <span class="member-role">Визуал & Смыслы</span>
                         <h3 class="unbounded">Мари Кикоин</h3>
-                        <p>Эстетика и нейромаркетинг: упаковка, которую хотят.</p>
+                        <p class="serif">Эстетика и нейромаркетинг: создаем упаковку, которую хотят на уровне подсознания.</p>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
         <section id="test-section" class="section">
-            <div class="test-container" id="quiz-wrapper" data-aos="zoom-in-up">
+            <div class="test-container glass-card" id="quiz-wrapper" data-aos="zoom-in">
                 <div id="intro-screen">
-                    <h2 class="unbounded">Тест: твой женский архетип</h2>
+                    <span class="tag-small">Interactive</span>
+                    <h2 class="unbounded">Твой женский архетип</h2>
                     <p class="serif">Узнай код своей проявленности через 10 интуитивных вопросов.</p>
-                    <button class="btn-red-action" onclick="startQuiz()">Начать тест</button>
+                    <button class="btn-red-action" onclick="startQuiz()">Начать трансформацию</button>
                 </div>
 
                 <div id="quiz-content" style="display: none;">
@@ -73,98 +92,71 @@
             </div>
         </section>
 
-        <section class="section">
+        <section id="programs" class="section">
             <h2 class="unbounded center" data-aos="fade-up">Программы</h2>
             <div class="tariffs-grid">
-                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card glass" data-aos="fade-up">
                     <span class="tag">01</span>
                     <h3 class="unbounded">W-Individual</h3>
-                    <p>Индивидуальное сопровождение: строим твой бренд под ключ.</p>
+                    <p>Глубокая проработка личного бренда. Индивидуальный вектор развития и стратегия.</p>
                     <a href="#form" class="btn-card">Забронировать</a>
                 </div>
 
                 <div class="card featured" data-aos="fade-up" data-aos-delay="200">
-                    <span class="tag" style="color: var(--red);">02</span>
+                    <span class="tag">02</span>
                     <h3 class="unbounded">W-Team</h3>
-                    <p>Групповая работа, мастермайнды и контент-съемки.</p>
+                    <p>Мастермайнды, контент-съемки и сила комьюнити для твоего роста.</p>
                     <a href="#form" class="btn-card-red">Вступить в клуб</a>
                 </div>
 
-                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card glass" data-aos="fade-up" data-aos-delay="400">
                     <span class="tag">03</span>
                     <h3 class="unbounded">WIN-Салфетка</h3>
-                    <p>Живая практика нейропластичности и аудит мышления.</p>
+                    <p>Экспресс-аудит мышления. Живая практика нейропластичности за одну встречу.</p>
                     <a href="https://t.me/womind_community" class="btn-card">Написать в TG</a>
                 </div>
             </div>
         </section>
 
         <section id="form" class="section">
-            <div class="form-wrapper" data-aos="fade-up">
+            <div class="form-wrapper glass-card" data-aos="fade-up">
                 <h2 class="unbounded center">Связаться с нами</h2>
                 <form action="https://formspree.io/f/YOUR_ID" method="POST" class="main-form">
                     <div class="input-group">
-                        <input type="text" name="name" required placeholder="ИМЯ *">
-                        <input type="tel" name="phone" required placeholder="ТЕЛЕФОН *">
+                        <input type="text" name="name" required placeholder="ВАШЕ ИМЯ">
+                        <input type="tel" name="phone" required placeholder="ТЕЛЕФОН">
                     </div>
-                    <textarea name="message" rows="4" placeholder="ВАШ ЗАПРОС И ЖЕЛАЕМАЯ ПРОГРАММА"></textarea>
+                    <textarea name="message" rows="4" placeholder="ВАШ ЗАПРОС"></textarea>
                     <button type="submit" class="btn-submit">ОТПРАВИТЬ ЗАЯВКУ</button>
                 </form>
             </div>
         </section>
-    </div>
+    </main>
 
     <footer class="footer">
-
-        <section class="social-connect section">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <span class="member-role">Follow the journey</span>
-            <h2 class="unbounded">Мы в соцсетях</h2>
-        </div>
-        
-        <div class="instagram-grid">
-            <a href="https://instagram.com/womind_community" target="_blank" class="social-card" data-aos="zoom-in">
-                <div class="social-img-wrapper">
-                    <img src="IMG_9898 2.jpg" alt="Insta 1">
+        <div class="container">
+            <div class="instagram-grid">
+                <a href="https://instagram.com/womind_community" target="_blank" class="social-card" data-aos="zoom-in">
+                    <img src="IMG_9898 2.jpg" alt="Insta">
                     <div class="social-overlay"><span>INSTAGRAM</span></div>
-                </div>
-            </a>
-            
-            <a href="https://t.me/your_telegram" target="_blank" class="social-card" data-aos="zoom-in" data-aos-delay="100">
-                <div class="social-img-wrapper">
+                </a>
+                <a href="https://t.me/your_telegram" target="_blank" class="social-card" data-aos="zoom-in" data-aos-delay="100">
                     <img src="IMG_9899.jpg" alt="Telegram">
                     <div class="social-overlay"><span>TELEGRAM</span></div>
-                </div>
-            </a>
-            
-            <a href="#" class="social-card" data-aos="zoom-in" data-aos-delay="200">
-                <div class="social-img-wrapper">
-                    <img src="IMG_9897.jpg" alt="Aesthetic">
-                    <div class="social-overlay"><span>COMMUNITY</span></div>
-                </div>
-            </a>
-        </div>
-
-        <div class="blog-cta" data-aos="fade-up">
-            <p class="serif">Следите за закулисьем создания брендов и ежедневными смыслами в наших блогах</p>
-            <div class="social-links-row">
-                <a href="#" class="inline-link">@olya_parshin</a>
-                <span class="separator">/</span>
-                <a href="#" class="inline-link">@mari_kikoin</a>
+                </a>
             </div>
+            <p class="unbounded copyright">WOMIND // 2026</p>
         </div>
-    </div>
-</section>
-        
-        <p class="unbounded">WOMIND // 2026</p>
-        
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="quiz.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ 
+            duration: 1000, 
+            once: true,
+            offset: 100 
+        });
     </script>
 </body>
 </html>
