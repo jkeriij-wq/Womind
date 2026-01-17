@@ -96,3 +96,83 @@ body { background: var(--bg); color: var(--black); font-family: var(--unbounded)
     .grid-3, .creators-grid { grid-template-columns: 1fr; }
     .hero { height: auto; padding: 150px 20px; }
 }
+
+/* ОБНОВЛЕННЫЕ КНОПКИ ТЕСТОВ */
+.quiz-opt-btn {
+    display: block; width: 100%; 
+    padding: 25px; /* Больше воздуха */
+    margin-top: 15px;
+    background: transparent; 
+    border: 1px solid rgba(13, 13, 13, 0.2);
+    color: var(--black);
+    font-family: var(--unbounded);
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.quiz-opt-btn:hover {
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+    padding-left: 40px; /* Эффект сдвига */
+}
+
+/* МОДАЛЬНОЕ ОКНО (БОЛЬШЕ ВОЗДУХА) */
+.modal-box {
+    background: var(--bg);
+    border: 1px solid var(--black);
+    padding: 80px 60px; /* Огромные отступы для премиальности */
+    max-width: 800px; /* Шире */
+    width: 95%;
+}
+
+.quiz-question-text {
+    margin-bottom: 50px; /* Расстояние до ответов */
+    line-height: 1.4;
+}
+
+/* АНКЕТА НА ВЕСЬ ЭКРАН */
+#form {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+    padding: 100px 20px;
+}
+
+.contact-box {
+    width: 100%;
+    max-width: 900px;
+    background: transparent; /* Убрал лишние фоны */
+}
+
+.form-header h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: white;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.main-form .input-group {
+    margin-bottom: 50px;
+}
+
+.main-form input {
+    font-size: 1.5rem; /* Крупный текст ввода */
+    padding: 20px 0;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+/* ОБРАТНАЯ БЕГУЩАЯ СТРОКА */
+.ticker-accent.reverse .ticker-track {
+    animation: moveTickerReverse 20s linear infinite;
+    background: var(--black); /* Вторая строка черная для контраста */
+}
+
+@keyframes moveTickerReverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
