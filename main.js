@@ -1,44 +1,48 @@
-// Эффект "Декодирования" для заголовка
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let interval = null;
+// Эффект пишущей машинки для заголовка
+const typewriterElement = document.getElementById('typewriter');
+const text = "WOMIND";
+let index = 0;
+let isDeleting = false;
 
-document.querySelector("#decode-text").onmouseover = event => {  
-  let iteration = 0;
-  clearInterval(interval);
-  
-  interval = setInterval(() => {
-    event.target.innerText = event.target.innerText
-      .split("")
-      .map((letter, index) => {
-        if(index < iteration) {
-          return event.target.dataset.value;
-        }
-        return letters[Math.floor(Math.random() * 26)]
-      })
-      .join("");
+function type() {
+    const currentText = isDeleting ? text.substring(0, index - 1) : text.substring(0, index + 1);
+    typewriterElement.innerHTML = currentText;
     
-    if(iteration >= event.target.dataset.value.length){ 
-      clearInterval(interval);
-    }
-    iteration += 1 / 3;
-  }, 30);
-};
+    let typeSpeed = isDeleting ? 100 : 200;
 
-// Инициализация при загрузке
+    if (!isDeleting && currentText === text) {
+        typeSpeed = 2000; // Пауза в конце
+        isDeleting = true;
+    } else if (isDeleting && currentText === '') {
+        isDeleting = false;
+        typeSpeed = 500;
+    } else {
+        index = isDeleting ? index - 1 : index + 1;
+    }
+
+    setTimeout(type, typeSpeed);
+}
+
+// Инициализация
 window.onload = () => {
     AOS.init({ duration: 1000, once: true });
-    const title = document.querySelector("#decode-text");
-    title.dataset.value = title.innerText;
+    type(); // Запуск печати
 };
 
-// Функции тестов (связаны с quiz-data.js)
+// Функция для открытия тестов
 function openQuiz(type) {
     const data = QUIZ_DATA[type];
     const modal = document.getElementById('quiz-modal');
-    document.getElementById('quiz-content').innerHTML = `
+    document.getElementById('quiz-root').innerHTML = `
         <h2 class="unbounded" style="color:var(--red); margin-bottom:20px;">${data.title}</h2>
-        <p style="margin-bottom:20px;">${data.questions[0].q}</p>
-        ${data.questions[0].a.map(opt => `<button class="btn-dark" style="width:100%; margin-bottom:10px;" onclick="closeQuiz()">${opt}</button>`).join('')}
+        <p style="margin-bottom:30px;">${data.questions[0].q}</p>
+        <div style="display:grid; gap:10px;">
+            ${data.questions[0].a.map(opt => `
+                <button class="btn-black" style="text-align:left; padding:20px;" onclick="closeQuiz()">
+                    ${opt}
+                </button>
+            `).join('')}
+        </div>
     `;
     modal.style.display = 'flex';
 }
