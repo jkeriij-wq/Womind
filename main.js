@@ -31,19 +31,42 @@ window.onload = () => {
 
 // Функция для открытия тестов
 function openQuiz(type) {
+    // 1. Проверяем, существуют ли данные в файле quiz-data.js
+    if (typeof QUIZ_DATA === 'undefined' || !QUIZ_DATA[type]) {
+        console.error("Ошибка: Данные для теста '" + type + "' не найдены в quiz-data.js");
+        return;
+    }
+
     const data = QUIZ_DATA[type];
     const modal = document.getElementById('quiz-modal');
-    document.getElementById('quiz-root').innerHTML = `
-        <h2 class="unbounded" style="color:var(--red); margin-bottom:20px;">${data.title}</h2>
-        <p style="margin-bottom:30px;">${data.questions[0].q}</p>
-        <div style="display:grid; gap:10px;">
-            ${data.questions[0].a.map(opt => `
-                <button class="btn-black" style="text-align:left; padding:20px;" onclick="closeQuiz()">
-                    ${opt}
+    const container = document.getElementById('quiz-content');
+
+    // 2. Генерируем HTML для вставки
+    container.innerHTML = `
+        <span class="quiz-title-small">SYSTEM_SCAN // ${data.title}</span>
+        
+        <h2 class="quiz-question-text">${data.questions[0].q}</h2>
+        
+        <div class="options-list">
+            ${data.questions[0].a.map(answer => `
+                <button class="quiz-opt-btn" onclick="closeQuiz()">
+                    ${answer}
                 </button>
             `).join('')}
         </div>
+
+        <button class="btn-exit-quiz" onclick="closeQuiz()">← СВЕРНУТЬ ОКНО БЕЗ ОТВЕТА</button>
     `;
+
+    // 3. Показываем окно
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Запрещаем скролл сайта
+}
+
+function closeQuiz() {
+    document.getElementById('quiz-modal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Возвращаем скролл
+}
     modal.style.display = 'flex';
 }
 
