@@ -3,164 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOMIND // NEURO_SYSTEM_2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;700&family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+    <title>WOMIND // ESTHETIC_SYSTEM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;700&family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="grain"></div>
-    <div class="bg-scan-lines"></div>
 
-    <nav class="nav-os">
-        <div class="nav-logo">WOMIND.OS</div>
+    <nav class="nav-bar">
+        <div class="nav-logo">WOMIND</div>
         <div class="nav-links">
             <a href="#about">CREATORS</a>
-            <a href="#lab">MIND_LAB</a>
-            <a href="#tariffs">TARIFFS</a>
-            <a href="#offline">OFFLINE</a>
+            <a href="#lab">LAB</a>
+            <a href="#tariffs">OFFERS</a>
             <a href="#form">CONNECT</a>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <h1 class="glitch-title" data-text="EVOLUTION">EVOLUTION</h1>
-            <div class="typewriter-container">
-                <span id="typewriter"></span>
-            </div>
-            <button class="btn-os-gold" onclick="document.getElementById('lab').scrollIntoView()">INIT_SYSTEM_SCAN</button>
+        <div class="hero-content" data-aos="zoom-out" data-aos-duration="2000">
+            <h1 class="main-title">WOMIND</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-tagline serif">Экосистема смыслов, визуала и нейромаркетинга</p>
+            <button class="btn-accent" onclick="document.getElementById('lab').scrollIntoView()">INITIATE SCAN</button>
         </div>
     </header>
 
     <div class="ticker-box">
         <div class="ticker-line">
-            <span>NEUROPLASTICITY • SYSTEM • BRAND • VISUAL • STRATEGY • SCALE • NEUROPLASTICITY • </span>
-            <span>NEUROPLASTICITY • SYSTEM • BRAND • VISUAL • STRATEGY • SCALE • NEUROPLASTICITY • </span>
+            <span>NEURO_MARKETING • VISUAL_DNA • STRATEGY • SYSTEM • HIGH_LEVEL • </span>
+            <span>NEURO_MARKETING • VISUAL_DNA • STRATEGY • SYSTEM • HIGH_LEVEL • </span>
         </div>
     </div>
 
     <main class="container">
         <section id="about" class="section">
-            <h2 class="unbounded reveal-text" data-aos="fade-right">THE_CREATORS</h2>
+            <h2 class="unbounded section-title" data-aos="fade-up">CREATORS</h2>
             <div class="team-grid">
                 <div class="member-card" data-aos="fade-up">
-                    <div class="photo-wrapper">
-                        <img src="IMG_9895 2.jpg" alt="Оля">
-                        <div class="scan-line"></div>
+                    <div class="photo-frame">
+                        <img src="IMG_9895 2.jpg" alt="Olya">
+                        <div class="corner-accents"></div>
                     </div>
                     <div class="member-info">
-                        <span class="role">STRATEGY_ARCHITECT</span>
+                        <span class="role-tag">Strategy • Targeting</span>
                         <h3 class="unbounded">Olya Parshin</h3>
-                        <p class="serif">Выстраивает маркетинг как высокоточную систему. Оцифровывает смыслы в прибыль.</p>
+                        <p class="serif">Архитектор системного маркетинга. Оцифровывает хаос в результат.</p>
                     </div>
                 </div>
                 <div class="member-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="photo-wrapper">
-                        <img src="IMG_9892 2.jpg" alt="Мари">
-                        <div class="scan-line"></div>
+                    <div class="photo-frame">
+                        <img src="IMG_9892 2.jpg" alt="Mari">
+                        <div class="corner-accents"></div>
                     </div>
                     <div class="member-info">
-                        <span class="role">VISUAL_NEURO_DESIGNER</span>
+                        <span class="role-tag">Visual • Neuromarketing</span>
                         <h3 class="unbounded">Mari Kikoin</h3>
-                        <p class="serif">Создает визуальный интеллект бренда. Внедряет нейромаркетинг в эстетику контента.</p>
+                        <p class="serif">Куратор эстетики и упаковки смыслов через визуальный интеллект.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="lab" class="section">
-            <h2 class="unbounded center" data-aos="zoom-in">MIND_LAB_v2.0</h2>
+            <h2 class="unbounded center section-title" data-aos="fade-up">MIND_LAB</h2>
             <div class="lab-grid">
-                <div class="glass-card test-card" data-aos="flip-left">
-                    <span class="id">MOD_01</span>
-                    <h3 class="unbounded">NEURO_CODE</h3>
-                    <p>Взлом архетипа проявленности.</p>
-                    <button class="btn-os" onclick="openQuiz('archetype')">SCAN</button>
+                <div class="test-card glass" data-aos="fade-up">
+                    <span class="test-no">01</span>
+                    <h3 class="unbounded">Neuro-Code</h3>
+                    <p class="serif">Тест на архетип и проявленность.</p>
+                    <button class="btn-outline" onclick="openQuiz('archetype')">START</button>
                 </div>
-                <div class="glass-card test-card gold-border" data-aos="flip-left" data-aos-delay="100">
-                    <span class="id">MOD_02</span>
-                    <h3 class="unbounded">MONEY_MIND</h3>
-                    <p>Прошивка на масштаб х10.</p>
-                    <button class="btn-os-gold" onclick="openQuiz('money')">UPGRADE</button>
+                <div class="test-card glass gold-bg" data-aos="fade-up" data-aos-delay="100">
+                    <span class="test-no">02</span>
+                    <h3 class="unbounded">Money-Mind</h3>
+                    <p class="serif">Прошивка на финансовый масштаб.</p>
+                    <button class="btn-black" onclick="openQuiz('money')">UPGRADE</button>
                 </div>
-                <div class="glass-card test-card" data-aos="flip-left" data-aos-delay="200">
-                    <span class="id">MOD_03</span>
-                    <h3 class="unbounded">BRAND_SCAN</h3>
-                    <p>Аудит потенциала системы.</p>
-                    <button class="btn-os" onclick="openQuiz('brand')">AUDIT</button>
+                <div class="test-card glass" data-aos="fade-up" data-aos-delay="200">
+                    <span class="test-no">03</span>
+                    <h3 class="unbounded">Brand-Scan</h3>
+                    <p class="serif">Аудит потенциала вашего бренда.</p>
+                    <button class="btn-outline" onclick="openQuiz('brand')">RUN</button>
                 </div>
-                <div class="glass-card test-card" data-aos="flip-left" data-aos-delay="300">
-                    <span class="id">MOD_04</span>
-                    <h3 class="unbounded">VISUAL_DNA</h3>
-                    <p>Код твоего визуального стиля.</p>
-                    <button class="btn-os" onclick="openQuiz('visual')">DECODE</button>
+                <div class="test-card glass red-accent" data-aos="fade-up" data-aos-delay="300">
+                    <span class="test-no">04</span>
+                    <h3 class="unbounded">Visual DNA</h3>
+                    <p class="serif">Код твоего визуального стиля.</p>
+                    <button class="btn-outline" onclick="openQuiz('visual')">DECODE</button>
                 </div>
             </div>
         </section>
 
         <section id="tariffs" class="section">
-            <h2 class="unbounded center">ECOSYSTEM_OFFERS</h2>
+            <h2 class="unbounded center section-title" data-aos="fade-up">OFFERS</h2>
             <div class="tariffs-grid">
-                <div class="price-card glass-card" data-aos="fade-up">
-                    <h3 class="unbounded">W-Individual</h3>
+                <div class="price-card" data-aos="fade-right">
+                    <h4 class="unbounded">W-Individual</h4>
                     <div class="price">3888 ШЕК</div>
-                    <p class="subtitle">Персональный Architect-сопровождение</p>
-                    <ul class="specs">
-                        <li>Полный аудит и стратегия</li>
-                        <li>Создание продуктовой линейки</li>
-                        <li>Организация фото/видео дня</li>
-                        <li>Нейромаркетинг контента</li>
+                    <ul class="features serif">
+                        <li>Полное сопровождение под ключ</li>
+                        <li>Стратегия, смыслы, структура</li>
+                        <li>Организация съемочного дня</li>
+                        <li>Личный супервизоринг</li>
                     </ul>
-                    <button class="btn-os" onclick="location.href='#form'">ACQUIRE</button>
+                    <button class="btn-black" onclick="document.getElementById('form').scrollIntoView()">ACQUIRE</button>
                 </div>
-                <div class="price-card glass-card featured" data-aos="fade-up" data-aos-delay="200">
-                    <div class="badge">COMMUNITY_DRIVEN</div>
-                    <h3 class="unbounded">W-Team</h3>
-                    <div class="price">444 ШЕК/мес</div>
-                    <p class="subtitle">Клуб роста и поддержки</p>
-                    <ul class="specs">
-                        <li>2 Мастермайнда в месяц</li>
-                        <li>1 Общий съёмочный день</li>
-                        <li>Разборы аккаунтов</li>
-                        <li>Доступ к WOMIND-чату</li>
+                <div class="price-card featured" data-aos="fade-up">
+                    <div class="top-label">MOST POPULAR</div>
+                    <h4 class="unbounded">W-Team</h4>
+                    <div class="price">444 ШЕК / мес</div>
+                    <ul class="features serif">
+                        <li>2 Мастермайнда онлайн</li>
+                        <li>1 Съемочный день (группа)</li>
+                        <li>Комьюнити поддержки</li>
+                        <li>Мини-разборы аккаунтов</li>
                     </ul>
-                    <button class="btn-os-gold" onclick="location.href='#form'">JOIN_CLUB</button>
+                    <button class="btn-accent" onclick="document.getElementById('form').scrollIntoView()">JOIN CLUB</button>
                 </div>
-                <div id="offline" class="price-card glass-card gold-glow" data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="unbounded">WIN-Салфетка</h3>
+                <div class="price-card" data-aos="fade-left">
+                    <h4 class="unbounded">WIN-Салфетка</h4>
                     <div class="price">OFFLINE</div>
-                    <p class="subtitle">Практика нейропластичности</p>
-                    <ul class="specs">
+                    <ul class="features serif">
                         <li>Живая встреча в пространстве</li>
-                        <li>Тренировка мышления</li>
+                        <li>Тренировка нейропластичности</li>
                         <li>Новые ветки вероятности</li>
-                        <li>Энергия комьюнити</li>
+                        <li>Стратегический нетворкинг</li>
                     </ul>
-                    <button class="btn-os-gold" onclick="location.href='#form'">BOOK_SEAT</button>
+                    <button class="btn-black" onclick="document.getElementById('form').scrollIntoView()">RESERVE</button>
                 </div>
+            </div>
+        </section>
+
+        <section id="form" class="section">
+            <div class="form-box" data-aos="zoom-in">
+                <h2 class="unbounded">CONNECT</h2>
+                <form class="contact-form">
+                    <div class="input-row">
+                        <input type="text" placeholder="NAME" required>
+                        <input type="text" placeholder="INSTAGRAM / TG" required>
+                    </div>
+                    <textarea placeholder="ВАШ ЗАПРОС"></textarea>
+                    <button type="submit" class="btn-accent" style="width:100%">SEND DATA</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="social-links">
-            <a href="https://instagram.com/womind_community" class="social-pill">INSTAGRAM</a>
-            <a href="https://t.me/womind_community" class="social-pill">TELEGRAM</a>
-        </div>
-        <div class="copyright">// WOMIND.OS_SYSTEM_2026</div>
+        <p class="unbounded">WOMIND // 2026</p>
     </footer>
 
     <div id="quiz-modal" class="modal">
-        <div class="modal-content glass-card">
-            <span class="close-btn" onclick="closeQuiz()">&times;</span>
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeQuiz()">&times;</span>
             <div id="quiz-container"></div>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="quiz-data.js"></script>
-    <script src="main.js"></script>
+    <script>
+        AOS.init({ duration: 1200, once: true });
+        
+        function openQuiz(type) {
+            const data = QUIZ_DATA[type];
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = `
+                <h2 class="unbounded" style="color:#A30000; margin-bottom:20px;">${data.title}</h2>
+                <div class="quiz-step">
+                    <p class="serif" style="font-size:1.4rem; margin-bottom:20px;">${data.questions[0].q}</p>
+                    ${data.questions[0].a.map(opt => `<button class="quiz-opt" onclick="closeQuiz()">${opt}</button>`).join('')}
+                </div>
+            `;
+            document.getElementById('quiz-modal').style.display = 'flex';
+        }
+
+        function closeQuiz() { document.getElementById('quiz-modal').style.display = 'none'; }
+    </script>
 </body>
 </html>
