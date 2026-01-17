@@ -52,6 +52,79 @@ body { background: var(--bg); color: var(--black); font-family: var(--unbounded)
 .test-card:hover { background: var(--black); color: var(--bg); border-color: var(--black); }
 .featured { border: 2px solid var(--red); }
 
+/* СПИСКИ В КАРТОЧКАХ */
+.card-features {
+    list-style: none;
+    margin: 30px 0 40px 0;
+    text-align: left;
+}
+
+.card-features li {
+    font-size: 11px;
+    margin-bottom: 12px;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* КНОПКА С ОБВОДКОЙ (Вместо белых) */
+.btn-outline {
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    border: 1px solid var(--black);
+    color: var(--black);
+    font-family: var(--unbounded);
+    font-weight: 900;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    text-transform: uppercase;
+}
+
+.btn-outline:hover {
+    background: var(--black);
+    color: var(--bg);
+}
+
+/* КНОПКА КРАСНАЯ (Для акцента в среднем тарифе) */
+.btn-red-action {
+    width: 100%;
+    padding: 18px;
+    background: var(--red);
+    border: 1px solid var(--red);
+    color: white;
+    font-family: var(--unbounded);
+    font-weight: 900;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(209, 0, 0, 0.2);
+}
+
+.btn-red-action:hover {
+    filter: brightness(1.2);
+    transform: translateY(-3px);
+}
+
+/* ДОПОЛНИТЕЛЬНЫЙ ВОЗДУХ ДЛЯ ТАРИФОВ */
+.price-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px; /* Чтобы карточки были одной высоты */
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 20px 0;
+    color: var(--black);
+}
+
+
+
 /* МОДАЛЬНОЕ ОКНО */
 .modal {
     display: none; position: fixed; z-index: 9999;
