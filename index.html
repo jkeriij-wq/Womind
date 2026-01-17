@@ -3,279 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOMIND Community | Маркетинговое сопровождение</title>
+    <title>WOMIND | Brand Ecosystem & Strategy</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Unbounded:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --bg-color: #F9F7F2; /* Цвет слоновой кости */
-            --text-color: #1A1A1A;
-            --accent-color: #4A5D4E; /* Глубокий оливковый/английский зеленый */
-            --gold: #C5A059;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Hero Section */
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            font-size: 3rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .hero-subtitle {
-            font-style: italic;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 1px;
-            background: var(--gold);
-            margin: 20px auto 0;
-        }
-
-        /* О нас */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        /* Продукты */
-        .product-card {
-            background: #fff;
-            padding: 50px;
-            margin-bottom: 40px;
-            border: 1px solid rgba(0,0,0,0.03);
-            transition: 0.4s;
-        }
-
-        .product-card:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
-        }
-
-        .product-tag {
-            color: var(--gold);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-
-        .product-card h3 {
-            font-size: 2rem;
-            margin: 15px 0;
-        }
-
-        .features-list {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .features-list li::before {
-            content: "—";
-            margin-right: 10px;
-            color: var(--gold);
-        }
-
-        /* Кнопки */
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            margin-top: 30px;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: var(--text-color);
-            transform: translateY(-2px);
-        }
-
-        /* Форма */
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 50px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 15px 0;
-            margin-bottom: 30px;
-            border: none;
-            border-bottom: 1px solid #ddd;
-            font-family: inherit;
-            outline: none;
-        }
-
-        input:focus {
-            border-bottom-color: var(--gold);
-        }
-
-        /* Соцсети */
-        .socials {
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        .socials a {
-            margin: 0 15px;
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .about-grid, .features-list { grid-template-columns: 1fr; }
-            .logo { font-size: 2rem; }
-        }
-    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">WOMIND</div>
-        <div class="hero-subtitle">Маркетинг с женским интеллектом</div>
-        <a href="#apply" class="btn">Присоединиться</a>
+    <header class="hero">
+        <div class="hero-content">
+            <h1 data-aos="fade-down" data-aos-duration="1500">WOMIND</h1>
+            <p class="hero-sub" data-aos="fade-up" data-aos-delay="500">Эстетика влияния. Маркетинг как высшее искусство.</p>
+            <a href="#form" class="btn btn-main" data-aos="zoom-in" data-aos-delay="800">Создать свою ветку вероятности</a>
+        </div>
     </header>
 
-    <div class="container">
+    <main class="container">
         
-        <section id="about">
-            <div class="about-grid">
-                <div>
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">Эстетика смыслов</h2>
-                    <p>WOMIND — это не просто агентство. Это пространство, где мы превращаем ваш личный бренд в работающую экосистему. Мы объединяем классический маркетинг, нейропсихологию и визуальную эстетику Old Money.</p>
+        <section class="philosophy">
+            <div class="section-header" data-aos="fade-up">
+                <span class="accent-red">01 // О СИСТЕМЕ</span>
+                <h2>Эстетика смыслов</h2>
+            </div>
+            <p class="large-text" data-aos="fade-up" data-aos-delay="200">
+                WOMIND — это персональная работа с брендом, где вы получаете <span class="bold-red">полное маркетинговое сопровождение под ключ</span>. Мы выстраиваем вашу экосистему так, чтобы вас начали замечать, выбирать и покупать.
+            </p>
+        </section>
+
+        <section class="stories" data-aos="fade-up">
+            <div class="story-card">
+                <div class="story-content">
+                    <h2 class="unbounded-title">The Muse</h2>
+                    <p>Здесь — ваша история. О том, как через нейромаркетинг и визуальные метасообщения мы меняем не просто продажи, а восприятие личности. Каждое действие — это тренировка нейропластичности и выход из зоны комфорта.</p>
+                    <a href="#" class="inline-link">Читать манифест →</a>
                 </div>
-                <div style="background: #EAE7DE; height: 400px; display: flex; align-items: center; justify-content: center; font-style: italic; color: #999;">
-                    [Место для вашего фото в стиле Old Money]
+                <div class="story-visual">
+                    <div class="image-placeholder">PHOTO // AESTHETIC</div>
                 </div>
             </div>
         </section>
 
-        <section id="services">
-            <h2 class="section-title">Программы</h2>
+        <section id="services" class="services">
+            <h2 class="section-title" data-aos="fade-right">Направления</h2>
 
-            <div class="product-card">
-                <span class="product-tag">Personal Mentoring</span>
-                <h3>W-Individual</h3>
-                <p>Полное маркетинговое сопровождение под ключ. Мы становимся вашей командой.</p>
-                <ul class="features-list">
-                    <li>Анализ бренда и ниши</li>
-                    <li>Стратегия продвижения</li>
-                    <li>Создание продуктовой линейки</li>
-                    <li>Нейромаркетинг</li>
-                    <li>Организация съёмок</li>
-                    <li>Личный супервизоринг</li>
-                </ul>
-                <a href="#apply" class="btn">Забронировать место</a>
-            </div>
+            <div class="service-grid">
+                <div class="service-item" data-aos="flip-up">
+                    <span class="tag">Individual</span>
+                    <h3>W-Individual</h3>
+                    <p>Анализ бренда, стратегия, контент-система, визуал и личный супервизоринг.</p>
+                    <a href="#form" class="btn-outline">Узнать подробнее</a>
+                </div>
 
-            <div class="product-card">
-                <span class="product-tag">Community & Growth</span>
-                <h3>W-Team</h3>
-                <p>Ежемесячное пространство роста для тех, кто готов действовать в кругу единомышленниц.</p>
-                <ul class="features-list">
-                    <li>2 Мастермайнда в месяц</li>
-                    <li>1 Съёмочный день</li>
-                    <li>Разборы аккаунтов</li>
-                    <li>Закрытое комьюнити</li>
-                </ul>
-                <a href="#apply" class="btn">Вступить в клуб</a>
-            </div>
+                <div class="service-item" data-aos="flip-up" data-aos-delay="200">
+                    <span class="tag">Group work</span>
+                    <h3>W-Team</h3>
+                    <p>Мастермайнды, съёмочные дни в Instagram и комьюнити поддержки.</p>
+                    <a href="#form" class="btn-outline">Присоединиться</a>
+                </div>
 
-            <div class="product-card">
-                <span class="product-tag">Offline Experience</span>
-                <h3>WIN-Салфетка</h3>
-                <p>Живая встреча-практика для развития нейропластичности и поиска новых ветвей вероятности.</p>
-                <a href="#apply" class="btn">Узнать дату встречи</a>
+                <div class="service-item" data-aos="flip-up" data-aos-delay="400">
+                    <span class="tag">Offline</span>
+                    <h3>WIN-Салфетка</h3>
+                    <p>Живая практика. Одна встреча, запускающая новую ветку вероятности.</p>
+                    <a href="#form" class="btn-outline">Записаться</a>
+                </div>
             </div>
         </section>
 
-        <section id="apply">
-            <h2 class="section-title">Оставить заявку</h2>
-            <div class="form-container">
-                <form action="https://formspree.io/f/your-email@example.com" method="POST">
+    </main>
+
+    <section id="form" class="form-section">
+        <div class="container">
+            <div class="form-wrapper" data-aos="zoom-in">
+                <h2 class="unbounded-title">Contact Us</h2>
+                <p>Оставьте след. Мы свяжемся с вами для аудита бренда.</p>
+                
+                <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="main-form">
                     <input type="text" name="name" placeholder="ВАШЕ ИМЯ" required>
-                    <input type="email" name="email" placeholder="E-MAIL" required>
-                    <input type="text" name="instagram" placeholder="INSTAGRAM / TELEGRAM">
-                    <textarea name="message" rows="4" placeholder="КАКОЕ НАПРАВЛЕНИЕ ВАС ИНТЕРЕСУЕТ?"></textarea>
-                    <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Отправить</button>
+                    <input type="text" name="instagram" placeholder="INSTAGRAM / TELEGRAM" required>
+                    <textarea name="message" rows="3" placeholder="ВАШ ЗАПРОС"></textarea>
+                    <button type="submit" class="btn btn-red">ОТПРАВИТЬ</button>
                 </form>
             </div>
-        </section>
-
-        <div class="socials">
-            <a href="#">INSTAGRAM</a>
-            <a href="#">TELEGRAM</a>
-            <a href="#">WHATSAPP</a>
         </div>
+    </section>
 
-    </div>
-
-    <footer style="text-align: center; padding: 40px; font-size: 0.7rem; letter-spacing: 1px; opacity: 0.5;">
-        © 2026 WOMIND COMMUNITY. ALL RIGHTS RESERVED.
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">WOMIND</div>
+                <div class="footer-socials">
+                    <a href="#">INSTAGRAM</a>
+                    <a href="#">TELEGRAM</a>
+                    <a href="#">WHATSAPP</a>
+                </div>
+            </div>
+            <p class="copy">© 2026 WOMIND. BUILT FOR INDIVIDUALS.</p>
+        </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
