@@ -150,23 +150,24 @@
         <div class="spacer-xl"></div>
 
         <section id="form" class="section">
-            <div class="contact-box" data-aos="zoom-in">
-                <div class="form-header">
-                    <h2 class="unbounded">ВХОД В СИСТЕМУ</h2>
-                </div>
-                <form class="main-form">
-                    <div class="input-group">
-                        <label>ИМЯ</label>
-                        <input type="text" placeholder="ВВЕДИТЕ ВАШЕ ИМЯ" required>
-                    </div>
-                    <div class="input-group">
-                        <label>INSTAGRAM / TELEGRAM</label>
-                        <input type="text" placeholder="@USERNAME" required>
-                    </div>
-                    <button type="submit" class="btn-red-wide">ОТПРАВИТЬ ДАННЫЕ</button>
-                </form>
+    <div class="contact-box" data-aos="zoom-in">
+        <div class="form-header">
+            <h2 class="unbounded">ВХОД В СИСТЕМУ</h2>
+        </div>
+        <form class="main-form" id="google-sheet-form">
+            <div class="input-group">
+                <label>ИМЯ</label>
+                <input type="text" name="name" placeholder="ВВЕДИТЕ ВАШЕ ИМЯ" required>
             </div>
-        </section>
+            <div class="input-group">
+                <label>INSTAGRAM / TELEGRAM</label>
+                <input type="text" name="contact" placeholder="@USERNAME" required>
+            </div>
+            <button type="submit" class="btn-red-wide">ОТПРАВИТЬ ДАННЫЕ</button>
+        </form>
+    </div>
+</section>
+        
     </main>
 
     <section id="socials" class="section">
