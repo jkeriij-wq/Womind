@@ -13,8 +13,9 @@
     <div class="grain"></div>
 
     <header class="hero">
-        <h1 data-aos="zoom-out" data-aos-duration="2000">WOMIND</h1>
-        <p class="hero-sub" data-aos="fade-up">Маркетинговая экосистема нового времени</p>
+        <h1 class="typewriter">WOMIND</h1>
+        <p class="hero-sub" data-aos="fade-up" data-aos-delay="1000">Экосистема твоего превосходства</p>
+        <div class="scroll-indicator"></div>
     </header>
 
     <div class="container">
@@ -29,7 +30,7 @@
                     <div class="member-info">
                         <span class="member-role">Стратегия & Таргетинг</span>
                         <h3 class="unbounded">Оля Паршин</h3>
-                        <p>Выстраивает фундамент: от смыслов и структуры до рекламных механик, которые приводят целевых клиентов.</p>
+                        <p>Твердый маркетинг: структура, воронки и масштаб.</p>
                     </div>
                 </div>
 
@@ -38,49 +39,61 @@
                         <img src="IMG_9892 2.jpg" alt="Мари Кикоин" class="member-photo">
                     </div>
                     <div class="member-info">
-                        <span class="member-role">Визуал & Нейромаркетинг</span>
+                        <span class="member-role">Визуал & Смыслы</span>
                         <h3 class="unbounded">Мари Кикоин</h3>
-                        <p>Создает визуальные метасообщения и контент-системы, работающие напрямую с подсознанием аудитории.</p>
+                        <p>Эстетика и нейромаркетинг: упаковка, которую хотят.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="test-section" class="section">
-            <div class="test-container" id="quiz-wrapper" data-aos="flip-up">
+            <div class="test-container" id="quiz-wrapper" data-aos="zoom-in-up">
                 <div id="intro-screen">
-                    <h2 class="unbounded">Тест: твой архетип силы</h2>
-                    <p>Узнай, через что ты влияешь и создаешь на самом деле.</p>
-                    <button class="btn-gold" onclick="startQuiz()">Начать трансформацию</button>
+                    <h2 class="unbounded">Тест: твой женский архетип</h2>
+                    <p class="serif">Узнай код своей проявленности через 10 интуитивных вопросов.</p>
+                    <button class="btn-red-action" onclick="startQuiz()">Начать тест</button>
                 </div>
+
                 <div id="quiz-content" style="display: none;">
-                    <div class="progress-bar"><div id="progress"></div></div>
+                    <div class="progress-container">
+                        <div id="progress"></div>
+                    </div>
                     <h3 id="question-text" class="question-title"></h3>
                     <div id="options-container" class="options-grid"></div>
                 </div>
+
                 <div id="result-screen" style="display: none;">
-                    <h2 class="unbounded">Твой код: <span id="result-name" class="text-red"></span></h2>
-                    <p id="result-desc"></p>
-                    <button class="btn-gold" onclick="location.reload()">Пройти еще раз</button>
+                    <h2 class="unbounded">Твой архетип: <span id="result-name" class="text-red"></span></h2>
+                    <div class="result-box">
+                        <p id="result-desc" class="serif"></p>
+                    </div>
+                    <button class="btn-minimal" onclick="location.reload()">Пройти еще раз</button>
                 </div>
             </div>
         </section>
 
         <section class="section">
+            <h2 class="unbounded center" data-aos="fade-up">Программы</h2>
             <div class="tariffs-grid">
-                <div class="card" data-aos="fade-up">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="tag">01</span>
                     <h3 class="unbounded">W-Individual</h3>
-                    <p>Индивидуальная работа. Личное сопровождение.</p>
+                    <p>Индивидуальное сопровождение: строим твой бренд под ключ.</p>
                     <a href="#form" class="btn-card">Забронировать</a>
                 </div>
+
                 <div class="card featured" data-aos="fade-up" data-aos-delay="200">
+                    <span class="tag" style="color: var(--red);">02</span>
                     <h3 class="unbounded">W-Team</h3>
-                    <p>Групповая динамика + съемки.</p>
-                    <a href="#form" class="btn-card-red">Присоединиться</a>
+                    <p>Групповая работа, мастермайнды и контент-съемки.</p>
+                    <a href="#form" class="btn-card-red">Вступить в клуб</a>
                 </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="400">
+
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="tag">03</span>
                     <h3 class="unbounded">WIN-Салфетка</h3>
-                    <p>Живой аудит. Встреча в реальности.</p>
+                    <p>Живая практика нейропластичности и аудит мышления.</p>
                     <a href="https://t.me/womind_community" class="btn-card">Написать в TG</a>
                 </div>
             </div>
@@ -88,19 +101,27 @@
 
         <section id="form" class="section">
             <div class="form-wrapper" data-aos="fade-up">
-                <h2 class="unbounded">Анкета предзаписи</h2>
+                <h2 class="unbounded center">Связаться с нами</h2>
                 <form action="https://formspree.io/f/YOUR_ID" method="POST" class="main-form">
-                    <input type="text" name="name" required placeholder="ВАШЕ ИМЯ *">
-                    <input type="tel" name="phone" required placeholder="ТЕЛЕФОН / WHATSAPP *">
-                    <textarea name="msg" rows="3" placeholder="ОПИШИТЕ ВАШ ЗАПРОС"></textarea>
-                    <button type="submit" class="btn-submit">ОТПРАВИТЬ ДАННЫЕ</button>
+                    <div class="input-group">
+                        <input type="text" name="name" required placeholder="ИМЯ *">
+                        <input type="tel" name="phone" required placeholder="ТЕЛЕФОН *">
+                    </div>
+                    <textarea name="message" rows="4" placeholder="ВАШ ЗАПРОС И ЖЕЛАЕМАЯ ПРОГРАММА"></textarea>
+                    <button type="submit" class="btn-submit">ОТПРАВИТЬ ЗАЯВКУ</button>
                 </form>
             </div>
         </section>
     </div>
 
+    <footer class="footer">
+        <p class="unbounded">WOMIND // 2026</p>
+    </footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="quiz.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
