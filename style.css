@@ -1,145 +1,60 @@
 :root {
-    --bg: #EAE4D9;
-    --dark: #0A0A0A;
+    --bg: #EAE4D9; 
+    --dark: #0A0A0A; 
     --red: #A30000;
-    --gold: #B89352;
-    --glass: rgba(234, 228, 217, 0.9);
     --unbounded: 'Unbounded', sans-serif;
     --tenor: 'Tenor Sans', sans-serif;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { 
-    background-color: var(--bg); 
-    color: var(--dark); 
-    font-family: var(--tenor);
-    margin: 0; 
-    overflow-x: hidden; 
-}
+body { background: var(--bg); color: var(--dark); font-family: var(--tenor); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
-
-/* АНИМАЦИЯ ЗАГОЛОВКОВ (Reveal) */
-[data-aos="reveal-anim"] {
-    opacity: 0;
-    transform: translateY(40px);
-    letter-spacing: 15px;
-    transition-property: transform, opacity, letter-spacing;
+/* ШУМ И СЕТКА */
+.grain::before {
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.05; pointer-events: none; z-index: 999;
 }
-[data-aos="reveal-anim"].aos-animate {
-    opacity: 1;
-    transform: translateY(0);
-    letter-spacing: -0.5px;
-}
-
-/* ФОНОВАЯ СЕТКА */
 .bg-grid-animation {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(rgba(163, 0, 0, 0.03) 1px, transparent 1px), 
-                      linear-gradient(90deg, rgba(163, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    z-index: -1;
-    animation: grid-move 20s linear infinite;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(163,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(163,0,0,0.03) 1px, transparent 1px);
+    background-size: 50px 50px; z-index: -1; animation: grid-move 20s linear infinite;
 }
-@keyframes grid-move { 0% { transform: translateY(0); } 100% { transform: translateY(60px); } }
+@keyframes grid-move { 0% { transform: translateY(0); } 100% { transform: translateY(50px); } }
 
-/* НАВИГАЦИЯ ЦЕНТРИРОВАННАЯ */
+/* КОНТЕЙНЕРЫ */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 120px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.center { text-align: center; }
+.serif { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; line-height: 1.5; }
+
+/* МЕНЮ */
 .nav-glass {
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: var(--glass);
-    backdrop-filter: blur(15px);
-    z-index: 1000;
+    position: fixed; top: 0; width: 100%; padding: 20px 0;
+    display: flex; flex-direction: column; align-items: center;
+    background: rgba(234, 228, 217, 0.95); backdrop-filter: blur(10px); z-index: 1000;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
-.nav-logo { font-family: var(--unbounded); font-weight: 700; letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 8px; }
+.nav-logo { font-family: var(--unbounded); letter-spacing: 5px; font-weight: 700; margin-bottom: 10px; font-size: 0.85rem; }
 .nav-links { display: flex; gap: 30px; }
-.nav-links a { font-size: 0.65rem; text-transform: uppercase; color: var(--dark) !important; opacity: 0.5; transition: 0.3s; }
-.nav-links a:hover { opacity: 1; color: var(--red) !important; }
+.nav-links a { font-size: 0.65rem; text-transform: uppercase; opacity: 0.5; transition: 0.3s; letter-spacing: 1px; }
+.nav-links a:hover { opacity: 1; color: var(--red); }
 
 /* HERO */
-.hero { height: 100vh; background: var(--dark); color: var(--bg); display: flex; align-items: center; justify-content: center; overflow: hidden; perspective: 1000px; }
-.glitch-title { font-family: var(--unbounded); font-size: clamp(3rem, 12vw, 8rem); color: var(--red); margin: 0; transition: transform 0.1s; }
-.hero-manifest { max-width: 600px; margin: 30px auto; text-align: center; }
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--dark); color: white; text-align: center; overflow: hidden; }
+.glitch-title { font-family: var(--unbounded); font-size: clamp(3rem, 10vw, 7.5rem); color: var(--red); margin-bottom: 20px; transition: transform 0.1s; }
+.hero-subtitle { max-width: 600px; margin: 0 auto 40px; opacity: 0.8; }
 
-/* КНОПКИ ТЕХНОЛОГИЧНЫЕ */
+/* КНОПКИ */
 .btn-tech-primary {
-    background: var(--red);
-    color: white;
-    border: none;
-    padding: 22px 50px;
-    font-family: var(--unbounded);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: 0.4s;
+    background: var(--red); color: white; border: none; padding: 22px 45px;
+    font-family: var(--unbounded); font-size: 0.7rem; font-weight: 700; cursor: pointer;
+    position: relative; overflow: hidden; transition: 0.4s; letter-spacing: 1px;
 }
-.btn-tech-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(163, 0, 0, 0.4); }
-
-.btn-flare {
-    position: absolute;
-    top: 0; left: -150%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    animation: flare 4s infinite;
-}
-@keyframes flare { 0% { left: -150%; } 30% { left: 150%; } 100% { left: 150%; } }
+.btn-tech-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(163, 0, 0, 0.3); }
 
 .btn-tech-secondary {
-    background: transparent;
-    border: 1px solid var(--dark);
-    padding: 15px 30px;
-    font-family: var(--unbounded);
-    font-size: 0.7rem;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
-}
-.btn-tech-secondary:hover { background: var(--dark); color: white; }
-
-/* ТАРИФЫ */
-.tariffs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-.card { padding: 50px 40px; background: var(--card-bg); border-top: 1px solid rgba(0,0,0,0.05); }
-.card.featured { background: var(--dark); color: var(--bg); border-top: 4px solid var(--red); }
-.price-tag { font-size: 1.5rem; margin: 25px 0; color: var(--red); }
-
-/* БЕГУЩАЯ СТРОКА */
-.ticker-wrap { background: var(--red); padding: 15px 0; overflow: hidden; white-space: nowrap; }
-.ticker { display: inline-block; animation: move 30s linear infinite; color: white; }
-.ticker span { padding-right: 50px; font-size: 0.7rem; }
-@keyframes move { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-/* КОМАНДА */
-.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.member-photo-wrapper { height: 500px; overflow: hidden; }
-.member-photo { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.7s; }
-.member-card:hover .member-photo { filter: grayscale(0%); transform: scale(1.05); }
-
-/* ФУТЕР */
-.footer { padding: 100px 0 40px; text-align: center; }
-.social-pill { 
-    display: inline-block;
-    padding: 12px 35px; 
-    border: 1px solid var(--dark); 
-    border-radius: 50px; 
-    font-family: var(--unbounded); 
-    font-size: 0.65rem; 
-    margin: 0 10px;
-    transition: 0.3s;
-}
-.social-pill:hover { background: var(--dark); color: var(--bg); }
-
-@media (max-width: 768px) {
-    .team-grid { grid-template-columns: 1fr; }
-    .nav-links { gap: 15px; }
-    .glitch-title { font-size: 3.5rem; }
-}
+    background: transparent; border: 1px solid var(--dark); padding: 15px 30px;
+    font-family: var(--unbounded); font-size: 0.65rem;
