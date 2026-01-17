@@ -1,111 +1,94 @@
 :root {
     --bg: #EAE4D9;
-    --dark: #121212;
+    --dark: #0F0F0F;
     --red: #A30000;
     --gold: #B89352;
     --card-bg: #F2EDE4;
-    --font-main: 'Tenor Sans', sans-serif;
-    --font-accent: 'Unbounded', sans-serif;
-    --font-serif: 'Cormorant Garamond', serif;
 }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     background-color: var(--bg);
     color: var(--dark);
-    font-family: var(--font-main);
+    font-family: 'Tenor Sans', sans-serif;
     margin: 0;
     overflow-x: hidden;
 }
 
-.unbounded { font-family: var(--font-accent); text-transform: uppercase; letter-spacing: -1px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.unbounded { font-family: 'Unbounded', sans-serif; text-transform: uppercase; letter-spacing: -0.5px; }
+.serif { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; }
 .text-red { color: var(--red); }
-.section { padding: 120px 0; }
+.center { text-align: center; }
+.section { padding: 100px 0; }
 
-/* ГРАФИКА КОМАНДЫ */
-.team-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-top: 60px;
-}
-
-.member-card {
-    background: var(--card-bg);
-    overflow: hidden;
-    transition: 0.5s;
-    border-bottom: 3px solid transparent;
-}
-
-.member-card:hover {
-    border-bottom-color: var(--red);
-    transform: translateY(-10px);
-}
-
-.member-photo-wrapper {
-    height: 500px;
-    overflow: hidden;
-}
-
-.member-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: 0.8s;
-}
-
-.member-card:hover .member-photo {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-}
-
-.member-info {
-    padding: 40px;
-}
-
-.member-role {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    color: var(--gold);
-    display: block;
-    margin-bottom: 10px;
-}
-
-.member-info p {
-    font-family: var(--font-serif);
-    font-size: 1.3rem;
-    margin-top: 20px;
-}
-
-/* ТЕСТ (ИНТЕРФЕЙС) */
-.test-container {
+/* HERO ANIMATION */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: var(--dark);
     color: var(--bg);
-    padding: 80px;
-    border-radius: 2px;
+    position: relative;
 }
 
-.btn-gold {
-    background: var(--red);
-    color: white;
-    border: none;
-    padding: 20px 40px;
-    font-family: var(--font-accent);
-    cursor: pointer;
-    margin-top: 30px;
+.typewriter {
+    font-size: clamp(3rem, 12vw, 8.5rem);
+    color: var(--red);
+    overflow: hidden; 
+    border-right: .15em solid var(--red); 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
 }
 
-/* АДАПТИВНОСТЬ */
-@media (max-width: 900px) {
-    .team-grid { grid-template-columns: 1fr; }
-    .member-photo-wrapper { height: 400px; }
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--red) } }
+
+/* TEAM */
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+.member-card { background: var(--card-bg); transition: 0.4s ease; border-top: 1px solid rgba(0,0,0,0.05); }
+.member-photo-wrapper { height: 550px; overflow: hidden; }
+.member-photo { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.7s; }
+.member-card:hover .member-photo { filter: grayscale(0%); transform: scale(1.03); }
+.member-info { padding: 30px; }
+.member-role { font-size: 0.7rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+
+/* QUIZ */
+.test-container { background: var(--dark); color: var(--bg); padding: 80px 40px; text-align: center; }
+.progress-container { width: 100%; height: 2px; background: rgba(255,255,255,0.1); margin-bottom: 40px; }
+#progress { height: 100%; background: var(--red); transition: 0.3s; width: 0%; }
+.options-grid { display: grid; gap: 10px; margin-top: 40px; }
+.option-btn { background: transparent; border: 1px solid rgba(255,255,255,0.1); color: var(--bg); padding: 18px; cursor: pointer; font-family: 'Tenor Sans'; transition: 0.3s; }
+.option-btn:hover { background: var(--red); border-color: var(--red); }
+.btn-red-action { background: var(--red); color: white; border: none; padding: 20px 50px; font-family: 'Unbounded'; cursor: pointer; margin-top: 30px; }
+
+/* CARDS */
+.tariffs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.card { padding: 50px 35px; background: var(--card-bg); display: flex; flex-direction: column; border-top: 4px solid var(--dark); }
+.card.featured { background: var(--dark); color: var(--bg); border-top-color: var(--red); }
+.tag { font-family: 'Unbounded'; font-size: 0.8rem; margin-bottom: 20px; opacity: 0.5; }
+.btn-card { border: 1px solid var(--dark); padding: 15px; text-align: center; text-decoration: none; color: var(--dark); font-family: 'Unbounded'; font-size: 0.7rem; margin-top: auto; }
+.btn-card-red { background: var(--red); color: white; padding: 15px; text-align: center; text-decoration: none; font-family: 'Unbounded'; font-size: 0.7rem; margin-top: auto; }
+
+/* FORM */
+.form-wrapper { max-width: 700px; margin: 0 auto; }
+.input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.main-form input, .main-form textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 15px 0; margin-bottom: 30px; font-family: inherit; outline: none; transition: 0.3s; }
+.main-form input:focus { border-bottom-color: var(--red); }
+.btn-submit { background: var(--dark); color: white; border: none; width: 100%; padding: 25px; font-family: 'Unbounded'; cursor: pointer; transition: 0.3s; }
+.btn-submit:hover { background: var(--red); }
+
+@media (max-width: 768px) {
+    .team-grid, .input-group { grid-template-columns: 1fr; }
+    .typewriter { font-size: 3rem; border-right: none; white-space: normal; animation: none; }
+    .section { padding: 60px 0; }
 }
 
-/* Эффект шума */
-.grain::before {
-    content: "";
-    position: fixed;
-    top: 0; left:0; width: 100%; height: 100%;
-    background: url('https://grainy-gradients.vercel.app/noise.svg');
-    opacity: 0.05; pointer-events: none; z-index: 100;
-}
+.footer { padding: 60px; text-align: center; opacity: 0.3; font-size: 0.7rem; }
+.grain::before { content: ""; position: fixed; top: 0; width: 100%; height: 100%; background: url('https://grainy-gradients.vercel.app/noise.svg'); opacity: 0.05; pointer-events: none; z-index: 100; }
