@@ -1,85 +1,99 @@
 :root {
-    --bg: #050505;
-    --dark: #0A0A0A;
-    --red: #A30000;
-    --gold: #B89352;
-    --silk: #D1CEC7; /* Кремовый/Слоновая кость */
+    --bg: #F4F1EA;      /* Приятный кремовый / Old Money */
+    --black: #1A1A1A;   /* Глубокий антрацит */
+    --red: #A30000;     /* Акцентный красный */
+    --gold: #C5A059;    /* Благородное золото */
     --unbounded: 'Unbounded', sans-serif;
 }
 
-body { background: var(--bg); color: var(--silk); font-family: 'Tenor Sans', sans-serif; overflow-x: hidden; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--black); font-family: 'Tenor Sans', sans-serif; overflow-x: hidden; }
 
-/* SCAN LINES & GRAIN */
-.bg-scan-lines {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, transparent 1px);
-    z-index: 5; pointer-events: none;
+.serif { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 120px 0; }
+.center { text-align: center; }
+
+/* ШУМ */
+.grain::before {
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.06; pointer-events: none; z-index: 1000;
 }
 
-/* ЗАГОЛОВКИ */
-.glitch-title {
-    font-family: var(--unbounded);
-    font-size: clamp(4rem, 15vw, 10rem);
-    color: var(--red);
-    text-transform: uppercase;
-    letter-spacing: -5px;
-    animation: pulse-red 5s infinite ease-in-out;
+/* НАВИГАЦИЯ */
+.nav-bar {
+    position: fixed; top: 0; width: 100%; padding: 30px 50px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(244, 241, 234, 0.9); backdrop-filter: blur(10px); z-index: 900;
+}
+.nav-logo { font-family: var(--unbounded); font-weight: 700; letter-spacing: 4px; font-size: 1.2rem; }
+.nav-links a { font-family: var(--unbounded); font-size: 0.7rem; text-decoration: none; color: var(--black); margin-left: 30px; opacity: 0.6; transition: 0.3s; }
+.nav-links a:hover { opacity: 1; color: var(--red); }
+
+/* HERO */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.main-title { font-family: var(--unbounded); font-size: clamp(3rem, 15vw, 10rem); font-weight: 700; color: var(--black); line-height: 1; }
+.hero-divider { width: 60px; height: 4px; background: var(--red); margin: 30px auto; }
+.hero-tagline { font-size: 1.8rem; margin-bottom: 40px; }
+
+/* КНОПКИ */
+.btn-accent {
+    background: var(--red); color: white; border: none; padding: 20px 45px;
+    font-family: var(--unbounded); font-size: 0.7rem; cursor: pointer; transition: 0.4s;
+}
+.btn-accent:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(163,0,0,0.2); }
+
+.btn-black {
+    background: var(--black); color: white; border: none; padding: 15px 30px;
+    font-family: var(--unbounded); font-size: 0.7rem; cursor: pointer; transition: 0.3s;
 }
 
-@keyframes pulse-red {
-    0%, 100% { text-shadow: 0 0 20px rgba(163,0,0,0.3); }
-    50% { text-shadow: 0 0 50px rgba(163,0,0,0.6); }
+.btn-outline {
+    background: transparent; border: 1px solid var(--black); padding: 12px 25px;
+    font-family: var(--unbounded); font-size: 0.6rem; cursor: pointer;
 }
 
-/* ТАРИФЫ (3 В РЯД) */
-.tariffs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+/* CREATORS */
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+.photo-frame { position: relative; height: 600px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); }
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; }
+.member-card:hover img { transform: scale(1.05); }
+.role-tag { color: var(--red); font-family: var(--unbounded); font-size: 0.7rem; display: block; margin-bottom: 10px; }
+
+/* LAB */
+.lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.test-card { padding: 40px; background: white; border: 1px solid rgba(0,0,0,0.05); transition: 0.4s; }
+.test-card:hover { border-color: var(--red); transform: translateY(-10px); }
+.test-no { font-family: var(--unbounded); font-size: 0.7rem; opacity: 0.3; }
+.gold-bg { background: var(--gold); color: white; border: none; }
+.red-accent:hover { background: var(--red); color: white; }
+
+/* TARIFFS */
+.tariffs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 60px; }
+.price-card { background: white; padding: 60px 40px; border: 1px solid rgba(0,0,0,0.05); transition: 0.4s; }
+.price-card.featured { border: 2px solid var(--gold); transform: scale(1.05); z-index: 2; }
+.price { font-family: var(--unbounded); font-size: 2.2rem; margin: 30px 0; color: var(--red); }
+.features { list-style: none; margin-bottom: 40px; }
+.features li { margin-bottom: 15px; opacity: 0.8; font-size: 1.1rem; }
+.top-label { font-family: var(--unbounded); font-size: 0.6rem; color: var(--gold); margin-bottom: 20px; }
+
+/* MODAL */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center; padding: 20px; }
+.modal-content { background: var(--bg); padding: 60px; max-width: 600px; width: 100%; position: relative; }
+.close-modal { position: absolute; top: 20px; right: 20px; font-size: 2rem; cursor: pointer; }
+.quiz-opt { display: block; width: 100%; padding: 15px; margin-bottom: 10px; border: 1px solid #ccc; background: white; cursor: pointer; font-family: var(--unbounded); font-size: 0.7rem; }
+.quiz-opt:hover { background: var(--red); color: white; border-color: var(--red); }
+
+/* TICKER */
+.ticker-box { background: var(--black); padding: 15px 0; overflow: hidden; white-space: nowrap; }
+.ticker-line { display: inline-block; animation: ticker 20s linear infinite; }
+.ticker-line span { color: white; font-family: var(--unbounded); font-size: 0.7rem; padding-right: 50px; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+@media (max-width: 768px) {
+    .team-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .main-title { font-size: 4rem; }
 }
-
-.glass-card {
-    background: var(--dark);
-    border: 1px solid rgba(184, 147, 82, 0.15);
-    padding: 50px 35px;
-    position: relative;
-    transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.price-card:hover {
-    border-color: var(--red);
-    transform: translateY(-15px);
-    box-shadow: 0 20px 60px rgba(163, 0, 0, 0.15);
-}
-
-.featured { border: 1px solid var(--gold); }
-.gold-glow { box-shadow: 0 0 30px rgba(184, 147, 82, 0.1); }
-
-.price { font-family: var(--unbounded); font-size: 2.2rem; color: var(--gold); margin: 25px 0; }
-.specs { list-style: none; opacity: 0.8; font-size: 0.95rem; line-height: 2.2; margin-bottom: 30px; }
-.specs li::before { content: "// "; color: var(--red); }
-
-/* БЕГУЩАЯ СТРОКА */
-.ticker-box { background: var(--red); padding: 15px 0; overflow: hidden; white-space: nowrap; border-bottom: 1px solid var(--gold); }
-.ticker-line { display: inline-block; animation: ticker-scroll 25s linear infinite; }
-.ticker-line span { font-family: var(--unbounded); color: white; padding-right: 60px; font-size: 0.8rem; }
-@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* BUTTONS */
-.btn-os-gold {
-    background: transparent; border: 1px solid var(--gold); color: var(--gold);
-    padding: 20px 40px; font-family: var(--unbounded); font-size: 0.7rem;
-    cursor: pointer; transition: 0.4s; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-}
-.btn-os-gold:hover { background: var(--gold); color: black; box-shadow: 0 0 40px var(--gold); }
-
-/* ФОТО */
-.photo-wrapper { position: relative; height: 550px; overflow: hidden; border: 1px solid rgba(184, 147, 82, 0.2); }
-.photo-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); transition: 1.5s; }
-.member-card:hover img { filter: grayscale(0.2); transform: scale(1.08); }
-.scan-line {
-    position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-    background: var(--red); opacity: 0.5; animation: scan 4s infinite linear;
-}
-@keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
