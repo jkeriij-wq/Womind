@@ -1,0 +1,238 @@
+/* Переменные проекта */
+:root {
+    --bg: #F8F5F2;
+    --dark: #0F0F0F;
+    --red: #BC0000;
+    --red-hover: #8B0000;
+    --gray: #666;
+    --white: #FFFFFF;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Общие стили */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--dark);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шрифты */
+h1, h2, .unbounded-title {
+    font-family: 'Unbounded', sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--dark);
+    color: var(--white);
+    position: relative;
+    border-bottom: 8px solid var(--red);
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 12vw, 9rem);
+    margin: 0;
+    color: var(--red);
+    line-height: 0.8;
+}
+
+.hero-sub {
+    font-style: italic;
+    font-size: 1.5rem;
+    margin: 20px 0 40px;
+    opacity: 0.8;
+}
+
+/* Кнопки */
+.btn {
+    padding: 20px 45px;
+    text-decoration: none;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-main {
+    background: var(--red);
+    color: white;
+}
+
+.btn-main:hover {
+    background: white;
+    color: var(--red);
+    transform: translateY(-5px);
+}
+
+.btn-outline {
+    border-bottom: 1px solid var(--red);
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Философия */
+.philosophy {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.large-text {
+    font-size: 2.2rem;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.accent-red { color: var(--red); font-weight: bold; }
+.bold-red { color: var(--red); font-family: 'Unbounded'; font-size: 1rem; }
+
+/* Блок Истории (The Muse) */
+.stories {
+    padding: 60px 0;
+}
+
+.story-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--dark);
+    color: white;
+    min-height: 500px;
+}
+
+.story-content {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.story-visual {
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 4px solid var(--red);
+}
+
+.image-placeholder {
+    font-family: 'Unbounded';
+    opacity: 0.2;
+    font-size: 0.8rem;
+}
+
+/* Сетка услуг */
+.services { padding: 100px 0; }
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-item {
+    background: white;
+    padding: 50px;
+    border-top: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.service-item:hover {
+    background: var(--dark);
+    color: white;
+}
+
+.service-item h3 { color: var(--red); margin: 20px 0; }
+.tag { font-size: 0.7rem; text-transform: uppercase; color: var(--gray); }
+
+/* ФОРМА */
+.form-section {
+    background: var(--red);
+    padding: 100px 0;
+    color: white;
+}
+
+.form-wrapper { max-width: 600px; margin: 0 auto; }
+
+.main-form input, .main-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    padding: 15px 0;
+    margin-bottom: 30px;
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.main-form input:focus { border-bottom-color: white; }
+
+.btn-red {
+    background: white;
+    color: var(--red);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* FOOTER */
+.footer {
+    background: var(--dark);
+    color: white;
+    padding: 80px 0 40px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.footer-logo { font-family: 'Unbounded'; font-size: 1.5rem; color: var(--red); }
+.footer-socials a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.copy { font-size: 0.7rem; opacity: 0.4; text-align: center; margin-top: 50px; }
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 768px) {
+    .story-card { grid-template-columns: 1fr; }
+    .story-content { padding: 40px; }
+    .story-visual { height: 300px; order: -1; }
+    .large-text { font-size: 1.4rem; }
+    .hero h1 { font-size: 4rem; }
+    .footer-grid { flex-direction: column; gap: 30px; }
+}
