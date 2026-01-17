@@ -233,79 +233,113 @@ input:-webkit-autofill:focus {
     .form-header h2 { font-size: 2rem; }
 }
 
-/* МОДАЛЬНОЕ ОКНО (ВСПЛЫВАЮЩЕЕ) 
+/* ФИНАЛЬНОЕ МОДАЛЬНОЕ ОКНО (CБОРКА) */
 .modal {
-    display: none;
+    display: none; /* Переключается через JS на flex */
     position: fixed;
-    z-index: 3000;
+    z-index: 9999; /* Самый высокий приоритет, чтобы быть поверх всего */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(15, 15, 15, 0.98); /* Почти черный фон для контраста */
-    backdrop-filter: blur(15px);
+    background-color: rgba(10, 10, 10, 0.98); /* Глубокий темный фон */
+    backdrop-filter: blur(15px); /* Эффект размытия заднего плана */
     align-items: center;
     justify-content: center;
     padding: 20px;
 }
 
 .modal-box {
-    background: var(--bg); /* Твой бежевый фон */
-    border: 2px solid var(--red);
+    background: var(--bg); /* Твой благородный беж */
+    border: 2px solid var(--red); /* Красная акцентная рамка */
     padding: 50px 40px;
     max-width: 600px;
     width: 100%;
     position: relative;
-    box-shadow: 0 0 50px rgba(209, 0, 0, 0.2);
+    box-shadow: 0 0 60px rgba(209, 0, 0, 0.3);
+    color: var(--black); /* Основной текст (для ответов) */
 }
 
-/* Цвет самого вопроса */
+/* ЗАГОЛОВОК ВОПРОСА - ГАРАНТИРОВАННО КРАСНЫЙ */
 .quiz-question-text {
-    color: var(--red) !important; /* Делаем вопрос ярко-красным */
+    color: var(--red) !important; /* Принудительно красный цвет */
     font-family: var(--unbounded);
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 4vw, 1.8rem); /* Адаптивный размер */
     font-weight: 900;
     line-height: 1.2;
     margin-bottom: 30px;
     text-transform: uppercase;
+    display: block;
 }
 
-/* Заголовок теста (архетип, бренд и т.д.) */
+/* Техническая подпись сверху */
 .quiz-title-small {
     color: var(--black);
     font-family: var(--unbounded);
     font-size: 0.7rem;
     letter-spacing: 2px;
-    opacity: 0.6;
-    margin-bottom: 10px;
+    opacity: 0.5;
+    margin-bottom: 15px;
     display: block;
 }
 
-/* Кнопка ВЫХОДА (крестик) */
+/* Кнопка закрытия (крестик) */
 .close-modal {
     position: absolute;
     top: 20px;
-    right: 20px;
-    font-size: 24px;
+    right: 25px;
+    font-size: 28px;
     cursor: pointer;
     color: var(--black);
-    transition: 0.3s;
+    transition: 0.3s ease;
+    z-index: 10;
 }
-.close-modal:hover { color: var(--red); transform: rotate(90deg); }
 
-/* Кнопка СВЕРНУТЬ (внизу) */
+.close-modal:hover {
+    color: var(--red);
+    transform: rotate(90deg);
+}
+
+/* СТИЛИ КНОПОК-ОТВЕТОВ */
+.quiz-opt-btn {
+    display: block;
+    width: 100%;
+    padding: 18px 25px;
+    margin-top: 12px;
+    background: rgba(0, 0, 0, 0.05); /* Легкий контрастный фон */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: var(--unbounded);
+    font-size: 0.85rem;
+    color: var(--black);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.quiz-opt-btn:hover {
+    background: var(--black);
+    color: var(--bg); /* Текст становится бежевым на черном фоне */
+    border-color: var(--black);
+    padding-left: 35px; /* Динамичный сдвиг */
+}
+
+/* КНОПКА ВЫХОДА (СВЕРНУТЬ) */
 .btn-exit-quiz {
-    margin-top: 20px;
+    display: block;
+    margin: 30px auto 0;
     background: transparent;
     border: none;
     color: var(--black);
     font-family: var(--unbounded);
-    font-size: 0.6rem;
+    font-size: 0.65rem;
+    font-weight: 400;
     cursor: pointer;
-    text-decoration: underline !important; /* Чтобы выделялась как ссылка */
-    opacity: 0.5;
-    width: 100%;
-    text-align: center;
+    text-decoration: underline !important;
+    opacity: 0.4;
+    transition: 0.3s;
 }
-.btn-exit-quiz:hover { opacity: 1; color: var(--red); }
+
+.btn-exit-quiz:hover {
+    opacity: 1;
+    color: var(--red);
 }
