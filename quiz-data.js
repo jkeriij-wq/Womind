@@ -164,3 +164,46 @@ function showResult() {
     document.getElementById('result-name').innerText = winner;
     document.getElementById('result-desc').innerText = resultsData[winner];
 }
+
+
+const QUIZ_STORAGE = {
+    archetype: {
+        title: "NEURO_CODE SCAN",
+        questions: [
+            { q: "Как вы принимаете решения?", a: ["Логика", "Интуиция", "Система", "Импульс"] },
+            { q: "Ваш идеальный визуал?", a: ["Минимализм", "Драма", "Хаос", "Порядок"] }
+        ]
+    },
+    money: {
+        title: "MONEY_MIND UPGRADE",
+        questions: [
+            { q: "Ваш финансовый потолок сейчас?", a: ["0-100k", "100-500k", "500k-1M", "1M+"] },
+            { q: "Что мешает расти?", a: ["Страх", "Нет системы", "Окружение", "Лень"] }
+        ]
+    },
+    brand: {
+        title: "BRAND_CORE ANALYSIS",
+        questions: [
+            { q: "У вас есть стратегия на год?", a: ["Да", "Нет", "В процессе"] }
+        ]
+    }
+};
+
+function initQuiz(type) {
+    const data = QUIZ_STORAGE[type];
+    const modal = document.getElementById('quiz-modal');
+    const container = document.getElementById('quiz-container');
+    
+    container.innerHTML = `<h3>${data.title}</h3>` + data.questions.map((q, i) => `
+        <div class="q-block">
+            <p>${q.q}</p>
+            ${q.a.map(opt => `<button class="btn-os" onclick="alert('Processed')">${opt}</button>`).join('')}
+        </div>
+    `).join('');
+    
+    modal.style.display = "block";
+}
+
+function closeQuiz() {
+    document.getElementById('quiz-modal').style.display = "none";
+}
